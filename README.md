@@ -4,6 +4,7 @@ Repositorio de la asignatura de SEW. Aquí podrás encontrar los validadores nec
 <a href="https://diegomarty00.github.io/sew-25-26/SEW-Pautas/index.html">Página Web Práctica 0 </a> 
 
 [Línea invisible.]: # (<a href="http://localhost/GitHub/pruebas-25-26/NOMBRE/index.html">Página localhost</a>)
+[Línea invisible.]: # (Se tiene que subir los archivos a C:\xampp\htdocs)
 
 # Validadores
 * [Validador de Lenguajes de marcas](https://validator.w3.org/)
