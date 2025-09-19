@@ -1,7 +1,8 @@
 # SEW 2025/26
 Repositorio de la asignatura de SEW. Aquí podrás encontrar los validadores necesarios para pasar las pruebas, así como los adaptadores y herramientas de accesibilidad web.
 
-<a href="https://diegomarty00.github.io/sew-25-26/SEW-Pautas/index.html">Página Web Práctica 0 </a> 
+<a href="https://diegomarty00.github.io/sew-25-26/SEW-Pautas/index.html">Página Web Práctica 0 </a>
+
 <a href="https://diegomarty00.github.io/sew-25-26/MotoGP-Desktop/index.html">Página Web</a> 
 
 [Línea invisible.]: # (<a href="http://localhost/GitHub/pruebas-25-26/NOMBRE/index.html">Página localhost</a>)
