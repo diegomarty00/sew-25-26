@@ -9,13 +9,15 @@
     <meta name ="keywords" content="Franco, Morbidelli, piloto, motogp, moto"/>
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <title>MotoGP-Piloto</title>
+    <link rel="icon" href="multimedia/imagenes/MotoGP.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
 </head>
 
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <header>
-        <h1>MotoGP Desktop</h1>
+            <h1><a href="index.html">MotoGP Desktop</a></h1>
+            
         <nav>
             <a href="index.html" accesskey="i">Inicio</a>
             <a href="piloto.html" class="active" accesskey="p">Piloto</a>
@@ -26,9 +28,26 @@
             <a href="ayuda.html" accesskey="a">Ayuda</a>
         </nav>
     </header>
-
+    <p>Estás en: <a href="index.html">Inicio</a> >> Piloto</p>
     <main>
         <h2>Franco Morbidelli</h2>
+        
+        <p>
+            Franco Morbidelli es un piloto de motociclismo italiano-brasileño. Ha sido campeón 
+            del Campeonato Mundial de Motociclismo en la categoría de Moto2 en 2017 y 
+            subcampeón de MotoGP en 2020 con el equipo Petronas Yamaha. En 2025 compite 
+            en el Pertamina Enduro VR46 Racing Team con Fabio Di Giannantonio.
+        </p>
+
+        <picture>
+            <source type="image/jpg" media="(max-width: 465px)"
+                srcset="multimedia/imagenes/FrancoMorbidelli-25x100.jpg" />
+            <source type="image/jpg" media="(max-width: 799px)"
+                srcset="multimedia/imagenes/FrancoMorbidelli-50x100.jpg" />
+            <source type="image/jpg" media="(min-width: 800px)" srcset="multimedia/imagenes/FrancoMorbidelli.jpg" />
+            <img src="multimedia/imagenes/FrancoMorbidelli.jpg" alt="Foto de Franco Morbidelli" />
+        </picture>
+
         <section>
             <h3>Datos Personales</h3>
             <ul>
@@ -42,6 +61,10 @@
         </section>
         <section>
             <h3>Trayectoria de equipos</h3>
+            <p> 
+                Aquí dejamos los equipos por los que ha pasado Franco durante su transito 
+                por MotoGP
+            </p>
             <ol>
                 <li>EG 0,0 Marc VDS</li>
                 <li>Petronas Yamaha SRT</li>
@@ -51,54 +74,49 @@
             </ol>
         </section>
         <section>
-            <h3>Glosario de MotoGP</h3>
-            <dl>
-                <dt>Tachometer – Tacómetro</dt>
-                <dd>Es el instrumento que nos muestra las revoluciones por minuto del motor. 
-                    Podemos encontrarlos en la mayoría de vehículos en versiones digitales o 
-                    analógicas y suelen tener un rango de color rojo en el que se indica el 
-                    límite al que puede llegar el propulsor.</dd>
-                <dt>Throttle – Acelerador</dt>
-                <dd>Es cuando se refiere al mando en si o al sistema (puño del acelerador, 
-                    cuerpo del acelerador).</dd>
-                <dt>Timing – Cronometraje</dt>
-                <dd>Es la medición de tiempo al que se somete cada una de las motos en todas 
-                    las sesiones.</dd>
-                <dt>Top speed – Velocidad máxima</dt>
-                <dd>Es la máxima velocidad alcanzada, ya sea en total o de un piloto en 
-                    concreto.</dd>
-                <dt>Valve – Válvula</dt>
-                <dd>Son los elementos que impiden o permiten el paso de un espacio a otro. 
-                    Podemos encontrarlas en el motor así como en otros elementos mecánicos, 
-                    como en el escape, en el sistema neumático o de refrigeración.</dd>
-            </dl>
-        </section>
-        <section>
             <h3>Resultados ultima temporada</h3>
+            <p>El piloto durante su ultima temporada, se ha mentenido en el promedio,
+                no ha sido de los mejores pilotos de la parrilla, pero tampoco ha 
+                sido de los peores, colocandose en una posición más que suficiente
+                como para poder estar en el top 10 de los pilotos, teniendo un 
+                resultado superior a la media.
+
+                Aquí podemos ver los resultados en su última temporada
+            </p>
             <table>
                 <caption>Clasificación Temporada 2024</caption>
                 <thead>
                     <tr>
-                        <th scope="col" id="pf">Posición final</th>
-                        <th scope="col" id="po">Puntos Obtenidos</th>
-                        <th scope="col" id="pl">Poles</th>
-                        <th scope="col" id="vi">Victorias</th>
-                        <th scope="col" id="pd">Podios</th>
+                        <th scope="col" id="indice">Indice</th>
+                        <th scope="col" id="date">Resultados</th>
                     </tr>
                 </thead>  
                 <tbody>
                     <tr>
-                        <td headers="pf">9º</td>
-                        <td headers="po">173</td>
-                        <td headers="pl">0</td>
-                        <td headers="vi">0</td>
-                        <td headers="pd">0</td>
+                        <th scope="row" id="posición" headers="indice">Posición final</th>
+                        <td headers="posición date">9</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="po" headers="indice">Puntos Obtenidos</th>
+                        <td headers="po date">173</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="poles" headers="indice">Poles</th>
+                        <td headers="poles date">0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="victorias" headers="indice">Victorias</th>
+                        <td headers="victorias date">0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="podios" headers="indice">Podios</th>
+                        <td headers="podios date">0</td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        <aside>
-            <h3>Redes sociales</h3>
+        <section>
+            <h2>Redes sociales</h2>
             <p> Aquí os dejamos algunos enlaces donde podrás acceder a y saber más sobre
                 este gran piloto italiano.</p>
             <ul>
@@ -106,7 +124,51 @@
                 <li><a href="https://www.instagram.com/frankymorbido">Instagram</a></li>
                 <li><a href="https://x.com/frankymorbido12">Twitter</a></li>
             </ul>
-        </aside>
+        </section>
     </main>
+    <aside>
+        <h2>Glosario de MotoGP</h2>
+        <p>
+            Sabemos que no todos estais puestos en el mundo del motor, por eso, dejamos 
+            por aquí algunas de las terminologías más utilizadas en el mundillo para que 
+            no perdais el hilo de las retrasmisiones.
+        </p>
+        <dl>
+            <dt>Tachometer – Tacómetro</dt>
+            <dd>Es el instrumento que nos muestra las revoluciones por minuto del motor. 
+                Podemos encontrarlos en la mayoría de vehículos en versiones digitales o 
+                analógicas y suelen tener un rango de color rojo en el que se indica el 
+                límite al que puede llegar el propulsor.</dd>
+            <dt>Throttle – Acelerador</dt>
+            <dd>Es cuando se refiere al mando en si o al sistema (puño del acelerador, 
+                cuerpo del acelerador).</dd>
+            <dt>Timing – Cronometraje</dt>
+            <dd>Es la medición de tiempo al que se somete cada una de las motos en todas 
+                las sesiones.</dd>
+            <dt>Top speed – Velocidad máxima</dt>
+            <dd>Es la máxima velocidad alcanzada, ya sea en total o de un piloto en 
+                concreto.</dd>
+            <dt>Valve – Válvula</dt>
+            <dd>Son los elementos que impiden o permiten el paso de un espacio a otro. 
+                Podemos encontrarlas en el motor así como en otros elementos mecánicos, 
+                como en el escape, en el sistema neumático o de refrigeración.</dd>
+        </dl>
+    </aside>
+
+    <footer>
+        <nav>
+            <a href="index.html" accesskey="i">Inicio</a>
+            <a href="piloto.html" class="active" accesskey="p">Piloto</a>
+            <a href="circuito.html" accesskey="c">Circuito</a>
+            <a href="meteorologia.html" accesskey="m">Meteorología</a>
+            <a href="clasificacion.html" accesskey="s">Clasificación</a>
+            <a href="juegos.html" accesskey="j">Juegos</a>
+            <a href="ayuda.html" accesskey="a">Ayuda</a>
+        </nav>
+        <p class="footer-company-name">All Rights Reserved. &copy; 2025 <a href="index.html"
+                target="_blank">MotoGP</a>
+            - Design By : <a href="https://github.com/diegomarty00" target="_blank">Diego Martinez Menéndez</a>
+        </p>
+    </footer>
 </body>
 </html>

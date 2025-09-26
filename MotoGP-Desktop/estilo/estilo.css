@@ -1,18 +1,347 @@
 /* Diego Martinez Menendez - UO270457 */
 
-/* Estilos generales del proyecto MotoGP-Desktop*/
+/* Estilos generales del proyecto MotoGP-Desktop
+
+W. White        #FFFFFF
+B. Black        #000000
+
+1. Olive Green  #9BA216 	B
+2. Dark Green   #304606 	W, 3, 4, 5
+3. Chartreuse   #D6E024 	B, 2, 7
+4. Yellow Green #EBF094   B, 2, 7
+
+5. Mauve        #E6D1DC   B, 2, 7
+6. Lavender     #C197D2		B
+7. Orchid       #5B3354 	w, 3, 4, 5
+
+*/
 
 /*Especificidad: 001*/
 body {
-  font-family: Tahoma, sans-serif;
+  font-family: Verdana, sans-serif;
+  color: #000000;
+  background-color: #304606;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
+
+/*Especificidad: 011*/
+section .active {
+  background-color: #EBF094;
+  color: #304606;
+  font-weight: bold;
+}
+
+/*Especifidad: 010*/
+.active {
+  color: #EBF094;
+  background-color: #304606;
+}
+
+/*Especifidad: 001
+Controlado con el color del fondo*/
+p {
+  color: white;
+  margin: 1em;
+}
+
+/*Especifidad: 001
+Definido el background-color
+anteriormente en body*/
+a {
+  color: #FFFFFF;
+}
+
 /*Especificidad: 001*/
-h1 {
-  color: #fff;    
-  background-color:#ff3333; 
-  text-transform: uppercase;
-  padding: 2em; 
-  text-align: center;     
-  }
+main, article, aside {
+  margin: 1em;
+}
+
+/* 
+  ========================================
+  =====          CSS HEADER         ======
+  ========================================
+*/
+
+/*Especificidad: 001*/
+header {
+  color: #304606;
+  background-color: #EBF094;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+/*Especificidad: 002
+Definido el background-color
+anteriormente en header*/
+header p{
+  color: black  ;
+}
+
+/*Especificidad: 003
+Definido el background-color
+anteriormente en header*/
+header p a{
+  color: #304606;
+}
+
+/*Especificidad: 002*/
+header section{
+  justify-items: center;
+}
+
+/*Especificidad: 02*/
+header h1{
+  font-family: Helveltica, Verdana, sans-serif;
+  background-color: #EBF094;
+  color: #304606;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: 0.5em 0em;
+  font-size: 2em;
+}
+
+/*Especificidad: 003
+Definido el background-color
+anteriormente en header*/
+header h1 a{
+  color: #304606;
+  font-size: 2em;
+}
+
+/*Especificidad: 002*/
+header nav {
+  overflow: hidden;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/*Especificidad: 003*/
+header nav a {
+  font-size: 1em;
+  margin: 0.5em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  background-color: #E6D1DC;
+  color: #304606;
+  border: 2px solid black;
+  border-radius: 0.5em 0;
+}
+
+/*Especificidad: 013*/
+header nav a:focus {
+  font-weight: bold;
+}
+
+/* 
+  ========================================
+  =====          CSS TITLES         ======
+  ========================================
+*/
+
+/*Especificidad: 001*/
+h1,
+h2,
+h4 {
+    font-family: Helveltica, Verdana, sans-serif;
+    background-color: #EBF094;
+    color: #304606;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 0.5em 0;
+}
 
 
+/*Especifidad: 001*/
+h3,
+h5,
+h6 {
+    font-family: Helveltica, Verdana, sans-serif;
+    background-color: #E6D1DC;
+    max-height: fit-content; /* Altura fija para los h5 */
+    max-width: fit-content; /* Altura fija para los h5 */
+    color: #5B3354;
+    border-radius: 0.5em 0;
+    margin: 1em;
+    padding: 0.5em;
+    display: inline-block; /* Esto hace que el ancho se ajuste al contenido */
+    width: auto;
+}
+
+/*Especificidad: 001*/
+h2 {
+  font-size: 1.7em;
+  margin: 0.5em;
+}
+
+/*Especifidad: 001*/
+h3 {
+    text-align: center;
+    padding: 0.5em;
+}
+
+/*Especificidad: 001*/
+h4 {
+    font-size: 1.1em;
+    margin: 1em;
+}
+
+/*Especificidad: 001*/
+h5 {
+    font-size: 0.9em;
+}
+
+/*Especificidad: 001*/
+h6 {
+    font-size: 0.7em;
+}
+
+/* 
+  ========================================
+  =====       CSS DEFINICIONES      ======
+  ========================================
+*/
+
+/*Especificidad: 001*/
+dl {
+  margin: 1em;
+}
+/*Especificidad: 001
+Definido el background-color
+anteriormente en table*/
+dt {
+  color: #D6E024;
+}
+
+/*Especificidad: 001
+Definido el background-color
+anteriormente en table*/
+dd {
+  color: #EBF094;
+}
+
+/* 
+  ========================================
+  =====          CSS TABLAS         ======
+  ========================================
+*/
+
+/*Especifidad: 001
+El color se le indica en los
+parametros siguientes*/
+table {
+    border-radius: 5px;
+    background-color: #304606;
+    text-align: center;
+    margin: auto;
+}
+
+/*Especifidad: 002
+Definido el background-color
+anteriormente en table*/
+table caption {
+    font-family: Helveltica, Verdana, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.3em;
+    color: #E6D1DC;
+    font-size: 1.3em;
+    text-decoration: underline
+}
+
+/*Especifidad: 003
+Definido el background-color
+anteriormente en table*/
+table tr th {
+    text-align: center;
+    color: black;
+    font-size: 1.3em;
+    border-radius: 5px;
+    background-color: #9BA216;
+}
+
+/*Especifidad: 003
+Definido el background-color
+anteriormente en table*/
+table tr td {
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* 
+  ========================================
+  =====          CSS LISTAS         ======
+  ========================================
+*/
+
+/*Especifidad: 001
+Definido el background-color
+anteriormente en body*/
+ul {
+  color: #FFFFFF;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/*Especifidad: 001
+Definido el background-color
+anteriormente en body*/
+ol {
+  color: #D6E024;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* 
+  ========================================
+  =====          CSS LISTAS         ======
+  ========================================
+*/
+
+/*Especifidad: 001
+Definido el background-color
+para que no sea igual al del Body
+Error controlado para identificar
+correctamente el footer*/
+footer {
+  background-color: #1f1f1f;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 2em 1em;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Especificidad: 002*/
+nav {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin: 0.5em;
+}
+
+/*Especificidad: 003*/
+nav a {
+  padding: 0.25em 1em;
+  text-decoration: none;
+  background-color: #E6D1DC;
+  color: #304606;
+  border: 2px solid black;
+  border-radius: 0.5em 0;
+}
+
+/*Especificidad: 013*/
+nav a:focus {
+  font-weight: bold;
+}
