@@ -1,0 +1,55 @@
+/* Diego Martinez Menendez - UO270457 */
+
+/* Estilos generales del proyecto MotoGP-Desktop
+
+W. White        #FFFFFF
+B. Black        #000000
+
+1. Olive Green  #9BA216 	B
+2. Dark Green   #304606 	W, 3, 4, 5
+3. Chartreuse   #D6E024 	B, 2, 7
+4. Yellow Green #EBF094   B, 2, 7
+
+5. Mauve        #E6D1DC   B, 2, 7
+6. Lavender     #C197D2		B
+7. Orchid       #5B3354 	w, 3, 4, 5
+
+*/
+
+/*Especificidad: 001*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+/*Especificidad: 001*/
+nav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+/* 
+  ========================================
+  =====     ADAPTABILIDAD MOVIL     ======
+  ========================================
+*/
+
+@media (min-width: 320px) and (max-width: 799px){
+    /*Especificidad: 001*/
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  
+    /*Especificidad: 001*/
+    nav{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }

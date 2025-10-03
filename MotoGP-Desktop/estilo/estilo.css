@@ -23,21 +23,27 @@ body {
   background-color: #304606;
 }
 
-/*Especificidad: 011*/
+/*Especificidad: 002*/
 body a{
   color: #EBF094;
+}
+
+/*Especificidad: 002*/
+body p {
+  font-size: 0.7em;
+}
+
+/*Especificidad: 002*/
+ main p, section p{ 
+  font-size: 1em;
 }
 
 /*Especificidad: 001*/
 header{
   background-color: #EBF094;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
 }
 
-/*Especificidad: 011*/
+/*Especificidad: 002*/
 header a{
   color: #5B3354;
 }
@@ -55,12 +61,9 @@ h2, h3{
 /*Especificidad: 001*/
 nav{
   color: #304606;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
 }
 
-/*Especificidad: 013*/
+/*Especificidad: 012*/
 nav a:focus {
   font-weight: bold;
 }
@@ -73,25 +76,3 @@ nav a:focus {
 }
 
 
-/* 
-  ========================================
-  =====     ADAPTABILIDAD MOVIL     ======
-  ========================================
-*/
-
-@media (min-width: 320px) and (max-width: 720px){
-  header{
-    background-color: #EBF094;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-
-  nav{
-    color: #304606;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-}
