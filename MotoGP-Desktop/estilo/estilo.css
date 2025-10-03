@@ -31,6 +31,10 @@ body a{
 /*Especificidad: 001*/
 header{
   background-color: #EBF094;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 /*Especificidad: 011*/
@@ -51,6 +55,9 @@ h2, h3{
 /*Especificidad: 001*/
 nav{
   color: #304606;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 /*Especificidad: 013*/
@@ -63,4 +70,28 @@ nav a:focus {
   color: #EBF094;
   font-weight: bold;
   background-color: #304606;
+}
+
+
+/* 
+  ========================================
+  =====     ADAPTABILIDAD MOVIL     ======
+  ========================================
+*/
+
+@media (min-width: 320px) and (max-width: 720px){
+  header{
+    background-color: #EBF094;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  nav{
+    color: #304606;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
