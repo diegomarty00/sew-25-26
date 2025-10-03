@@ -38,7 +38,6 @@ header a{
   color: #5B3354;
 }
 
-
 /*Especificidad: 001*/
 h1{
   color: #304606;
@@ -52,4 +51,16 @@ h2, h3{
 /*Especificidad: 001*/
 nav{
   color: #304606;
+}
+
+/*Especificidad: 013*/
+nav a:focus {
+  font-weight: bold;
+}
+
+/*Especifidad: 010*/
+.active {
+  color: #EBF094;
+  font-weight: bold;
+  background-color: #304606;
 }
