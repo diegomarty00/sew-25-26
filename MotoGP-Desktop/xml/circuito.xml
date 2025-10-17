@@ -12,10 +12,14 @@
         <localidad>Brno</localidad>
         <pais>República Checa</pais>
         <patrocinador>Tissot</patrocinador>
-        <referencia>https://www.motogpbrno.com/es</referencia>
-        <referencia>https://www.automotodrombrno.cz/en/moto-gp/</referencia>
-        <referencia>https://en.wikipedia.org/wiki/Brno_Circuit</referencia>
-        <foto>https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Jeddah_Street_Circuit_2021.svg/1024px-Jeddah_Street_Circuit_2021.svg.png</foto>
+        <referencias>
+            <referencia>https://www.motogpbrno.com/es</referencia>
+            <referencia>https://www.automotodrombrno.cz/en/moto-gp/</referencia>
+            <referencia>https://en.wikipedia.org/wiki/Brno_Circuit</referencia>
+        </referencias>
+        <multimedia>
+            <foto>https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Jeddah_Street_Circuit_2021.svg/1024px-Jeddah_Street_Circuit_2021.svg.png</foto>
+        </multimedia>
         <coordenadasCircuito>
             <longitud unidad="grados">49.203574</longitud>
             <latitud unidad="grados">16.442826</latitud>
