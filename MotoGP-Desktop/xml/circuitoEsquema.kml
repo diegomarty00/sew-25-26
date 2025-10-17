@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>circuitoEsquema.kml</name>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+16.442826,49.203574,436
+16.439388,49.205726,432
+16.442209,49.205824,435
+16.450653,49.206241,441
+16.450101,49.208078,445
+16.457579,49.209139,424
+16.457385,49.207598,414
+16.455100,49.207111,421
+16.458330,49.205670,415
+16.459526,49.206739,404
+16.464247,49.201839,381
+16.459730,49.202922,389
+16.458753,49.201952,405
+16.450712,49.203520,432
+16.449312,49.202060,440
+16.442826,49.203574,436
+</coordinates>
+<altitudeMode>clampToGround</altitudeMode>
+</LineString>
+<Style> id="lineaRoja">
+<LineStyle>
+<color>#ff0000ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+</Document>
+</kml>

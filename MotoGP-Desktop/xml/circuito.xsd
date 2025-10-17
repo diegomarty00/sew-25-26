@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="Windows-1252"?>
-<xs:schema xmlns="http://tempuri.org/circuito" elementFormDefault="qualified" targetNamespace="http://tempuri.org/circuito" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.uniovi.es"
+  xmlns="http://www.uniovi.es"
+  elementFormDefault="qualified">
   <xs:element name="circuito">
     <xs:complexType>
       <xs:sequence>
@@ -7,7 +10,7 @@
         <xs:element ref="tramos" />
         <xs:element ref="resultados" />
       </xs:sequence>
-      <xs:attribute name="nombreCircuito" type="xs:string" use="required" />
+      <xs:attribute name="nombreCircuito" type="xs:ID" use="required" />
     </xs:complexType>
   </xs:element>
   <xs:element name="datos">
@@ -30,7 +33,7 @@
   <xs:element name="longitudCircuito">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:string">
+        <xs:extension base="xs:integer">
           <xs:attribute name="unidad" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>
@@ -39,22 +42,29 @@
   <xs:element name="anchura">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute name="unidad" type="xs:ID" use="required" />
+        <xs:extension base="xs:integer">
+          <xs:attribute name="unidad" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="fechaCarrera" type="xs:string" />
-  <xs:element name="horaCarreraEsp" type="xs:string" />
-  <xs:element name="vueltas" type="xs:string" />
+  <xs:element name="fechaCarrera" type="xs:date" />
+  <xs:element name="horaCarreraEsp" type="xs:time" />
+  <xs:element name="vueltas">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="1" />
+        <xs:maxInclusive value="100" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
   <xs:element name="localidad" type="xs:string" />
   <xs:element name="pais" type="xs:string" />
   <xs:element name="patrocinador" type="xs:string" />
   <xs:element name="referencias">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="1" maxOccurs="unbounded" ref="referencia" />
+        <xs:element minOccurs="3" maxOccurs="unbounded" ref="referencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,8 +72,8 @@
   <xs:element name="multimedia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="1" maxOccurs="unbounded" ref="foto" />
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="video" />
+        <xs:element minOccurs="1" maxOccurs="5" ref="foto" />
+        <xs:element minOccurs="1" maxOccurs="3" ref="video" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -81,7 +91,7 @@
   <xs:element name="tramos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="tramo" />
+        <xs:element minOccurs="3" maxOccurs="unbounded" ref="tramo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -92,13 +102,13 @@
         <xs:element ref="coordenadasTramoFin" />
         <xs:element ref="sector" />
       </xs:sequence>
-      <xs:attribute name="numeroTramo" type="xs:string" use="required" />
+      <xs:attribute name="numeroTramo" type="xs:integer" use="required" />
     </xs:complexType>
   </xs:element>
   <xs:element name="distancia">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:string">
+        <xs:extension base="xs:integer">
           <xs:attribute name="unidad" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>
@@ -113,11 +123,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="sector" type="xs:string" />
+  <xs:element name="sector" type="xs:integer" />
+  
+  <xs:simpleType name="LatitudType">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="-90"/>
+      <xs:maxInclusive value="90"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LongitudType">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="-180"/>
+      <xs:maxInclusive value="180"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AltitudType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="5000"/>
+    </xs:restriction>
+  </xs:simpleType> 
+
   <xs:element name="longitud">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:string">
+        <xs:extension base="LongitudType">
           <xs:attribute name="unidad" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>
@@ -126,7 +156,7 @@
   <xs:element name="latitud">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:string">
+        <xs:extension base="LatitudType">
           <xs:attribute name="unidad" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>
@@ -135,7 +165,7 @@
   <xs:element name="altitud">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:string">
+        <xs:extension base="AltitudType">
           <xs:attribute name="unidad" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>
@@ -154,7 +184,7 @@
   <xs:element name="tiempoGP">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:string">
+        <xs:extension base="xs:duration">
           <xs:attribute name="unidad" type="xs:string" use="required" />
         </xs:extension>
       </xs:simpleContent>
@@ -163,7 +193,7 @@
   <xs:element name="clasificacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="piloto" />
+        <xs:element minOccurs="3" maxOccurs="3" ref="piloto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -171,8 +201,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="posicion" type="xs:string" use="required" />
-          <xs:attribute name="puntos" type="xs:string" use="required" />
+          <xs:attribute name="posicion" type="xs:integer" use="required" />
+          <xs:attribute name="puntos" type="xs:integer" use="required" />
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>

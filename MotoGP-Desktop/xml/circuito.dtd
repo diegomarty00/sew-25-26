@@ -15,7 +15,7 @@
         <!ELEMENT patrocinador (#PCDATA)>
         <!ELEMENT referencias (referencia+)>
         <!ELEMENT referencia (#PCDATA)>
-        <!ELEMENT multimedia (foto+, video*)>
+        <!ELEMENT multimedia (foto+, video+)>
         <!ELEMENT foto (#PCDATA)>
         <!ELEMENT video (#PCDATA)>
         <!ELEMENT coordenadasCircuito (longitud, latitud, altitud)>

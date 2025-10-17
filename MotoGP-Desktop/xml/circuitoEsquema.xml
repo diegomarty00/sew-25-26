@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE circuito SYSTEM "circuito.dtd">
 
-
-<circuito nombreCircuito="Automotodrom Brno">
+<circuito nombreCircuito="Automotodrom-Brno" 
+xmlns="http://www.uniovi.es" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.uniovi.es circuito.xsd">
     <datos>
         <longitudCircuito unidad="metros">5403</longitudCircuito>
         <anchura unidad="metros">15</anchura>
-        <fechaCarrera>7 de Julio</fechaCarrera>
-        <horaCarreraEsp>15:00</horaCarreraEsp>
+        <fechaCarrera>2025-07-07</fechaCarrera>
+        <horaCarreraEsp>15:00:00</horaCarreraEsp>
         <vueltas>21</vueltas>
         <localidad>Brno</localidad>
         <pais>República Checa</pais>
@@ -166,7 +167,7 @@
     </tramos>
     <resultados>
         <ganador>M. Marquez</ganador>
-        <tiempoGP unidad="minutos">40,04.628</tiempoGP>
+        <tiempoGP unidad="minutos">PT40M4.628S</tiempoGP>
         <clasificacion>
             <piloto posicion="1" puntos="545">Marc Márquez</piloto>
             <piloto posicion="2" puntos="362">Álex Márquez</piloto>
