@@ -59,12 +59,12 @@ def setCoordenadas(raiz, kml):
                 cc = h
                 break
         if cc is not None:
-            lat = val(cc, 'longitud')
-            lon = val(cc, 'latitud')
+            lon = val(cc, 'longitud')
+            lat = val(cc, 'latitud')
             alt = val(cc, 'altitud') or '0'
             if lon and lat:
-                # SIEMPRE en orden KML: longitud,latitud,altitud
-                kml.write(f'{lon},{lat},{alt}\n')
+                # Orden KML: latitud,longitud,altitud
+                kml.write(f'{lat},{lon},{alt}\n')
 
     # 2) Resto de puntos: tramos / tramo / coordenadasTramoFin
     tramos = None
@@ -83,12 +83,12 @@ def setCoordenadas(raiz, kml):
                     fin = h
                     break
             if fin is not None:
-                lat = val(fin, 'longitud')
-                lon = val(fin, 'latitud')
+                lon = val(fin, 'longitud')
+                lat = val(fin, 'latitud')
                 alt = val(fin, 'altitud') or '0'
                 if lon and lat:
-                    # SIEMPRE en orden KML: longitud,latitud,altitud
-                    kml.write(f'{lon},{lat},{alt}\n')
+                    # Orden KML: latitud,longitud,altitud
+                    kml.write(f'{lat},{lon},{alt}\n')
 
 
 

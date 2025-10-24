@@ -1,0 +1,12 @@
+/* MotoGP-Desktop*/
+/* Hoja de estilo para el juego de memoria con cartas */
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*Lo que hace es fragmentar 4*/
+}
+
+h2{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
