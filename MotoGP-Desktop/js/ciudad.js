@@ -1,59 +1,59 @@
 class ciudad {
 
-	constructor(nombre, pais, gentilicio){
-		this.nombre = nombre;
-		this.pais = pais;
-		this.gentilicio = gentilicio;
-	}
+    constructor(nombre, pais, gentilicio) {
+        this.nombre = nombre;
+        this.pais = pais;
+        this.gentilicio = gentilicio;
+    }
 
-    setPoblacion(poblacion){
+    setPoblacion(poblacion) {
         this.poblacion = poblacion;
     }
 
     getPoblacion() {
-		return this.poblacion;
-	}
+        return this.poblacion;
+    }
 
     setCoordenadas(longitud, latitud) {
-		this.longitud = longitud;
-		this.latitud = latitud;
-	}
+        this.longitud = longitud;
+        this.latitud = latitud;
+    }
 
     getCoordenadas() {
-		return this.latitud + ", " + this.longitud;
-	}
+        return this.latitud + ", " + this.longitud;
+    }
 
-    getNombre(){
+    getNombre() {
         return this.nombre;
     }
 
-    getPais(){
+    getPais() {
         return this.pais;
     }
 
-    getGentilicio(){
+    getGentilicio() {
         return this.gentilicio;
     }
 
-    parrafoNombre(){
+    parrafoNombre() {
         const mensaje = document.createElement("p");
-        mensaje.textContent = "Ciudad: " +this.getNombre();
+        mensaje.textContent = "Ciudad: " + this.getNombre();
         document.querySelector("main").appendChild(mensaje);
     }
 
-    parrafoPais(){
+    parrafoPais() {
         const mensaje = document.createElement("p");
-        mensaje.textContent = "Pais: " +this.getPais();
+        mensaje.textContent = "Pais: " + this.getPais();
         document.querySelector("main").appendChild(mensaje);
     }
 
-    parrafoSecundario(){
+    parrafoSecundario() {
         const mensaje = document.createElement("p");
-        mensaje.textContent = "Gentilicio" + this.getGentilicio() +" - Población: "+ this.getPoblacion();
+        mensaje.textContent = "Gentilicio" + this.getGentilicio() + " - Población: " + this.getPoblacion();
         document.querySelector("main").appendChild(mensaje);
     }
 
-    parrafoCoordenadas(){
-        document.write("<p>Coordenadas ["+ this.getCoordenadas() +"] </p>");
+    parrafoCoordenadas() {
+        document.write("<p>Coordenadas [" + this.getCoordenadas() + "] </p>");
     }
 }

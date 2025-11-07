@@ -48,3 +48,11 @@ article h3 {
 article img {
     transform: rotateY(180deg);
 }
+
+@media (min-width: 320px) and (max-width: 799px) {
+
+    /* Especificidad: 002 */
+    main article {
+        width: 40vw;
+    }
+}

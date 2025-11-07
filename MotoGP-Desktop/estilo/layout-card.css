@@ -1,12 +1,36 @@
 /* MotoGP-Desktop*/
 /* Hoja de estilo para el juego de memoria con cartas */
 
-main{
+/*Especificidad: 001*/
+main {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /*Lo que hace es fragmentar 4*/
 }
 
-h2{
+/*Especificidad: 001*/
+h2 {
     grid-column-start: 1;
     grid-column-end: 5;
+}
+
+/*Especificidad: 002*/
+main article{
+    margin: 1em;
+    justify-self: center;
+    text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 799px) {
+
+    /*Especificidad: 001*/
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /*Lo que hace es fragmentar 2*/
+    }
+
+    /*Especificidad: 001*/
+    h2 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
