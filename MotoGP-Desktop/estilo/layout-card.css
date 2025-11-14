@@ -17,8 +17,8 @@ h2 {
 main article{
     margin: 1em;
     justify-self: center;
-    text-align: center;
 }
+
 
 @media (min-width: 320px) and (max-width: 799px) {
 

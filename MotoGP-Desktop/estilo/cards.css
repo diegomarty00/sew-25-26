@@ -14,9 +14,10 @@ main article {
     box-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,.3);
 }
 
+
 /* Regla con la transformación que permite girar la carta cuando se le pone el data-state al valor flip */
 /* especificidad: 012 */
-main article[data-state=flip] {
+main article[data-estado=volteada], main article[data-estado=pareada] {
     transform: rotateY(180deg);
 }
 

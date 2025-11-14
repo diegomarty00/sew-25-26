@@ -11,10 +11,11 @@
     <title>MotoGP-Juegos</title>
     <link rel="icon" href="multimedia/imagenes/MotoGP.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/cards.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />    
     <link rel="stylesheet" type="text/css" href="estilo/layout-card.css" />
-    <script src="js/memoria.js"></script>
+    <link rel="stylesheet" type="text/css" href="estilo/cards.css" />
+    <script src="js/memoria.js"> </script>
+    <script src="js/cronometro.js"> </script>
 </head>
 
 <body>
@@ -34,55 +35,13 @@
     </header>
     <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Memoria</p>
     <main>
+        <p id="cronometro">00:00.0</p>
         <h2>Juego de memoria</h2>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/honda.svg" alt="Logo-Honda"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/yamaha.svg" alt="Logo-Yamaha"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/ducati.svg" alt="Logo-Ducati"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/ktm.svg" alt="Logo-KTM"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/aprilia.svg" alt="Logo-Aprilia"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/motogp.svg" alt="Logo-MotoGP"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/honda.svg" alt="Logo-Honda"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/yamaha.svg" alt="Logo-Yamaha"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/ducati.svg" alt="Logo-Ducati"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/ktm.svg" alt="Logo-KTM"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/aprilia.svg" alt="Logo-Aprilia"/>
-        </article>
-        <article onclick="mem.flipCard(this)">
-            <h3>Memory Card</h3>
-            <img src="multimedia/logos/motogp.svg" alt="Logo-MotoGP"/>
-        </article>
+        <script>
+            const memoria = new Memoria();
+            const cronometro = new Cronometro();
+            memoria.renderCards();
+        </script>
     </main>
 
     <footer>
