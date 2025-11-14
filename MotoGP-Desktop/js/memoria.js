@@ -16,7 +16,13 @@ class Memoria {
         ];
         this.juegoIniciado = false;
         this.cronometro = new Cronometro();
-        this.volteadas = [];
+        this.reiniciarAtributos();
+    }
+
+    reiniciarAtributos(){
+        this.tablero_bloqueado = true;
+        this.primera_carta = null;
+        this.segunda_carta = null;
     }
 
     flipCard(cardElement) {
@@ -25,34 +31,31 @@ class Memoria {
             this.cronometro.arrancar();
         }
         const estado = cardElement.getAttribute('data-estado');
-        const nombre = cardElement.querySelector('img').alt.replace('Logo-', '');
 
         if (estado === 'volteada') {
             cardElement.setAttribute('data-estado', 'normal');
             this.volteada = this.volteadas.filter(c => c !== cardElement);
             return;
         }
-        if (estado === 'pareada')
-            return;
         if (estado === 'normal') {
             cardElement.setAttribute('data-estado', 'volteada');
             this.volteadas.push(cardElement);
             if (this.volteadas.length === 2) {
-                this.checkMatch();
+                this.deshabilitarCartas();
             }
         }
     }
 
-    checkMatch() {
+    deshabilitarCartas() {
         const [carta1, carta2] = this.volteadas;
         const nombre1 = this.getCardName(carta1);
         const nombre2 = this.getCardName(carta2);
 
         if (nombre1 === nombre2) {
-            carta1.setAttribute('data-estado', 'pareada');
-            carta2.setAttribute('data-estado', 'pareada');
+            carta1.setAttribute('data-estado', 'revelada');
+            carta2.setAttribute('data-estado', 'revelada');
             this.volteadas = [];
-            if (document.querySelectorAll('main article[data-estado="pareada"]').length === this.cards.length) {
+            if (document.querySelectorAll('main article[data-estado="revelada"]').length === this.cards.length) {
                 this.cronometro.parar();
                 setTimeout(() => {
                     alert('¡Felicidades! ¡Has completado el juego de memoria! Tu tiempo: ' + document.querySelector('main p').textContent);
@@ -67,12 +70,21 @@ class Memoria {
         }
     }
 
+    comprobarJuego(){
+        if (document.querySelectorAll('main article[data-estado="revelada"]').length === this.cards.length) {
+            this.cronometro.parar();
+            setTimeout(() => {
+                alert('¡Felicidades! ¡Has completado el juego de memoria! Tu tiempo: ' + document.querySelector('main p').textContent);
+            }, 500);
+        }
+    }
+
     getCardName(cardElement) {
         return cardElement.querySelector('img').alt.replace('Logo-', '');
     }
 
 
-    shuffle(array) {
+    barajarCartas(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
@@ -80,10 +92,10 @@ class Memoria {
     }
 
 
-    renderCards() {
+    renderizarCartas() {
         const container = document.querySelector('main');
 
-        this.shuffle(this.cards);
+        this.barajarCartas(this.cards);
 
         this.cards.forEach(card => {
             const article = document.createElement('article');
