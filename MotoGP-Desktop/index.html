@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/carrusel.js"> </script>
+    <script src="js/noticias.js"> </script>
 </head>
 
 <body>
@@ -33,10 +34,18 @@
     </header>
 
     <main>
+        <section class="carrusel" aria-label="Carrusel de imágenes de MotoGP"></section>
+
+        <section id="noticias" aria-label="Noticias de MotoGP">
+            <h2 class="noticias__titulo">Últimas noticias de MotoGP</h2>
+            <section id="noticias-contenido" class="noticias__lista"></section>
+        </section>
+
         <script>
             const carrusel = new Carrusel('Automotodrom Brno');
             carrusel.getFotografias();
         </script>
+
     </main>
 
 

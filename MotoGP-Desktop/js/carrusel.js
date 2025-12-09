@@ -1,5 +1,3 @@
-
-// js/carrusel.js
 class Carrusel {
     constructor(busqueda) {
         this.busqueda = busqueda;   // término para API de Flickr
@@ -44,23 +42,36 @@ class Carrusel {
         }));
     }
 
+
     mostrarFotografias() {
         if (!this.fotos.length) return;
 
-        this.$article = $('<article class="carrusel"></article>');
+        // 1) Intenta usar el contenedor ya existente en el HTML
+        this.$section = $('section.carrusel');
+
+        // 2) Si no existe (por si algún HTML no lo tiene), créalo y colócalo arriba
+        if (!this.$section.length) {
+            this.$section = $('<section class="carrusel" aria-label="Carrusel de imágenes de MotoGP"></section>');
+            const $noticias = $('#noticias');
+            if ($noticias.length) {
+                $noticias.before(this.$section);  // lo pone por encima de noticias
+            } else {
+                $('main').prepend(this.$section); // o al principio de <main>
+            }
+        }
+
+        // 3) Construye el contenido del carrusel
         this.$h2 = $(`<h2>Imágenes del circuito de ${this.busqueda}</h2>`);
-        this.$img = $('<img>', {
+        this.$img = $('<img/>', {
             src: this.fotos[0].url,
             alt: this.fotos[0].title,
             loading: 'lazy'
         });
 
-        this.$article.append(this.$h2, this.$img);
-        $('main').append(this.$article);
+        // 4) Rellena el contenedor (sin volver a añadirlo al final del main)
+        this.$section.empty().append(this.$h2, this.$img);
 
         this.actual = 0;
-
-        // Cambia la fotografía cada 3 segundos
         this.intervalId = setInterval(this.cambiarFotografia.bind(this), 3000);
     }
 
