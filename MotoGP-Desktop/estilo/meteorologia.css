@@ -1,0 +1,75 @@
+/* Diego Martinez Menendez - UO270457 */
+
+/* Estilos generales del proyecto MotoGP-Desktop
+
+W. White        #FFFFFF
+B. Black        #000000
+
+1. Olive Green  #9BA216 	B
+2. Dark Green   #304606 	W, 3, 4, 5
+3. Chartreuse   #D6E024 	B, 2, 7
+4. Yellow Green #EBF094   B, 2, 7
+
+5. Mauve        #E6D1DC   B, 2, 7
+6. Lavender     #C197D2		B
+7. Orchid       #5B3354 	w, 3, 4, 5
+
+*/
+
+/*Especificidad: 010*/
+.meteo-sol {
+  display: grid;
+  gap: 0.8em;
+  text-align: center;
+  margin: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+
+.meteo-cards,
+.entrenos-cards {
+  display: grid;
+  gap: 0.8em;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.meteo-card,
+.entrenos-card {
+  border: 1px solid #D6E024;
+  border-radius: 0.6em;
+  padding: 0.8em;
+  background: #5B3354;
+  color: #FFFFFF;
+}
+
+.meteo-card h4,
+.entrenos-card h4 {
+  text-align: center;
+  margin: 0 0 0.4em;
+  justify-content: center;
+}
+
+.meteo-card h4 time,
+.entrenos-card h4 time {
+  font-weight: 700;
+  color: #EBF094;
+}
+
+.meteo-card dl,
+.entrenos-card dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25em 0.6em;
+  margin: 0;
+}
+
+.meteo-card dt,
+.entrenos-card dt {
+  color: #D6E024;
+  font-weight: 700;
+}
+
+.meteo-card dd,
+.entrenos-card dd {
+  margin: 0;
+}
