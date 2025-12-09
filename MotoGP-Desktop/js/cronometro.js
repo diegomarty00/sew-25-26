@@ -1,32 +1,33 @@
 class Cronometro {
     constructor() {
         this.tiempo = 0;
+        this.corriendo = null;
+        this.inicio = null;
+    }
+
+    instanciaTiempo() {
+        try {
+            // Si Temporal no existe o falla, ReferenceError/TypeError serán capturados
+            return Temporal.Now.instant().epochMilliseconds;
+        } catch (e) {
+            return Date.now();
+        }
     }
 
     arrancar() {
         if (this.corriendo) return; // Evita múltiples llamadas a arrancar
-        // Crea el atributo inicio y lo inicializa según la disponibilidad de Temporal
-        if (typeof Temporal !== "undefined" && Temporal.Now) {
-            this.inicio = Temporal.Now.instant(); // Usar Temporal si está disponible
-        } else {
-            this.inicio = new Date(); // Usar Date si Temporal no está disponible
-        }
+        this.inicio = this.instanciaTiempo();
 
         // Llama al método actualizar cada décima de segundo y guarda el ID del intervalo
         this.corriendo = setInterval(this.actualizar.bind(this), 100); // Usa bind para mantener el contexto de this
     }
 
     actualizar() {
-        let ahora; 
-        if (typeof Temporal !== "undefined" && Temporal.Now) {
-            ahora = Temporal.Now.instant(); // Usar Temporal si está disponible
-            this.tiempo = ahora.epochMilliseconds - this.inicio.epochMilliseconds;
-        } else {
-            ahora = new Date(); // Usar Date si Temporal no está disponible
-            this.tiempo = ahora - this.inicio;
-        }
-       
-        this.tiempo = Math.floor(this.tiempo / 100); 
+
+        let ahora = this.instanciaTiempo(); // Usar Temporal si está disponible
+        this.tiempo = ahora - this.inicio;
+
+        this.tiempo = Math.floor(this.tiempo / 100);
 
         this.mostrar();
     }
@@ -56,12 +57,14 @@ class Cronometro {
     parar() {
         if (!this.corriendo) return;
         clearInterval(this.corriendo);
+
     }
 
     reiniciar() {
-        if (!this.corriendo) return;
         this.parar();
         this.tiempo = 0;
+        this.inicio = null;
+        this.corriendo = null;
         this.mostrar();
     }
 }
