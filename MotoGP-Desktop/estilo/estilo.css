@@ -63,11 +63,22 @@ nav{
   color: #304606;
 }
 
+/*Especificidad: 002*/
+nav a {
+  margin: 0.5em;
+  
+}
+
 /*Especificidad: 012*/
-nav a:focus {
+nav a:focus, nav a:hover   {
   font-weight: bold;
 }
 
+/*Especificidad: 013*/
+header nav a.active {
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+}
 /*Especifidad: 010*/
 .active {
   color: #EBF094;
