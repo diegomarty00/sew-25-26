@@ -17,19 +17,44 @@ B. Black        #000000
 */
 
 /*Especificidad: 001*/
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-  }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
 
 /*Especificidad: 001*/
-nav{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
+nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Especificidad: 011 */
+article.carrusel {
+  margin: 1rem auto;
+  padding: 0.5rem 0;
+  max-width: 760px;
+}
+
+/* Especificidad: 012 */
+article.carrusel h2 {
+  text-align: center;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+/* Especificidad: 013 */
+article.carrusel h2+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
 
 /* 
   ========================================
@@ -37,19 +62,35 @@ nav{
   ========================================
 */
 
-@media (min-width: 320px) and (max-width: 799px){
-    /*Especificidad: 001*/
-    header{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: column;
-    }
-  
-    /*Especificidad: 001*/
-    nav{
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+@media (min-width: 320px) and (max-width: 799px) {
+
+  /*Especificidad: 001*/
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
   }
+
+  /*Especificidad: 001*/
+  nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Especificidad: 011 */
+  article.carrusel {
+    margin: 0.75rem 0.5rem;
+    max-width: 100%;
+  }
+
+
+  /* Especificidad: 013 */
+  article.carrusel h2+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+}

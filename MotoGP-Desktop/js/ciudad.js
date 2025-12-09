@@ -54,6 +54,11 @@ class ciudad {
     }
 
     parrafoCoordenadas() {
-        document.write("<p>Coordenadas [" + this.getCoordenadas() + "] </p>");
+        // document.write("<p>Coordenadas [" + this.getCoordenadas() + "] </p>");
+        // Evitamos el deprecado document.write y usamos createElement y appendChild
+        const mensaje = document.createElement("p");
+        mensaje.textContent = "Coordenadas: " + this.getCoordenadas();
+        document.querySelector("main").appendChild(mensaje);
+        
     }
 }

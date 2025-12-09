@@ -1,17 +1,20 @@
 <!DOCTYPE HTML>
 
 <html lang="es">
+
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <meta name="author" content="Diego Marty">
     <meta name="description" content="Página de inicio con la información más actualizada de MotoGP">
-    <meta name ="keywords" content="motogp, moto"/>
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="motogp, moto" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MotoGP</title>
     <link rel="icon" href="multimedia/imagenes/MotoGP.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/carrusel.js"> </script>
 </head>
 
 <body>
@@ -29,7 +32,14 @@
         </nav>
     </header>
 
-        <p>En desarrollado</p>
-    
+    <main>
+        <script>
+            const carrusel = new Carrusel('Automotodrom Brno');
+            carrusel.getFotografias();
+        </script>
+    </main>
+
+
 </body>
+
 </html>
