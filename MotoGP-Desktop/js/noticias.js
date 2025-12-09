@@ -61,9 +61,6 @@ class Noticias {
 
         noticias.forEach(n => {
             const $art = $('<article/>', { class: 'noticia' });
-            if (n.imagen) {
-                $art.append($('<img/>', { src: n.imagen, alt: n.titulo || 'Imagen', loading: 'lazy' }));
-            }
             $art.append($('<h3/>').text(n.titulo || 'Titular no disponible'));
             if (n.entradilla) $art.append($('<p/>', { class: 'entradilla' }).text(n.entradilla));
 

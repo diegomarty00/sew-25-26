@@ -28,13 +28,13 @@ body a{
   color: #EBF094;
 }
 
-/*Especificidad: 002*/
-body p {
+/*Especificidad: 001*/
+p {
   font-size: 0.7em;
 }
 
 /*Especificidad: 002*/
- main p, section p{ 
+ main p, section p, aside p{ 
   font-size: 1em;
 }
 
@@ -98,6 +98,10 @@ button{
 /*Especificidad: 002*/
 button a{
   color: #304606;
+}
+
+dt{
+  color: #EBF094;
 }
 
 
