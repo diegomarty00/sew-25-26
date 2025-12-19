@@ -14,7 +14,7 @@ def xml2kml(xml):
     kmlName = xml+".kml"
 
     kml = open(kmlName,"w")
-    prologo(kml, kmlName)
+    prologo(kml, xml)
 
     setCoordenadas(raiz, kml)
     epilogo(kml)
@@ -97,7 +97,7 @@ def epilogo(kml):
     kml.write('</coordinates>\n')
     kml.write('<altitudeMode>clampToGround</altitudeMode>\n')
     kml.write('</LineString>\n')
-    kml.write('<Style> id="lineaRoja">\n')
+    kml.write('<Style id="lineaRoja">\n')
     kml.write('<LineStyle>\n')
     kml.write('<color>#ff0000ff</color>\n')
     kml.write('<width>5</width>\n')
@@ -109,7 +109,7 @@ def epilogo(kml):
     kml.write('</kml>')
 
 def main():
-    xml = input('Introduce el archivo XML de entrada: ')
+    xml = input('Introduce el nombre base del XML (sin .xml): ')
     xml2kml(xml)
 
 if __name__ == "__main__":
