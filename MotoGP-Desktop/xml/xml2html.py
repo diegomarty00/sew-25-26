@@ -60,6 +60,10 @@ class Html:
         fotos = root.findall('.//ns:multimedia/ns:foto', namespaces=ns)
         videos = root.findall('.//ns:multimedia/ns:video', namespaces=ns)
 
+        latitud = root.find('.//ns:coordenadasCircuito/ns:latitud', namespaces=ns)
+        longitud_coord = root.find('.//ns:coordenadasCircuito/ns:longitud', namespaces=ns)
+        altitud = root.find('.//ns:coordenadasCircuito/ns:altitud', namespaces=ns)
+
 
         # Escritura
         self.out.write(f'        <h2>Circuito: {nombre}</h2>\n')
@@ -70,6 +74,8 @@ class Html:
             self.out.write(f'        <p>Longitud del circuito: {longitud.text} {longitud.get("unidad")}</p>\n')
         if anchura is not None:
             self.out.write(f'        <p>Anchura media: {anchura.text} {anchura.get("unidad")}</p>\n')
+        if latitud is not None:
+            self.out.write(f'        <p>Coordenadas: {latitud.text}, {longitud_coord.text}, {altitud.text}</p>\n')
         if fecha is not None:
             self.out.write(f'        <p>Fecha de la carrera: {fecha.text}</p>\n')
         if hora is not None:
