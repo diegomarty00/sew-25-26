@@ -3,156 +3,248 @@
 session_start();
 
 class Configuracion {
+  private $host = 'localhost';
+  // En XAMPP por defecto suele ser: user 'root' y pass '' (vacío).
+  // Cambia estas credenciales si tienes otras configuradas.
+  private $user = 'root';
+  private $pass = '';
+  private $dbname = 'UO270457_db';
+  private $connection = null;
 
-    private $host   = 'localhost';
-    private $user   = 'DBUSER2025';
-    private $pass   = 'DBPSWD2025';
-    private $dbname = 'UO270457_db';
+  public function __construct() {
+    $this->conect();
+  }
 
-    /** @var mysqli|null */
-    private $connection = null;
+  /** Conecta SIN seleccionar BD para poder crearla si no existe */
+  private function conect() {
+    // Conexión genérica (sin dbname)
+    $this->connection = @new mysqli($this->host, $this->user, $this->pass);
+    if ($this->connection->connect_error) {
+      exit('Error de conexión: ' . $this->connection->connect_error);
+    }
+    $this->connection->set_charset('utf8mb4');
+  }
 
-    public function __construct() {
-        $this->conect();
+  /** Crea la BD y las tablas EXACTAS que has solicitado */
+  public function create() {
+    // 1) Crear BD si no existe
+    $this->connection->query("CREATE DATABASE IF NOT EXISTS {$this->dbname} CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci");
+
+    // 2) Seleccionar BD
+    if (!$this->connection->select_db($this->dbname)) {
+      exit('No se pudo seleccionar la BD: ' . $this->dbname);
     }
 
-    private function conect(){
-        // Intenta conectar directamente a la BD
-        $this->connection = @new mysqli($this->host, $this->user, $this->pass, $this->dbname);
+    // 3) Crear tablas
+    $ddl = [];
 
-        if ($this->connection->connect_error) {
-            // Si la BD no existe o hay error, muestra mensaje y evita warnings rotos
-            // Puedes opcionalmente reconectar solo al servidor: new mysqli($host, $user, $pass)
-            echo 'Error de conexión: ' . htmlspecialchars($this->connection->connect_error);
-        } else {
-            // Charset recomendado para evitar problemas de acentos y emojis
-            $this->connection->set_charset('utf8mb4');
-            // Para MySQL 8+, asegúrate de que el modo SQL no bloquee TRUNCATE con FKs
-            // $this->connection->query("SET sql_mode=''");
-        }
+    $ddl[] = "CREATE TABLE IF NOT EXISTS Usuarios (
+                ID_Usuario INT AUTO_INCREMENT PRIMARY KEY,
+                Profesion TEXT NOT NULL,
+                Edad INT NOT NULL,
+                Genero ENUM('Masculino','Femenino','Otro') NOT NULL,
+                Pericia_Informatica INT NOT NULL,
+                CONSTRAINT chk_edad CHECK (Edad BETWEEN 1 AND 120),
+                CONSTRAINT chk_pericia CHECK (Pericia_Informatica BETWEEN 0 AND 10)
+              ) ENGINE=InnoDB";
+
+    /* Mantengo tu nombre literal 'Obsevaciones' */
+    $ddl[] = "CREATE TABLE IF NOT EXISTS Obsevaciones (
+                ID_Usuario INT NOT NULL,
+                Comentario TEXT NOT NULL,
+                CONSTRAINT fk_obsevaciones_usuario
+                  FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID_Usuario)
+                  ON UPDATE CASCADE ON DELETE CASCADE
+              ) ENGINE=InnoDB";
+
+    $ddl[] = "CREATE TABLE IF NOT EXISTS Resultados (
+                ID_Usuario INT NOT NULL,
+                Dispositivo ENUM('Tableta','Ordenador','Movil') NOT NULL,
+                Tiempo TIME NOT NULL,
+                Completado BOOLEAN NOT NULL,
+                Comentarios TEXT NULL,
+                Propuesta TEXT NULL,
+                Valoracion INT NOT NULL,
+                CONSTRAINT fk_resultados_usuario
+                  FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID_Usuario)
+                  ON UPDATE CASCADE ON DELETE CASCADE,
+                CONSTRAINT chk_valoracion CHECK (Valoracion BETWEEN 0 AND 10)
+              ) ENGINE=InnoDB";
+
+    foreach ($ddl as $sql) {
+      $this->connection->query($sql);
     }
+  }
 
-    /** Reiniciar (vaciar) datos de las tablas */
-    public function restart(){
-        if (!$this->connection || $this->connection->connect_error) {
-            echo 'No hay conexión válida.';
-            return;
-        }
-
-        // Desactiva la comprobación de claves foráneas para evitar errores al TRUNCATE
-        $this->connection->query('SET FOREIGN_KEY_CHECKS = 0');
-
-        // Ajusta esta lista a las tablas reales de tu BD
-        $tablas = ['observaciones', 'resultado', 'usuario'];
-
-        foreach ($tablas as $tabla) {
-            // Usa backticks para evitar problemas si el nombre es palabra reservada
-            $sql = "TRUNCATE TABLE `{$tabla}`";
-            if (!$this->connection->query($sql)) {
-                echo 'Algo salió mal al vaciar ' . htmlspecialchars($tabla) . ': ' . htmlspecialchars($this->connection->error) . '<br>';
-            }
-        }
-
-        $this->connection->query('SET FOREIGN_KEY_CHECKS = 1');
+  /** Vacía las tablas (sin borrar la estructura) */
+  public function restart() {
+    if (!$this->connection->select_db($this->dbname)) {
+      exit('La BD no existe. Pulsa "Crear BD y tablas" primero.');
     }
-
-    /** Eliminar la base de datos completa */
-    public function delete(){
-        // Cierra la conexión si estaba abierta a la BD
-        if ($this->connection && !$this->connection->connect_error) {
-            $this->connection->close();
-        }
-
-        // Conexión genérica al servidor (sin seleccionar BD)
-        $genConn = new mysqli($this->host, $this->user, $this->pass);
-        if ($genConn->connect_error) {
-            echo 'Algo salió mal: ' . htmlspecialchars($genConn->connect_error);
-            return;
-        }
-
-        // IMPORTANTE: IF EXISTS evita error si ya no existe
-        $sql = "DROP DATABASE IF EXISTS `{$this->dbname}`";
-        if (!$genConn->query($sql)) {
-            echo 'Error eliminando BD: ' . htmlspecialchars($genConn->error);
-        } else {
-            echo 'BD eliminada correctamente.';
-        }
-
-        $genConn->close();
+    $this->connection->query('SET FOREIGN_KEY_CHECKS = 0');
+    $tablas = ['Resultados','Obsevaciones','Usuarios']; // orden por dependencias
+    foreach ($tablas as $tabla) {
+      $this->connection->query("TRUNCATE TABLE $tabla");
     }
+    $this->connection->query('SET FOREIGN_KEY_CHECKS = 1');
+  }
 
-    /**
-     * Exportar todas las tablas a un único CSV (con separador ';'), incluyendo cabeceras y separadores entre tablas.
-     * Opcionalmente añadimos BOM para que Excel reconozca UTF-8.
-     */
-    public function export(){
-        if (!$this->connection || $this->connection->connect_error) {
-            echo 'No hay conexión válida.';
-            return;
-        }
+  /** Elimina la base de datos completa */
+  public function delete() {
+    // Asegúrate de estar conectado genérico (ya lo estamos)
+    $this->connection->query("DROP DATABASE IF EXISTS {$this->dbname}");
+  }
 
-        $tablas = ['observaciones', 'resultado', 'usuario'];
-
-        // Cabeceras de descarga
-        header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename=tablas_UO276417.csv');
-
-        $archivoSalida = fopen('php://output', 'w');
-
-        if (!$archivoSalida) {
-            echo 'No se pudo abrir la salida CSV.';
-            exit;
-        }
-
-        // BOM UTF-8 (para que Excel muestre bien acentos)
-        echo "\xEF\xBB\xBF";
-
-        foreach ($tablas as $tabla) {
-            // Línea vacía para separar tablas
-            fputcsv($archivoSalida, [''], ';');
-            // Título de la tabla
-            fputcsv($archivoSalida, ["Tabla: $tabla"], ';');
-
-            $sql = "SELECT * FROM `{$tabla}`";
-            $result = $this->connection->query($sql);
-
-            if ($result === false) {
-                fputcsv($archivoSalida, ["Error consultando '$tabla': {$this->connection->error}"], ';');
-                continue;
-            }
-
-            // Cabeceras
-            $campos = $result->fetch_fields();
-            $cabeceras = [];
-            foreach ($campos as $campo) {
-                $cabeceras[] = $campo->name;
-            }
-            fputcsv($archivoSalida, $cabeceras, ';');
-
-            // Filas
-            while ($fila = $result->fetch_assoc()) {
-                // Aseguramos UTF-8 en cada valor
-                $filaUtf8 = array_map(function($v) {
-                    return is_null($v) ? '' : (string)$v;
-                }, $fila);
-                fputcsv($archivoSalida, $filaUtf8, ';');
-            }
-
-            $result->free();
-        }
-
-        fclose($archivoSalida);
-        exit; // Muy importante: terminar la respuesta después de enviar el CSV
+  /** Exporta las tablas a CSV (secciones por tabla) */
+  
+  
+  public function export(){
+    // 1) Seleccionar BD
+    if (!$this->connection->select_db($this->dbname)) {
+      exit('La BD no existe. Pulsa "Crear BD y tablas" primero.');
     }
+    $this->connection->set_charset('utf8mb4');
+    $this->connection->query("SET NAMES utf8mb4");
+
+    // 2) Evitar cualquier salida previa a headers
+    if (ob_get_length()) { ob_end_clean(); }
+
+    // 3) Opciones
+    $sep = ';';               // Separador regional para Excel en ES
+    $tiempoComo = 'decimal';  // 'decimal' => 7,46 | 'mmss' => 07:28 (mm:ss)
+
+    // 4) Headers HTTP
+    header('Content-Type: text/csv; charset=UTF-8');
+    header('Content-Disposition: attachment; filename=tablas_UO270457.csv');
+    header('Pragma: no-cache');
+    header('Expires: 0');
+
+    // 5) BOM para Excel
+    echo "\xEF\xBB\xBF";
+
+    // 6) Abre salida
+    $out = fopen('php://output', 'w');
+
+    // === Helper para escribir secciones ===
+    $writeSection = function($title, $headers, $rows) use ($out, $sep) {
+      fputcsv($out, [''], $sep);                 // línea en blanco
+      fputcsv($out, ["Tabla: $title"], $sep);    // título de la tabla
+      fputcsv($out, $headers, $sep);             // cabeceras
+      foreach ($rows as $r) { fputcsv($out, $r, $sep); } // filas
+    };
+
+    // 7) USUARIOS
+    $sqlUsuarios = "SELECT ID_Usuario, Profesion, Edad, Genero, Pericia_Informatica
+                    FROM Usuarios
+                    ORDER BY ID_Usuario ASC";
+    $res = $this->connection->query($sqlUsuarios);
+    $rowsUsuarios = [];
+    if ($res) {
+      while ($r = $res->fetch_assoc()) {
+        $rowsUsuarios[] = [
+          $r['ID_Usuario'],
+          $r['Profesion'],
+          $r['Edad'],
+          $r['Genero'],
+          $r['Pericia_Informatica'],
+        ];
+      }
+    }
+    $writeSection('Usuarios',
+      ['ID Usuario','Profesión','Edad','Género','Pericia informática'],
+      $rowsUsuarios
+    );
+
+    // 8) OBSEVACIONES (nombre literal que usas)
+    $sqlObsev = "SELECT ID_Usuario, Comentario
+                FROM Obsevaciones
+                ORDER BY ID_Usuario ASC";
+    $res = $this->connection->query($sqlObsev);
+    $rowsObsev = [];
+    if ($res) {
+      while ($r = $res->fetch_assoc()) {
+        $rowsObsev[] = [
+          $r['ID_Usuario'],
+          $r['Comentario'],
+        ];
+      }
+    }
+    $writeSection('Obsevaciones', ['ID Usuario','Comentario'], $rowsObsev);
+
+    // 9) RESULTADOS (ordenado por tiempo ascendente)
+    $sqlResultados = "SELECT ID_Usuario, Dispositivo, Tiempo, Completado, Comentarios, Propuesta, `Valoracion`
+                      FROM Resultados
+                      ORDER BY ID_Usuario ASC";
+    $res = $this->connection->query($sqlResultados);
+    $rowsResultados = [];
+    if ($res) {
+      while ($r = $res->fetch_assoc()) {
+
+        // Convertir Tiempo según preferencia
+        $tiempoStr = $r['Tiempo'];
+        $colTiempo = $tiempoStr; // por defecto
+
+        if ($tiempoComo === 'decimal') {
+          // HH:MM:SS -> minutos decimales con coma
+          if (preg_match('/^(\d{1,2}):(\d{2}):(\d{2})$/', $tiempoStr, $m)) {
+            $h = (int)$m[1]; $mi = (int)$m[2]; $s = (int)$m[3];
+            $minDec = $h * 60 + $mi + ($s / 60);
+            $colTiempo = number_format($minDec, 2, ',', '');
+          } elseif (preg_match('/^(\d{1,2}):(\d{2})$/', $tiempoStr, $m2)) {
+            $h = 0; $mi = (int)$m2[1]; $s = (int)$m2[2];
+            $minDec = $h * 60 + $mi + ($s / 60);
+            $colTiempo = number_format($minDec, 2, ',', '');
+          }
+        } else { // 'mmss'
+          if (preg_match('/^(\d{1,2}):(\d{2}):(\d{2})$/', $tiempoStr, $m)) {
+            $total = $m[1]*3600 + $m[2]*60 + $m[3];
+            $mm = floor($total / 60);
+            $ss = $total % 60;
+            $colTiempo = sprintf('%02d:%02d', $mm, $ss);
+          } elseif (preg_match('/^(\d{1,2}):(\d{2})$/', $tiempoStr, $m2)) {
+            $mm = (int)$m2[1]; $ss = (int)$m2[2];
+            $colTiempo = sprintf('%02d:%02d', $mm, $ss);
+          }
+        }
+
+        // Completado a texto
+        $colCompletado = ((string)$r['Completado'] === '1') ? 'Completado' : 'No completado';
+
+        $rowsResultados[] = [
+          $r['ID_Usuario'],
+          $r['Dispositivo'],
+          $colTiempo,
+          $colCompletado,
+          $r['Comentarios'],
+          $r['Propuesta'],
+          $r['Valoracion'],
+        ];
+      }
+    }
+    $writeSection(
+      'Resultados',
+      [
+        'ID Usuario','Dispositivo','Tiempo',
+        'Finalización de prueba','Comentarios del usuario',
+        'Propuesta de mejora','Valoracion del usuario'
+      ],
+      $rowsResultados
+    );
+
+    fclose($out);
+    exit;
+  }
+
 }
 
-// === Control de acciones por POST (manteniendo tus nombres de botones) ===
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $configuracion = new Configuracion();
 
-    if (isset($_POST['botonReiniciar'])) { $configuracion->restart(); }
-    if (isset($_POST['botonEliminar']))  { $configuracion->delete();  }
-    if (isset($_POST['botonExportar']))  { $configuracion->export();  }
+/* Control de botones */
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $config = new Configuracion();
+  if (isset($_POST['botonCrear']))     $config->create();
+  if (isset($_POST['botonReiniciar'])) $config->restart();
+  if (isset($_POST['botonEliminar']))  $config->delete();
+  if (isset($_POST['botonExportar']))  $config->export();
 }
 ?>
 
@@ -162,27 +254,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <meta name="author" content="Diego Marty">
-    <meta name="description" content="Documento para utilizar en otros módulos de la asignatura">
-    <meta name ="keywords" content="clasificacion, motogp, moto"/>
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
-    <title>MotoGP-Configuración</title>
-    <link rel="icon" href="multimedia/imagenes/MotoGP.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <meta name="author" content="Iker Jiménez Herrero"/>
+    <meta name="description" content="Juegos de MotoGP Desktop"/>
+    <meta name="keywords" content="Juegos, MotoGP"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MotoGP</title>
+    <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
 </head>
 <body>
-    <header></header>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+     
+    <header><h1>Configuración de la base de datos</h1>
+     </header>
     <main>
     <?php
         echo "  
-                <h1>Opciones</h1>
+                
                 <form action='#' method='post' name='botones'>
-                    <input type = 'submit' name = 'botonReiniciar' value = 'Reiniciar'/>
-                    <input type = 'submit' name = 'botonEliminar' value = 'Eliminar'/>
-                    <input type = 'submit' name = 'botonExportar' value = 'Exportar'/>      
+                    <input type='submit' name='botonCrear' value='Crear BD y tablas'/>
+                    <input type='submit' name='botonReiniciar' value='Reiniciar (vaciar)'/>
+                    <input type='submit' name='botonEliminar'  value='Eliminar BD'/>
+                    <input type='submit' name='botonExportar'  value='Exportar .CSV'/>
                 </form>
-            ";
+            ";        
     ?>
     </main>
 </body>
