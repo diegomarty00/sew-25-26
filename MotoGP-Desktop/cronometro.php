@@ -83,7 +83,7 @@ if (isset($_POST['accion'])) {
             <a href="piloto.html" accesskey="p">Piloto</a>
             <a href="circuito.html" accesskey="c">Circuito</a>
             <a href="meteorologia.html" accesskey="m">Meteorología</a>
-            <a href="clasificacion.html" accesskey="s">Clasificación</a>
+            <a href="clasificacion.php" accesskey="s">Clasificación</a>
             <a href="juegos.html" class="active" accesskey="j">Juegos</a>
             <a href="ayuda.html" accesskey="a">Ayuda</a>
         </nav>
@@ -101,15 +101,6 @@ if (isset($_POST['accion'])) {
         </section>
     </main>
     <footer>
-        <nav>
-            <a href="index.html" accesskey="i">Inicio</a>
-            <a href="piloto.html" accesskey="p">Piloto</a>
-            <a href="circuito.html" accesskey="c">Circuito</a>
-            <a href="meteorologia.html" accesskey="m">Meteorología</a>
-            <a href="clasificacion.html" accesskey="s">Clasificación</a>
-            <a href="juegos.html" class="active" accesskey="j">Juegos</a>
-            <a href="ayuda.html" accesskey="a">Ayuda</a>
-        </nav>
         <p class="footer-company-name">All Rights Reserved. &copy; 2025 <a href="index.html" target="_blank">MotoGP</a>
             - Design By : <a href="https://github.com/diegomarty00" target="_blank">Diego Martinez Menéndez</a>
         </p>

@@ -38,7 +38,6 @@ class Html:
         return ''
 
 
-
     def escribir_circuito(self, root, ns):
         # Nodo principal
         nombre = root.get("nombreCircuito")
@@ -97,7 +96,7 @@ class Html:
                 if url:
                     # enlace completo y bien cerrado
                     self.out.write(
-                        f'            <li>{url}{url}</a></li>\n'
+                        f'            <li><a href="{url}">{url}</a></li>\n'
                     )
             self.out.write('        </ul>\n')
 
