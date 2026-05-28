@@ -4,35 +4,36 @@
 
 <head>
     <!-- Datos que describen el documento -->
-    <meta charset="UTF-8" />
-    <meta name="author" content="Diego Marty">
-    <meta name="description" content="Documento para utilizar en otros módulos de la asignatura">
-    <meta name="keywords" content="meteorologia, motogp, moto" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MotoGP-Meteorología</title>
-    <link rel="icon" href="multimedia/imagenes/MotoGP.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="author" content="Diego Martínez Menéndez">
+    <meta name="description" content="Meteorología en Palma, capital de Baleares">
+    <meta name="keywords" content="Baleares, meteorología, Palma, tiempo, previsión">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baleares - Meteorología</title>
+    <link rel="icon" href="multimedia/imagenes/Baleares.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/meteorologia.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/ciudad.js"></script>
 </head>
 
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <header>
-        <h1><a href="index.html">MotoGP Desktop</a></h1>
+
+        <h1><a href="index.html">Baleares</a></h1>
+
         <nav>
             <a href="index.html" accesskey="i">Inicio</a>
-            <a href="piloto.html" accesskey="p">Piloto</a>
-            <a href="circuito.html" accesskey="c">Circuito</a>
+            <a href="gastronomia.html" accesskey="g">Gastronomía</a>
+            <a href="rutas.html" accesskey="r">Rutas</a>
             <a href="meteorologia.html" class="active" accesskey="m">Meteorología</a>
-            <a href="clasificacion.php" accesskey="s">Clasificación</a>
             <a href="juegos.html" accesskey="j">Juegos</a>
+            <a href="php/reservas.php" accesskey="r">Reservas</a>
             <a href="ayuda.html" accesskey="a">Ayuda</a>
         </nav>
     </header>
+
     <p>Estás en: <a href="index.html">Inicio</a> >> Meteorología</p>
+
     <main>
         <h2>Meteorología de MotoGP-Desktop</h2>
         <script>
@@ -46,7 +47,7 @@
             brno.parrafoSecundario();
             brno.parrafoCoordenadas();
 
-            
+
             brno.getMeteorologiaCarrera()
                 .then(json => brno.procesarJSONCarrera(json))
                 .then(datos => brno.mostrarCarrera(datos))
@@ -61,7 +62,7 @@
     </main>
 
     <footer>
-        <p class="footer-company-name">All Rights Reserved. &copy; 2025 <a href="index.html" target="_blank">MotoGP</a>
+        <p class="footer-company-name">All Rights Reserved. &copy; 2026 <a href="index.html" target="_blank">Baleares</a>
             - Design By : <a href="https://github.com/diegomarty00" target="_blank">Diego Martinez Menéndez</a>
         </p>
     </footer>

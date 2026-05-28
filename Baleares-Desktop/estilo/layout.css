@@ -1,22 +1,21 @@
 /* Diego Martinez Menendez - UO270457 */
 
-/* Estilos generales del proyecto MotoGP-Desktop
+/* Estilos generales del proyecto Baleares
 
-W. White        #FFFFFF
-B. Black        #000000
+W. White              #FFFFFF
+B. Black              #000000
 
-1. Olive Green  #9BA216 	B
-2. Dark Green   #304606 	W, 3, 4, 5
-3. Chartreuse   #D6E024 	B, 2, 7
-4. Yellow Green #EBF094   B, 2, 7
-
-5. Mauve        #E6D1DC   B, 2, 7
-6. Lavender     #C197D2		B
-7. Orchid       #5B3354 	w, 3, 4, 5
+1. Deep Sea Navy      #003B5C     W, 4, 5
+2. Mediterranean Blue #006D77     Decorative only
+3. Turquoise          #00A6A6     B
+4. Sea Foam           #D8F3DC     B, 1
+5. Sand               #F4E3B2     B, 1
+6. Terracotta         #8F3A2F     W
+7. Coral              #C8553D     Decorative only
 
 */
 
-/*Especificidad: 001*/
+/* Especificidad: 001 */
 header {
   display: flex;
   align-items: center;
@@ -24,7 +23,7 @@ header {
   flex-direction: row;
 }
 
-/*Especificidad: 001*/
+/* Especificidad: 001 */
 nav {
   display: flex;
   align-items: center;
@@ -46,20 +45,20 @@ article.carrusel h2 {
 }
 
 /* Especificidad: 013 */
-article.carrusel h2+img {
+article.carrusel h2 + img {
   display: block;
   width: 100%;
   height: auto;
   max-width: 100%;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+  box-shadow: 0 4px 12px #000000;
 }
 
-div{
-  width:100%;
-  height:30em;
+/* Especificidad: 001 */
+div {
+  width: 100%;
+  height: 30em;
 }
-
 
 /* 
   ========================================
@@ -69,7 +68,7 @@ div{
 
 @media (min-width: 320px) and (max-width: 799px) {
 
-  /*Especificidad: 001*/
+  /* Especificidad: 001 */
   header {
     display: flex;
     align-items: center;
@@ -77,7 +76,7 @@ div{
     flex-direction: column;
   }
 
-  /*Especificidad: 001*/
+  /* Especificidad: 001 */
   nav {
     display: flex;
     align-items: center;
@@ -90,9 +89,8 @@ div{
     max-width: 100%;
   }
 
-
   /* Especificidad: 013 */
-  article.carrusel h2+img {
+  article.carrusel h2 + img {
     width: 100%;
     max-width: 100%;
     height: auto;
