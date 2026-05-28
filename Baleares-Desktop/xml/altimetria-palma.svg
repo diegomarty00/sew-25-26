@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <title>Altimetría de Ruta monumental por Palma</title>
+  <desc>Perfil de altitud de la ruta turística Ruta monumental por Palma con distancias y altitudes en metros.</desc>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <line x1="70" y1="340" x2="860" y2="340" stroke="#003B5C" stroke-width="2"/>
+  <line x1="70" y1="45" x2="70" y2="340" stroke="#003B5C" stroke-width="2"/>
+  <text x="450" y="25" text-anchor="middle" font-family="Verdana" font-size="18" fill="#003B5C">Ruta monumental por Palma</text>
+  <text x="450" y="395" text-anchor="middle" font-family="Verdana" font-size="13" fill="#003B5C">Distancia horizontal acumulada en metros</text>
+  <text x="20" y="200" text-anchor="middle" font-family="Verdana" font-size="13" fill="#003B5C" transform="rotate(-90 20,200)">Altitud en metros</text>
+  <line x1="70" y1="340.00" x2="860" y2="340.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="344.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">5</text>
+  <line x1="70" y1="281.00" x2="860" y2="281.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="285.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">10</text>
+  <line x1="70" y1="222.00" x2="860" y2="222.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="226.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">15</text>
+  <line x1="70" y1="163.00" x2="860" y2="163.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="167.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">20</text>
+  <line x1="70" y1="104.00" x2="860" y2="104.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="108.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">25</text>
+  <line x1="70" y1="45.00" x2="860" y2="45.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="49.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">30</text>
+  <polygon points="70,340 70.00,139.40 125.12,115.80 239.94,340.00 538.49,45.00 860.00,304.60 860,340" fill="#D8F3DC" stroke="#8F3A2F" stroke-width="2"/>
+  <polyline points="70.00,139.40 125.12,115.80 239.94,340.00 538.49,45.00 860.00,304.60" fill="none" stroke="#8F3A2F" stroke-width="3"/>
+  <circle cx="70.00" cy="139.40" r="5" fill="#003B5C"/>
+  <text x="70.00" y="129.40" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Catedral de Mallorca</text>
+  <text x="70.00" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">0</text>
+  <circle cx="125.12" cy="115.80" r="5" fill="#003B5C"/>
+  <text x="125.12" y="105.80" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Palacio de la Almudaina</text>
+  <text x="125.12" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">120</text>
+  <circle cx="239.94" cy="340.00" r="5" fill="#003B5C"/>
+  <text x="239.94" y="330.00" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Parc de la Mar</text>
+  <text x="239.94" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">370</text>
+  <circle cx="538.49" cy="45.00" r="5" fill="#003B5C"/>
+  <text x="538.49" y="35.00" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Plaza Mayor de Palma</text>
+  <text x="538.49" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">1020</text>
+  <circle cx="860.00" cy="304.60" r="5" fill="#003B5C"/>
+  <text x="860.00" y="294.60" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Lonja de Palma</text>
+  <text x="860.00" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">1720</text>
+</svg>

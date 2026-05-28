@@ -24,14 +24,15 @@ Contrastes principales:
 
 /* Especificidad: 001 */
 body {
-  font-family: Verdana, sans-serif;
-  color: #FFFFFF;
+  margin: 0;
   background-color: #003B5C;
+  color: #FFFFFF;
+  font-family: Verdana, sans-serif;
 }
 
 /* Especificidad: 002 */
 body a {
-  color: #D8F3DC;
+  color: #D8F3DC; /* background-color heredado de body: #003B5C. Contraste AAA 9.98 */
 }
 
 /* Especificidad: 001 */
@@ -48,8 +49,8 @@ aside p {
 
 /* Especificidad: 001 */
 header {
-  color: #003B5C;
   background-color: #F4E3B2;
+  color: #003B5C;
 }
 
 /* Especificidad: 002 */
@@ -65,7 +66,7 @@ h1 {
 /* Especificidad: 001 */
 h2,
 h3 {
-  color: #F4E3B2;
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
 }
 
 /* Especificidad: 001 */
@@ -81,11 +82,11 @@ nav a {
 /* Especificidad: 012 */
 nav a:focus,
 nav a:hover {
-  color: #FFFFFF;
-  background-color: #8F3A2F;
-  font-weight: bold;
   outline: 0.2em solid #003B5C;
   outline-offset: 0.15em;
+  background-color: #8F3A2F;
+  color: #FFFFFF;
+  font-weight: bold;
 }
 
 /* Especificidad: 013 */
@@ -96,29 +97,29 @@ header nav a.active {
 
 /* Especificidad: 010 */
 .active {
+  background-color: #8F3A2F;
   color: #FFFFFF;
   font-weight: bold;
-  background-color: #8F3A2F;
 }
 
 /* Especificidad: 001 */
 button {
-  color: #003B5C;
-  background-color: #F4E3B2;
-  padding: 0.5em 1em;
+  cursor: pointer;
   margin: 0.5em;
   border: 0.15em solid #003B5C;
   border-radius: 0.3em;
-  cursor: pointer;
+  background-color: #F4E3B2;
+  padding: 0.5em 1em;
+  color: #003B5C;
 }
 
 /* Especificidad: 011 */
 button:focus,
 button:hover {
-  color: #FFFFFF;
-  background-color: #8F3A2F;
   outline: 0.2em solid #F4E3B2;
   outline-offset: 0.15em;
+  background-color: #8F3A2F;
+  color: #FFFFFF;
 }
 
 /* Especificidad: 002 */
@@ -134,5 +135,36 @@ button:hover a {
 
 /* Especificidad: 001 */
 dt {
-  color: #F4E3B2;
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+}
+
+/* Especificidad: 001 */
+footer {
+  border-top: 0.2em solid #F4E3B2;
+  background-color: #003B5C;
+  padding: 1em;
+  color: #FFFFFF;
+  text-align: center;
+
+}
+
+/* Especificidad: 002 */
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Especificidad: 002 */
+footer a {
+  color: #D8F3DC; /* background-color heredado de footer: #003B5C. Contraste AAA 9.98 */
+  font-weight: bold;
+}
+
+/* Especificidad: 012 */
+footer a:focus,
+footer a:hover {
+  outline: 0.2em solid #F4E3B2;
+  outline-offset: 0.15em;
+  background-color: #8F3A2F;
+  color: #FFFFFF;
 }

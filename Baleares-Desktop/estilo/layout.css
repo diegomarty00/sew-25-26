@@ -18,47 +18,68 @@ B. Black              #000000
 /* Especificidad: 001 */
 header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 1em;
 }
 
 /* Especificidad: 001 */
 nav {
   display: flex;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
 }
 
-/* Especificidad: 011 */
-article.carrusel {
-  margin: 1rem auto;
+/* Especificidad: 002 */
+main article {
+  margin: 1em;
   padding: 0.5rem 0;
   max-width: 760px;
 }
 
-/* Especificidad: 012 */
-article.carrusel h2 {
-  text-align: center;
+/* Especificidad: 003 */
+main article h2 {
   margin: 0 0 0.75rem 0;
   line-height: 1.2;
+  text-align: center;
 }
 
-/* Especificidad: 013 */
-article.carrusel h2 + img {
+/* Especificidad: 004 */
+main article h2+img {
   display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 6px;
   box-shadow: 0 4px 12px #000000;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
-/* Especificidad: 001 */
-div {
+/* Especificidad: 002 */
+section div {
   width: 100%;
   height: 30em;
 }
+
+
+/* Especificidad: 001 */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+}
+
+/* Especificidad: 001 */
+main {
+  flex: 1;
+  padding: 1em;
+}
+
+/* Especificidad: 001 */
+footer {
+  width: 100%;
+}
+
 
 /* 
   ========================================
@@ -70,30 +91,32 @@ div {
 
   /* Especificidad: 001 */
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+    display: flex; /* Redefinición permitida por media query para adaptar la cabecera a móvil */
+    flex-direction: column; /* Redefinición permitida por media query para navegación vertical */
+    justify-content: space-between; /* Redefinición permitida por media query */
+    align-items: center; /* Redefinición permitida por media query */
+  }
+
+
+  /* Especificidad: 002 */
+  main article {
+    margin: 0.75rem 0.5rem;
+    max-width: 100%;
+  }
+
+
+  /* Especificidad: 004 */
+  main article h2+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   /* Especificidad: 001 */
   nav {
     display: flex;
-    align-items: center;
     flex-direction: column;
-  }
-
-  /* Especificidad: 011 */
-  article.carrusel {
-    margin: 0.75rem 0.5rem;
-    max-width: 100%;
-  }
-
-  /* Especificidad: 013 */
-  article.carrusel h2 + img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+    align-items: center;
   }
 
 }

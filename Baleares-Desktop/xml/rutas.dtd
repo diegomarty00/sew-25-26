@@ -1,0 +1,91 @@
+<!-- Diego Martinez Menendez - UO270457 -->
+<!-- DTD para validar rutas.xml del proyecto Baleares -->
+
+<!ELEMENT rutas (ruta+)>
+
+<!ELEMENT ruta (
+        tipo,
+        transporte,
+        fechaInicio?,
+        horaInicio?,
+        duracion,
+        agencia,
+        descripcion,
+        personasAdecuadas,
+        inicio,
+        referencias,
+        recomendacion,
+        hitos,
+        planimetria,
+        altimetria)>
+
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT transporte (#PCDATA)>
+<!ELEMENT fechaInicio (#PCDATA)>
+<!ELEMENT horaInicio (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT agencia (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT personasAdecuadas (#PCDATA)>
+
+<!ELEMENT inicio (lugar, direccion, coordenadasInicio)>
+<!ELEMENT lugar (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+
+<!ELEMENT coordenadasInicio (longitud, latitud, altitud)>
+<!ELEMENT coordenadasHito (longitud, latitud, altitud)>
+
+<!ELEMENT longitud (#PCDATA)>
+<!ELEMENT latitud (#PCDATA)>
+<!ELEMENT altitud (#PCDATA)>
+
+<!ELEMENT referencias (referencia, referencia, referencia+)>
+<!ELEMENT referencia (#PCDATA)>
+
+<!ELEMENT recomendacion (#PCDATA)>
+
+<!ELEMENT hitos (hito, hito, hito, hito, hito+)>
+
+<!ELEMENT hito (
+        nombre,
+        descripcion,
+        coordenadasHito,
+        distancia,
+        galeriaFotos,
+        galeriaVideos)>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT distancia (#PCDATA)>
+
+<!ELEMENT galeriaFotos (foto+)>
+<!ELEMENT foto (#PCDATA)>
+
+<!ELEMENT galeriaVideos (video*)>
+<!ELEMENT video (#PCDATA)>
+
+<!ELEMENT planimetria (#PCDATA)>
+<!ELEMENT altimetria (#PCDATA)>
+
+<!ATTLIST rutas
+        provincia CDATA #REQUIRED>
+
+<!ATTLIST ruta
+        nombre CDATA #REQUIRED>
+
+<!ATTLIST hito
+        numeroHito CDATA #REQUIRED>
+
+<!ATTLIST duracion
+        unidad CDATA #REQUIRED>
+
+<!ATTLIST distancia
+        unidad CDATA #REQUIRED>
+
+<!ATTLIST longitud
+        unidad CDATA #REQUIRED>
+
+<!ATTLIST latitud
+        unidad CDATA #REQUIRED>
+
+<!ATTLIST altitud
+        unidad CDATA #REQUIRED>

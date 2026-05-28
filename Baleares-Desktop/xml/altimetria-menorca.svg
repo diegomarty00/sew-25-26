@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <title>Altimetría de Ruta natural por el Camí de Cavalls</title>
+  <desc>Perfil de altitud de la ruta turística Ruta natural por el Camí de Cavalls con distancias y altitudes en metros.</desc>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <line x1="70" y1="340" x2="860" y2="340" stroke="#003B5C" stroke-width="2"/>
+  <line x1="70" y1="45" x2="70" y2="340" stroke="#003B5C" stroke-width="2"/>
+  <text x="450" y="25" text-anchor="middle" font-family="Verdana" font-size="18" fill="#003B5C">Ruta natural por el Camí de Cavalls</text>
+  <text x="450" y="395" text-anchor="middle" font-family="Verdana" font-size="13" fill="#003B5C">Distancia horizontal acumulada en metros</text>
+  <text x="20" y="200" text-anchor="middle" font-family="Verdana" font-size="13" fill="#003B5C" transform="rotate(-90 20,200)">Altitud en metros</text>
+  <line x1="70" y1="340.00" x2="860" y2="340.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="344.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">2</text>
+  <line x1="70" y1="281.00" x2="860" y2="281.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="285.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">5</text>
+  <line x1="70" y1="222.00" x2="860" y2="222.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="226.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">7</text>
+  <line x1="70" y1="163.00" x2="860" y2="163.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="167.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">10</text>
+  <line x1="70" y1="104.00" x2="860" y2="104.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="108.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">12</text>
+  <line x1="70" y1="45.00" x2="860" y2="45.00" stroke="#D8F3DC" stroke-width="1"/>
+  <text x="62" y="49.00" text-anchor="end" font-family="Verdana" font-size="11" fill="#003B5C">15</text>
+  <polygon points="70,340 215.53,45.00 327.79,203.85 460.84,317.31 502.42,340.00 760.21,249.23 797.63,113.08 860.00,294.62 860,340" fill="#D8F3DC" stroke="#8F3A2F" stroke-width="2"/>
+  <polyline points="215.53,45.00 327.79,203.85 460.84,317.31 502.42,340.00 760.21,249.23 797.63,113.08 860.00,294.62" fill="none" stroke="#8F3A2F" stroke-width="3"/>
+  <circle cx="215.53" cy="45.00" r="5" fill="#003B5C"/>
+  <text x="215.53" y="35.00" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Sa Mesquida</text>
+  <text x="215.53" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">3500</text>
+  <circle cx="327.79" cy="203.85" r="5" fill="#003B5C"/>
+  <text x="327.79" y="193.85" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Cala de Binillautí</text>
+  <text x="327.79" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">6200</text>
+  <circle cx="460.84" cy="317.31" r="5" fill="#003B5C"/>
+  <text x="460.84" y="307.31" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Es Grau</text>
+  <text x="460.84" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">9400</text>
+  <circle cx="502.42" cy="340.00" r="5" fill="#003B5C"/>
+  <text x="502.42" y="330.00" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">S'Albufera des Grau</text>
+  <text x="502.42" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">10400</text>
+  <circle cx="760.21" cy="249.23" r="5" fill="#003B5C"/>
+  <text x="760.21" y="239.23" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Cala Presili</text>
+  <text x="760.21" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">16600</text>
+  <circle cx="797.63" cy="113.08" r="5" fill="#003B5C"/>
+  <text x="797.63" y="103.08" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Far de Favàritx</text>
+  <text x="797.63" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">17500</text>
+  <circle cx="860.00" cy="294.62" r="5" fill="#003B5C"/>
+  <text x="860.00" y="284.62" text-anchor="middle" font-family="Verdana" font-size="11" fill="#003B5C">Cala Tortuga</text>
+  <text x="860.00" y="358.00" text-anchor="middle" font-family="Verdana" font-size="10" fill="#003B5C">19000</text>
+</svg>

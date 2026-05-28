@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Ruta natural por el Camí de Cavalls</name>
+    <Style id="lineaRuta">
+      <LineStyle>
+        <color>ff5c3a8f</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>Ruta natural por el Camí de Cavalls</name>
+      <styleUrl>#lineaRuta</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+          4.265800,39.888500,5
+          4.294000,39.905000,15
+          4.285000,39.927000,8
+          4.268000,39.950000,3
+          4.255000,39.949000,2
+          4.258500,40.000000,6
+          4.263700,39.998200,12
+          4.273000,40.005000,4
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

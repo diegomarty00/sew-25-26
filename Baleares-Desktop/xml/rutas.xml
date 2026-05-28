@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rutas SYSTEM "rutas.dtd">
+
+<rutas provincia="Baleares">
+
+    <ruta nombre="Ruta monumental por Palma">
+        <tipo>Arquitectura y monumentos</tipo>
+        <transporte>A pie</transporte>
+        <fechaInicio>2026-06-15</fechaInicio>
+        <horaInicio>10:00</horaInicio>
+        <duracion unidad="horas">3</duracion>
+        <agencia>Sin agencia</agencia>
+
+        <descripcion> Ruta urbana por el centro histórico de Palma para conocer algunos de sus
+            principales recursos patrimoniales, miradores, edificios religiosos y espacios
+            culturales. </descripcion>
+
+        <personasAdecuadas>Personas interesadas en cultura, historia y paseos urbanos</personasAdecuadas>
+
+        <inicio>
+            <lugar>Catedral de Mallorca</lugar>
+            <direccion>Plaza de la Almoina, Palma</direccion>
+            <coordenadasInicio>
+                <longitud unidad="grados">2.648136</longitud>
+                <latitud unidad="grados">39.567379</latitud>
+                <altitud unidad="metros">22</altitud>
+            </coordenadasInicio>
+        </inicio>
+
+        <referencias>
+            <referencia>https://www.mallorca.es/es/web/portal-turismo/mapas-y-folletos</referencia>
+            <referencia>https://www.spain.info/es/destino/palma/</referencia>
+            <referencia>https://www.illesbalears.travel/</referencia>
+        </referencias>
+
+        <recomendacion>9</recomendacion>
+
+        <hitos>
+            <hito numeroHito="1">
+                <nombre>Catedral de Mallorca</nombre>
+                <descripcion> Templo gótico situado junto al mar y uno de los símbolos monumentales
+                    de Palma. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">2.648136</longitud>
+                    <latitud unidad="grados">39.567379</latitud>
+                    <altitud unidad="metros">22</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">0</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/palma-catedral.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="2">
+                <nombre>Palacio de la Almudaina</nombre>
+                <descripcion> Antiguo alcázar real situado junto a la Catedral y vinculado a la
+                    historia de la ciudad. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">2.646700</longitud>
+                    <latitud unidad="grados">39.567000</latitud>
+                    <altitud unidad="metros">24</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">120</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/palma-almudaina.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="3">
+                <nombre>Parc de la Mar</nombre>
+                <descripcion> Espacio abierto frente a la muralla y la Catedral, con vistas al
+                    conjunto histórico. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">2.649300</longitud>
+                    <latitud unidad="grados">39.566200</latitud>
+                    <altitud unidad="metros">5</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">250</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/palma-parc-mar.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="4">
+                <nombre>Plaza Mayor de Palma</nombre>
+                <descripcion> Plaza céntrica rodeada de soportales y comercios, punto habitual de
+                    paso turístico. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">2.650900</longitud>
+                    <latitud unidad="grados">39.570400</latitud>
+                    <altitud unidad="metros">30</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">650</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/palma-plaza-mayor.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="5">
+                <nombre>Lonja de Palma</nombre>
+                <descripcion> Edificio civil gótico vinculado al comercio marítimo histórico de
+                    Mallorca. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">2.643900</longitud>
+                    <latitud unidad="grados">39.568000</latitud>
+                    <altitud unidad="metros">8</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">700</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/palma-lonja.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+        </hitos>
+
+        <planimetria>planimetria-palma.kml</planimetria>
+        <altimetria>altimetria-palma.svg</altimetria>
+    </ruta>
+
+    <ruta nombre="Ruta natural por el Camí de Cavalls">
+        <tipo>Senderismo y paisaje litoral</tipo>
+        <transporte>A pie</transporte>
+        <fechaInicio>2026-06-16</fechaInicio>
+        <horaInicio>09:00</horaInicio>
+        <duracion unidad="horas">3</duracion>
+        <agencia>Sin agencia</agencia>
+
+        <descripcion> Ruta inspirada en el Camí de Cavalls de Menorca, un recorrido costero que
+            permite conocer paisajes naturales, calas, zonas rurales y puntos de interés ambiental. </descripcion>
+
+        <personasAdecuadas>Personas con condición física media y amantes de la naturaleza</personasAdecuadas>
+
+        <inicio>
+            <lugar>Maó</lugar>
+            <direccion>Puerto de Maó, Menorca</direccion>
+            <coordenadasInicio>
+                <longitud unidad="grados">4.265800</longitud>
+                <latitud unidad="grados">39.888500</latitud>
+                <altitud unidad="metros">5</altitud>
+            </coordenadasInicio>
+        </inicio>
+
+        <referencias>
+            <referencia>http://camidecavalls.com/portal.aspx?IDIOMA=2</referencia>
+            <referencia>https://www.menorca.es/es/Mapa_de_rutas_del_Cami_de_Cavalls/13613</referencia>
+            <referencia>https://www.descobreixmenorca.com/es/cami-de-cavalls-2/</referencia>
+        </referencias>
+
+        <recomendacion>10</recomendacion>
+
+        <hitos>
+            <hito numeroHito="1">
+                <nombre>Sa Mesquida</nombre>
+                <descripcion> Zona costera próxima a Maó, adecuada como primera parada litoral antes
+                    de continuar hacia el entorno natural del noreste de Menorca. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">4.294000</longitud>
+                    <latitud unidad="grados">39.905000</latitud>
+                    <altitud unidad="metros">15</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">3500</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/menorca-sa-mesquida.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="2">
+                <nombre>Cala de Binillautí</nombre>
+                <descripcion> Pequeña zona litoral situada entre Sa Mesquida y Es Grau, útil como
+                    punto intermedio para suavizar el trazado de la ruta. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">4.285000</longitud>
+                    <latitud unidad="grados">39.927000</latitud>
+                    <altitud unidad="metros">8</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">2700</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/menorca-binillauti.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="3">
+                <nombre>Es Grau</nombre>
+                <descripcion> Núcleo costero asociado al Parque Natural de s'Albufera des Grau y a
+                    uno de los tramos más conocidos del Camí de Cavalls. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">4.268000</longitud>
+                    <latitud unidad="grados">39.950000</latitud>
+                    <altitud unidad="metros">3</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">3200</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/menorca-es-grau.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="4">
+                <nombre>S'Albufera des Grau</nombre>
+                <descripcion> Espacio natural protegido de gran interés ambiental, con zonas
+                    húmedas, vegetación mediterránea y paisajes representativos de la Menorca
+                    Reserva de Biosfera. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">4.255000</longitud>
+                    <latitud unidad="grados">39.949000</latitud>
+                    <altitud unidad="metros">2</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">1000</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/menorca-albufera.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="5">
+                <nombre>Cala Presili</nombre>
+                <descripcion> Cala del noreste de Menorca situada en el entorno de Favàritx, dentro
+                    de un paisaje costero de alto valor natural. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">4.258500</longitud>
+                    <latitud unidad="grados">40.000000</latitud>
+                    <altitud unidad="metros">6</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">6200</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/menorca-cala-presili.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="6">
+                <nombre>Far de Favàritx</nombre>
+                <descripcion> Faro situado en el noreste de Menorca, rodeado por un paisaje rocoso
+                    característico y muy próximo al trazado del Camí de Cavalls. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">4.263700</longitud>
+                    <latitud unidad="grados">39.998200</latitud>
+                    <altitud unidad="metros">12</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">900</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/menorca-favaritx.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="7">
+                <nombre>Cala Tortuga</nombre>
+                <descripcion> Cala natural del noreste de Menorca, cercana al entorno de Favàritx y
+                    al recorrido costero del Camí de Cavalls. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">4.273000</longitud>
+                    <latitud unidad="grados">40.005000</latitud>
+                    <altitud unidad="metros">4</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">1500</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/menorca-cala-tortuga.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+        </hitos>
+
+
+        <planimetria>planimetria-menorca.kml</planimetria>
+        <altimetria>altimetria-menorca.svg</altimetria>
+    </ruta>
+
+    <ruta nombre="Ruta histórica por Dalt Vila">
+        <tipo>Patrimonio histórico</tipo>
+        <transporte>A pie</transporte>
+        <fechaInicio>2026-06-17</fechaInicio>
+        <horaInicio>18:00</horaInicio>
+        <duracion unidad="horas">2</duracion>
+        <agencia>Sin agencia</agencia>
+
+        <descripcion> Ruta por el centro histórico amurallado de Eivissa para descubrir accesos,
+            plazas, baluartes, miradores y edificios patrimoniales de Dalt Vila. </descripcion>
+
+        <personasAdecuadas>Personas interesadas en patrimonio, fotografía y paseos culturales</personasAdecuadas>
+
+        <inicio>
+            <lugar>Portal de Ses Taules</lugar>
+            <direccion>Entrada principal de Dalt Vila, Eivissa</direccion>
+            <coordenadasInicio>
+                <longitud unidad="grados">1.435000</longitud>
+                <latitud unidad="grados">38.908900</latitud>
+                <altitud unidad="metros">12</altitud>
+            </coordenadasInicio>
+        </inicio>
+
+        <referencias>
+            <referencia>https://turismo.eivissa.es/</referencia>
+            <referencia>https://ibiza.travel/</referencia>
+            <referencia>http://escuelaturismo.es/ruta-dalt-vila.html</referencia>
+        </referencias>
+
+        <recomendacion>9</recomendacion>
+
+        <hitos>
+            <hito numeroHito="1">
+                <nombre>Portal de Ses Taules</nombre>
+                <descripcion> Entrada monumental a Dalt Vila y comienzo habitual de las visitas al
+                    recinto amurallado. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">1.435000</longitud>
+                    <latitud unidad="grados">38.908900</latitud>
+                    <altitud unidad="metros">12</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">0</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/ibiza-portal-ses-taules.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="2">
+                <nombre>Plaza de Vila</nombre>
+                <descripcion> Espacio interior del recinto histórico con ambiente turístico y acceso
+                    a calles tradicionales. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">1.435500</longitud>
+                    <latitud unidad="grados">38.908300</latitud>
+                    <altitud unidad="metros">18</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">120</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/ibiza-plaza-vila.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="3">
+                <nombre>Baluarte de Santa Llúcia</nombre>
+                <descripcion> Punto defensivo de la muralla con vistas hacia el puerto y la ciudad. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">1.436200</longitud>
+                    <latitud unidad="grados">38.909300</latitud>
+                    <altitud unidad="metros">35</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">260</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/ibiza-baluarte-santa-llucia.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="4">
+                <nombre>Catedral de Santa María</nombre>
+                <descripcion> Edificio religioso situado en la zona alta de Dalt Vila, junto a
+                    espacios museísticos y miradores. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">1.436900</longitud>
+                    <latitud unidad="grados">38.906800</latitud>
+                    <altitud unidad="metros">68</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">450</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/ibiza-catedral.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+
+            <hito numeroHito="5">
+                <nombre>Baluarte de Sant Jaume</nombre>
+                <descripcion> Elemento defensivo del recinto fortificado, adecuado para cerrar la
+                    ruta con vistas panorámicas. </descripcion>
+                <coordenadasHito>
+                    <longitud unidad="grados">1.434100</longitud>
+                    <latitud unidad="grados">38.906900</latitud>
+                    <altitud unidad="metros">42</altitud>
+                </coordenadasHito>
+                <distancia unidad="metros">500</distancia>
+                <galeriaFotos>
+                    <foto>multimedia/imagenes/rutas/ibiza-baluarte-sant-jaume.jpg</foto>
+                </galeriaFotos>
+                <galeriaVideos />
+            </hito>
+        </hitos>
+
+        <planimetria>planimetria-ibiza.kml</planimetria>
+        <altimetria>altimetria-ibiza.svg</altimetria>
+    </ruta>
+
+</rutas>
