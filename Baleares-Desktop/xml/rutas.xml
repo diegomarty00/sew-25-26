@@ -158,9 +158,9 @@
                 <descripcion> Zona costera próxima a Maó, adecuada como primera parada litoral antes
                     de continuar hacia el entorno natural del noreste de Menorca. </descripcion>
                 <coordenadasHito>
-                    <longitud unidad="grados">4.294000</longitud>
-                    <latitud unidad="grados">39.905000</latitud>
-                    <altitud unidad="metros">15</altitud>
+                    <longitud unidad="grados">4.297500</longitud>
+                    <latitud unidad="grados">39.901900</latitud>
+                    <altitud unidad="metros">10</altitud>
                 </coordenadasHito>
                 <distancia unidad="metros">3500</distancia>
                 <galeriaFotos>
@@ -174,8 +174,8 @@
                 <descripcion> Pequeña zona litoral situada entre Sa Mesquida y Es Grau, útil como
                     punto intermedio para suavizar el trazado de la ruta. </descripcion>
                 <coordenadasHito>
-                    <longitud unidad="grados">4.285000</longitud>
-                    <latitud unidad="grados">39.927000</latitud>
+                    <longitud unidad="grados">4.286500</longitud>
+                    <latitud unidad="grados">39.925000</latitud>
                     <altitud unidad="metros">8</altitud>
                 </coordenadasHito>
                 <distancia unidad="metros">2700</distancia>
@@ -190,9 +190,9 @@
                 <descripcion> Núcleo costero asociado al Parque Natural de s'Albufera des Grau y a
                     uno de los tramos más conocidos del Camí de Cavalls. </descripcion>
                 <coordenadasHito>
-                    <longitud unidad="grados">4.268000</longitud>
-                    <latitud unidad="grados">39.950000</latitud>
-                    <altitud unidad="metros">3</altitud>
+                    <longitud unidad="grados">4.273000</longitud>
+                    <latitud unidad="grados">39.948200</latitud>
+                    <altitud unidad="metros">4</altitud>
                 </coordenadasHito>
                 <distancia unidad="metros">3200</distancia>
                 <galeriaFotos>
@@ -207,8 +207,8 @@
                     húmedas, vegetación mediterránea y paisajes representativos de la Menorca
                     Reserva de Biosfera. </descripcion>
                 <coordenadasHito>
-                    <longitud unidad="grados">4.255000</longitud>
-                    <latitud unidad="grados">39.949000</latitud>
+                    <longitud unidad="grados">4.256000</longitud>
+                    <latitud unidad="grados">39.948000</latitud>
                     <altitud unidad="metros">2</altitud>
                 </coordenadasHito>
                 <distancia unidad="metros">1000</distancia>
@@ -223,9 +223,9 @@
                 <descripcion> Cala del noreste de Menorca situada en el entorno de Favàritx, dentro
                     de un paisaje costero de alto valor natural. </descripcion>
                 <coordenadasHito>
-                    <longitud unidad="grados">4.258500</longitud>
-                    <latitud unidad="grados">40.000000</latitud>
-                    <altitud unidad="metros">6</altitud>
+                    <longitud unidad="grados">4.252500</longitud>
+                    <latitud unidad="grados">39.996700</latitud>
+                    <altitud unidad="metros">5</altitud>
                 </coordenadasHito>
                 <distancia unidad="metros">6200</distancia>
                 <galeriaFotos>
@@ -240,7 +240,7 @@
                     característico y muy próximo al trazado del Camí de Cavalls. </descripcion>
                 <coordenadasHito>
                     <longitud unidad="grados">4.263700</longitud>
-                    <latitud unidad="grados">39.998200</latitud>
+                    <latitud unidad="grados">39.997700</latitud>
                     <altitud unidad="metros">12</altitud>
                 </coordenadasHito>
                 <distancia unidad="metros">900</distancia>
@@ -255,8 +255,8 @@
                 <descripcion> Cala natural del noreste de Menorca, cercana al entorno de Favàritx y
                     al recorrido costero del Camí de Cavalls. </descripcion>
                 <coordenadasHito>
-                    <longitud unidad="grados">4.273000</longitud>
-                    <latitud unidad="grados">40.005000</latitud>
+                    <longitud unidad="grados">4.269000</longitud>
+                    <latitud unidad="grados">39.999300</latitud>
                     <altitud unidad="metros">4</altitud>
                 </coordenadasHito>
                 <distancia unidad="metros">1500</distancia>

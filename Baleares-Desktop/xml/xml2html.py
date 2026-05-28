@@ -39,7 +39,7 @@ class GeneradorRutasHTML:
         self.escribir('            <a href="ayuda.html" accesskey="a">Ayuda</a>\n')
         self.escribir('        </nav>\n')
         self.escribir('    </header>\n')
-        self.escribir('    <p>Estás en: <a href="index.html">Inicio</a> &gt;&gt; Rutas</p>\n')
+        self.escribir('    <p>Estás en: <a href="index.html">Inicio</a> >> Rutas</p>\n')
         self.escribir('    <main>\n')
         self.escribir('        <section>\n')
         self.escribir('            <h2>Rutas turísticas por Baleares</h2>\n')
