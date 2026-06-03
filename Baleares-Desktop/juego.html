@@ -1,22 +1,25 @@
 <!DOCTYPE HTML>
-
 <html lang="es">
 
 <head>
     <!-- Datos que describen el documento -->
-    <meta charset="UTF-8" />
-    <meta name="author" content="Diego Marty">
-    <meta name="description" content="Juego de preguntas sobre el sitio turístico de Baleares">
-    <meta name="keywords" content="juegos, motogp, moto" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baleares - Juegos</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Diego Martínez Menéndez">
+    <meta name="description" content="Juego de preguntas sobre el sitio web turístico de las Islas Baleares">
+    <meta name="keywords" content="Baleares, juego, preguntas, turismo, accesibilidad">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baleares - Juego</title>
+
     <link rel="icon" href="multimedia/imagenes/Baleares.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <link rel="stylesheet" href="estilo/layout.css">
+
+    <script src="js/juego.js"></script>
 </head>
 
 <body>
-    <!-- Datos con el contenidos que aparece en el navegador -->
+    <!-- Datos con el contenido que aparece en el navegador -->
     <header>
 
         <h1><a href="index.html">Baleares</a></h1>
@@ -26,36 +29,29 @@
             <a href="gastronomia.html" accesskey="g">Gastronomía</a>
             <a href="rutas.html" accesskey="r">Rutas</a>
             <a href="meteorologia.html" accesskey="m">Meteorología</a>
-            <a href="juego.html" class="active" accesskey="j">Juego</a>
+            <a href="juego.html" class="activo" aria-current="page" accesskey="j">Juego</a>
             <a href="php/reservas.php" accesskey="v">Reservas</a>
             <a href="ayuda.html" accesskey="a">Ayuda</a>
         </nav>
     </header>
 
     <p>Estás en: <a href="index.html">Inicio</a> >> Juego</p>
-    <main>
-        <h2>Juego de Baleares</h2>
-        <p>
-            En este apartado podrás encontrar algunos juegos relacionados con el mundo de MotoGP.
-        </p>
 
-        <ul>
-            <li>
-                <a href="memoria.html">Juego de memoria</a>
-            </li>
-            <li>
-                <a href="cronometro.html">Cronómetro v.1</a>
-            </li>
-            <li>
-                <a href="cronometro.php">Cronómetro v.2</a>
-            </li>
-            <li>
-                <a href="php/configuracion.php">Configuración Test</a>
-            </li>
-            <li>
-                <a href="php/test.php">Prueba Usabilidad</a>
-            </li>
-        </ul>
+    <main>
+        <section>
+            <h2>Juego sobre las Islas Baleares</h2>
+            <p>
+                Responde a las 10 preguntas sobre la información incluida en el sitio web.
+                Cada pregunta tiene 5 opciones y solo una respuesta correcta.
+            </p>
+            <p>
+                Es obligatorio responder todas las preguntas antes de finalizar.
+            </p>
+        </section>
+
+        <section aria-label="Juego de preguntas sobre el sitio web de Baleares">
+            <h2>Cuestionario</h2>
+        </section>
     </main>
 
     <footer>
@@ -64,6 +60,7 @@
             - Design By : <a href="https://github.com/diegomarty00">Diego Martinez Menéndez</a>
         </p>
     </footer>
+
 </body>
 
 </html>
