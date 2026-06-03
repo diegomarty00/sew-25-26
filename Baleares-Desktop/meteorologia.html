@@ -13,6 +13,9 @@
     <link rel="icon" href="multimedia/imagenes/Baleares.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/meteorologia.js"></script>
 </head>
 
 <body>
@@ -34,31 +37,23 @@
 
     <p>Estás en: <a href="index.html">Inicio</a> >> Meteorología</p>
 
+
     <main>
-        <h2>Meteorología de MotoGP-Desktop</h2>
-        <script>
-            const brno = new Ciudad("Brno", "Republica Checa", "ovetense");
-            brno.setPoblacion(402739);
-            brno.setCoordenadas(49.195277777778, 16.608333333333);
-            brno.setFechaCarrera('2025-08-10');
+        <section>
+            <h2>Meteorología en Palma</h2>
+            <p>
+                Consulta la información meteorológica actual y la previsión para los próximos 7 días
+                en Palma, capital de las Islas Baleares.
+            </p>
+        </section>
 
-            brno.parrafoNombre();
-            brno.parrafoPais();
-            brno.parrafoSecundario();
-            brno.parrafoCoordenadas();
+        <section aria-label="Información meteorológica actual de Palma">
+            <h2>Tiempo actual</h2>
+        </section>
 
-
-            brno.getMeteorologiaCarrera()
-                .then(json => brno.procesarJSONCarrera(json))
-                .then(datos => brno.mostrarCarrera(datos))
-                .catch(err => brno.mostrarError(err));
-
-            brno.getMeteorologiaEntrenos()
-                .then(json => brno.procesarJSONEntrenos(json))
-                .then(resumen => brno.mostrarEntrenos(resumen))
-                .catch(err => brno.mostrarError(err));
-        </script>
-
+        <section aria-label="Previsión meteorológica de Palma para los próximos 7 días">
+            <h2>Previsión para los próximos 7 días</h2>
+        </section>
     </main>
 
     <footer>

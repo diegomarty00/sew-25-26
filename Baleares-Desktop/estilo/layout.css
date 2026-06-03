@@ -34,13 +34,10 @@ nav {
 /* Especificidad: 002 */
 main article {
   margin: 1em;
-  padding: 0.5rem 0;
-  max-width: 760px;
 }
 
 /* Especificidad: 003 */
 main article h2 {
-  margin: 0 0 0.75rem 0;
   line-height: 1.2;
   text-align: center;
 }
@@ -80,6 +77,58 @@ footer {
   width: 100%;
 }
 
+/*
+  ========================================
+  =====        METEOROLOGÍA         ======
+  ========================================
+*/
+
+/* Especificidad: 014 */
+main section:nth-of-type(2) article dl {
+  display: grid;
+  grid-template-columns: minmax(10em, 1fr) minmax(12em, 2fr);
+  gap: 0.5em 1em;
+}
+
+/* Especificidad: 013 */
+main section:nth-of-type(3) article {
+  box-sizing: border-box;
+  margin: 1em;
+  width: auto;
+  max-width: none;
+  text-align: center;
+
+}
+
+/* Especificidad: 014 */
+main section:nth-of-type(3) article ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* Especificidad: 015 */
+main section:nth-of-type(3) article ul li {
+  display: block;
+  flex: 1 1 12em;
+  padding: 1em;
+}
+
+/* Especificidad: 016 */
+main section:nth-of-type(3) article ul li dl {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25em;
+}
+
+/* Especificidad: 016 */
+main section:nth-of-type(3) article ul li h4 {
+  margin-top: 0;
+}
+
 
 /* 
   ========================================
@@ -91,10 +140,14 @@ footer {
 
   /* Especificidad: 001 */
   header {
-    display: flex; /* Redefinición permitida por media query para adaptar la cabecera a móvil */
-    flex-direction: column; /* Redefinición permitida por media query para navegación vertical */
-    justify-content: space-between; /* Redefinición permitida por media query */
-    align-items: center; /* Redefinición permitida por media query */
+    display: flex;
+    /* Redefinición permitida por media query para adaptar la cabecera a móvil */
+    flex-direction: column;
+    /* Redefinición permitida por media query para navegación vertical */
+    justify-content: space-between;
+    /* Redefinición permitida por media query */
+    align-items: center;
+    /* Redefinición permitida por media query */
   }
 
 
@@ -117,6 +170,18 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Especificidad: 014 */
+  main section:nth-of-type(2) article dl {
+    grid-template-columns: 1fr;
+    /* Redefinición permitida por media query para adaptar la meteorología actual a pantallas pequeñas */
+  }
+
+  /* Especificidad: 014 */
+  main section:nth-of-type(3) article ul {
+    grid-template-columns: 1fr;
+    /* Redefinición permitida por media query para mostrar la previsión meteorológica en una sola columna */
   }
 
 }
