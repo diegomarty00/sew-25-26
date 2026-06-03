@@ -1,0 +1,6 @@
+id_recurso,id_tipo,nombre,plazas_maximas,fecha_hora_inicio,fecha_hora_fin,precio,descripcion
+1,1,Ruta monumental por Palma,20,2026-06-15 10:00:00,2026-06-15 13:00:00,18.00,Ruta urbana por el centro histórico de Palma para conocer sus principales monumentos.
+2,1,Ruta natural por el Camí de Cavalls,15,2026-06-16 09:00:00,2026-06-16 12:00:00,22.00,Ruta a pie por paisajes naturales y litorales de Menorca.
+3,1,Ruta histórica por Dalt Vila,18,2026-06-17 18:00:00,2026-06-17 20:00:00,16.00,Ruta por el centro histórico amurallado de Eivissa.
+4,3,Menú gastronómico balear,30,2026-06-18 14:00:00,2026-06-18 16:00:00,35.00,Experiencia gastronómica con productos típicos como sobrasada ensaimada y queso de Mahón.
+5,5,Visita cultural a Palma,25,2026-06-19 11:00:00,2026-06-19 13:00:00,20.00,Visita guiada por espacios culturales representativos de Palma.
