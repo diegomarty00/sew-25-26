@@ -12,6 +12,11 @@
     <link rel="icon" href="multimedia/imagenes/Baleares.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilo/estilo.css">
     <link rel="stylesheet" href="estilo/layout.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/carrusel.js"></script>
+    <script src="js/noticias.js"></script>
+    <script src="js/inicio.js"></script>
 </head>
 
 <body>
@@ -36,64 +41,20 @@
         <section>
             <h2>Descubre las Islas Baleares</h2>
             <p>
-                Las Islas Baleares forman un archipiélago mediterráneo compuesto por Mallorca,
-                Menorca, Ibiza, Formentera y otros islotes. Su riqueza turística combina playas,
-                patrimonio histórico, gastronomía, naturaleza, rutas culturales y actividades al aire libre.
+                Las Islas Baleares son un destino turístico del Mediterráneo formado por Mallorca,
+                Menorca, Ibiza y Formentera. Destacan por sus playas, paisajes naturales,
+                patrimonio histórico, gastronomía y rutas turísticas.
             </p>
         </section>
 
-        <section>
-            <h2>Principales recursos turísticos</h2>
+        <section aria-label="Carrusel de imágenes de las Islas Baleares"></section>
 
-            <article>
-                <h3>Mallorca</h3>
-                <p>
-                    Mallorca destaca por la Serra de Tramuntana, la ciudad de Palma, sus calas,
-                    sus pueblos de interior y una tradición gastronómica muy reconocida.
-                </p>
-            </article>
-
-            <article>
-                <h3>Menorca</h3>
-                <p>
-                    Menorca es conocida por sus paisajes naturales, sus calas, su patrimonio arqueológico
-                    y productos como el queso de Mahón.
-                </p>
-            </article>
-
-            <article>
-                <h3>Ibiza y Formentera</h3>
-                <p>
-                    Ibiza y Formentera ofrecen playas, patrimonio, espacios naturales protegidos
-                    y una cultura mediterránea muy marcada.
-                </p>
-            </article>
-        </section>
-
-        <section>
-            <h2>Carrusel de imágenes</h2>
-            <p>
-                En esta sección se mostrará un carrusel con imágenes locales de los principales
-                recursos turísticos de Baleares.
-            </p>
-
-            <figure>
-                <img src="multimedia/imagenes/baleares-mapa.jpg" alt="Mapa de situación de las Islas Baleares">
-                <figcaption>Mapa de situación de las Islas Baleares.</figcaption>
-            </figure>
-
-            <button type="button">Anterior</button>
-            <button type="button">Siguiente</button>
-        </section>
-
-        <section>
-            <h2>Noticias sobre Baleares</h2>
-            <p>
-                En esta sección se cargarán noticias relacionadas con Baleares mediante servicios web
-                y código ECMAScript con jQuery.
-            </p>
+        <section aria-label="Noticias sobre las Islas Baleares">
+            <h2>Últimas noticias sobre las Islas Baleares</h2>
+            <section aria-label="Listado de noticias sobre las Islas Baleares"></section>
         </section>
     </main>
+
 
     <footer>
         <p>
@@ -102,9 +63,7 @@
         </p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/carrusel.js"></script>
-    <script src="js/noticias.js"></script>
+
 </body>
 
 </html>

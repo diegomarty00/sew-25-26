@@ -1,98 +1,104 @@
 class Noticias {
-    constructor(busqueda = 'MotoGP') {
-        // Término de búsqueda y URL base (Top Stories) de TheNewsApi
+    constructor(selectorContenedor, busqueda = 'Baleares') {
+        this.$contenedor = $(selectorContenedor);
         this.busqueda = busqueda;
         this.url = 'https://api.thenewsapi.com/v1/news/top';
         this.token = '3mwVVLj7ZRIFZzsBlbXu9WjO69FPRRtWYGMXCUji';
 
-        // Parámetros por defecto para la query
         this.paramsBase = {
-            api_token: this.token,                 // autenticación (TheNewsApi)
-            search: this.busqueda,                 // término de búsqueda
+            api_token: this.token,
+            search: this.busqueda,
             search_fields: 'title,description,main_text',
-            categories: 'sports',                  // filtramos por deportes
-            language: 'es,en',                     // español e inglés
-            sort: 'published_at',                  // orden por fecha de publicación
-            limit: 10                              // número máximo de resultados
+            language: 'es,en',
+            sort: 'published_at',
+            limit: 10
         };
     }
 
     async buscar() {
-        // Construimos la query string limpiamente
-        const qs = new URLSearchParams(this.paramsBase); // URLSearchParams recomendado
-        const endpoint = `${this.url}?${qs.toString()}`;
-
         try {
-            const resp = await fetch(endpoint);
-            if (!resp.ok) {
-                throw new Error(`HTTP ${resp.status} al consultar TheNewsApi`);
-            }
-            const json = await resp.json(); // Promesa resuelta con JSON
-            return json;
+            const json = await $.ajax({
+                url: this.url,
+                method: 'GET',
+                dataType: 'json',
+                data: this.paramsBase
+            });
+
+            const items = this.procesarInformacion(json);
+            this.pintar(items);
         } catch (err) {
             console.error('Error en la consulta de noticias:', err);
-            throw err;
+            this.mostrarError();
         }
     }
 
     procesarInformacion(json) {
         const items = Array.isArray(json?.data) ? json.data : [];
+
         return items.map(a => ({
             titulo: a.title,
             entradilla: a.description || a.snippet || '',
             enlace: a.url,
             fuente: a.source,
-            imagen: a.image_url,
             publicado: a.published_at
         }));
     }
 
-    pintar(noticias, contenedorSelector = '#noticias-contenido') {
-        const $sec = $(contenedorSelector);
+    pintar(noticias) {
+        this.$contenedor.empty();
 
         if (!noticias.length) {
-            $sec.append(
-                $('<article/>', { class: 'no-news' }).append(
-                    $('<h3/>').text('No hay noticias disponibles ahora mismo.')
+            this.$contenedor.append(
+                $('<article>').append(
+                    $('<h3>').text('No hay noticias disponibles ahora mismo.')
                 )
             );
             return;
         }
 
-        noticias.forEach(n => {
-            const $art = $('<article/>', { class: 'noticia' });
-            $art.append($('<h3/>').text(n.titulo || 'Titular no disponible'));
-            if (n.entradilla) $art.append($('<p/>', { class: 'entradilla' }).text(n.entradilla));
-
-            const $meta = $('<p/>', { class: 'fuente' })
-                .append($('<a/>', { href: n.enlace, target: '_blank', rel: 'noopener noreferrer', text: 'Leer en la fuente' }))
-                .append(` — ${n.fuente || 'Fuente desconocida'}`);
-
-            if (n.publicado) {
-                const fecha = new Date(n.publicado);
-                $meta.append(` — ${fecha.toLocaleString()}`);
-            }
-
-            $art.append($meta);
-            $sec.append($art);
-        });
+        noticias.forEach(noticia => this.pintarNoticia(noticia));
     }
-}
 
-// Inicialización al cargar el documento
-document.addEventListener('DOMContentLoaded', async () => {
-    // Instanciamos con la búsqueda "MotoGP"
-    const noticias = new Noticias('MotoGP');
+    pintarNoticia(noticia) {
+        const $articulo = $('<article>');
 
-    try {
-        const json = await noticias.buscar();
-        const items = noticias.procesarInformacion(json);
-        noticias.pintar(items, '#noticias');
-    } catch (err) {
-        // Mensaje de error visible
-        const $sec = $('#noticias');
-        $sec.append(
-            $('<p/>', { class: 'error', text: 'No se pudieron cargar las noticias. Inténtalo más tarde.' })
+        $articulo.append(
+            $('<h3>').text(noticia.titulo || 'Titular no disponible')
+        );
+
+        if (noticia.entradilla) {
+            $articulo.append(
+                $('<p>').text(noticia.entradilla)
+            );
+        }
+
+        const $meta = $('<p>');
+
+        if (noticia.enlace) {
+            $meta.append(
+                $('<a>', {
+                    href: noticia.enlace,
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    text: 'Leer en la fuente'
+                })
+            );
+        }
+
+        $meta.append(` — ${noticia.fuente || 'Fuente desconocida'}`);
+
+        if (noticia.publicado) {
+            const fecha = new Date(noticia.publicado);
+            $meta.append(` — ${fecha.toLocaleString('es-ES')}`);
+        }
+
+        $articulo.append($meta);
+        this.$contenedor.append($articulo);
+    }
+
+    mostrarError() {
+        this.$contenedor.empty().append(
+            $('<p>').text('No se pudieron cargar las noticias. Inténtalo más tarde.')
         );
     }
-});
+}

@@ -1,86 +1,140 @@
 class Carrusel {
-    constructor(busqueda) {
-        this.busqueda = busqueda;   // término para API de Flickr
-        this.actual = 0;            // índice de foto actual
-        this.maximo = 4;            // nº de fotos del carrusel (ver nota abajo)
-        this.apiKey = 'a09054d9591e63f243358ca426c788d1';
-    }
+    constructor(selectorContenedor) {
+        this.$contenedor = $(selectorContenedor);
+        this.indiceActual = 0;
+        this.intervalo = null;
+        this.tiempo = 5000;
+        this.enMovimiento = true;
 
-    getFotografias() {
-        if (this.apiKey) {
-            return $.getJSON('https://api.flickr.com/services/rest/', {
-                method: 'flickr.photos.search',
-                api_key: this.apiKey,
-                text: this.busqueda,
-                safe_search: 1,
-                content_type: 1,
-                media: 'photos',
-                sort: 'relevance',
-                per_page: this.maximo,
-                page: 1,
-                extras: 'url_z,title',        // URL directa 640px + título
-                format: 'json',
-                nojsoncallback: 1
-            })
-                .then(json => this.procesarJSONFotografias(json))
-                .then(() => this.mostrarFotografias())
-                .catch(err => console.error('Error Flickr API:', err));
-        }
-    }
-
-    procesarJSONFotografias(json) {
-        const photos = (json.photos && json.photos.photo)
-            ? json.photos.photo.slice(0, this.maximo)
-            : [];
-
-        // Preferimos url_z (640px); si no existe, construimos con _z
-        this.fotos = photos.map(p => ({
-            url: p.url_z
-                ? p.url_z
-                : `https://live.staticflickr.com/${p.server}/${p.id}_${p.secret}_z.jpg`,
-            title: p.title || this.busqueda
-        }));
-    }
-
-
-    mostrarFotografias() {
-        if (!this.fotos.length) return;
-
-        // 1) Intenta usar el contenedor ya existente en el HTML
-        this.$section = $('section.carrusel');
-
-        // 2) Si no existe (por si algún HTML no lo tiene), créalo y colócalo arriba
-        if (!this.$section.length) {
-            this.$section = $('<section class="carrusel" aria-label="Carrusel de imágenes de MotoGP"></section>');
-            const $noticias = $('#noticias');
-            if ($noticias.length) {
-                $noticias.before(this.$section);  // lo pone por encima de noticias
-            } else {
-                $('main').prepend(this.$section); // o al principio de <main>
+        this.imagenes = [
+            {
+                ruta: "multimedia/imagenes/Fondo.png",
+                textoAlternativo: "Mapa de situación de las Islas Baleares en el mar Mediterráneo",
+                titulo: "Mapa de situación de las Islas Baleares"
+            },
+            {
+                ruta: "multimedia/imagenes/Fondo.jpg",
+                textoAlternativo: "Vista turística de Mallorca con costa mediterránea",
+                titulo: "Mallorca"
+            },
+            {
+                ruta: "multimedia/imagenes/Fondo.jpg",
+                textoAlternativo: "Paisaje natural de Menorca con una cala de aguas claras",
+                titulo: "Menorca"
+            },
+            {
+                ruta: "multimedia/imagenes/Fondo.jpg",
+                textoAlternativo: "Paisaje turístico de Ibiza junto al mar",
+                titulo: "Ibiza"
+            },
+            {
+                ruta: "multimedia/imagenes/Fondo.jpg",
+                textoAlternativo: "Playa de Formentera con arena clara y agua turquesa",
+                titulo: "Formentera"
+            },
+            {
+                ruta: "multimedia/imagenes/Fondo.jpg",
+                textoAlternativo: "Vista de Palma, capital de las Islas Baleares",
+                titulo: "Palma"
             }
-        }
+        ];
+    }
 
-        // 3) Construye el contenido del carrusel
-        this.$h2 = $(`<h2>Imágenes del circuito de ${this.busqueda}</h2>`);
-        this.$img = $('<img/>', {
-            src: this.fotos[0].url,
-            alt: this.fotos[0].title,
-            loading: 'lazy'
+    iniciar() {
+        this.crearEstructura();
+        this.mostrarImagenActual();
+        this.iniciarMovimientoAutomatico();
+    }
+
+    crearEstructura() {
+        this.$titulo = $("<h2>").text("Recursos turísticos de las Islas Baleares");
+
+        this.$figura = $("<figure>");
+        this.$imagen = $("<img>", {
+            src: this.imagenes[0].ruta,
+            alt: this.imagenes[0].textoAlternativo
         });
 
-        // 4) Rellena el contenedor (sin volver a añadirlo al final del main)
-        this.$section.empty().append(this.$h2, this.$img);
+        this.$pie = $("<figcaption>", {
+            "aria-live": "polite"
+        });
 
-        this.actual = 0;
-        this.intervalId = setInterval(this.cambiarFotografia.bind(this), 3000);
+        this.$botonAnterior = $("<button>", {
+            type: "button",
+            text: "Anterior",
+            "aria-label": "Mostrar imagen anterior del carrusel"
+        });
+
+        this.$botonSiguiente = $("<button>", {
+            type: "button",
+            text: "Siguiente",
+            "aria-label": "Mostrar imagen siguiente del carrusel"
+        });
+
+        this.$botonMovimiento = $("<button>", {
+            type: "button",
+            text: "Pausar",
+            "aria-label": "Pausar el movimiento automático del carrusel"
+        });
+
+        this.$botonAnterior.on("click", () => this.mostrarAnterior());
+        this.$botonSiguiente.on("click", () => this.mostrarSiguiente());
+        this.$botonMovimiento.on("click", () => this.alternarMovimiento());
+
+        this.$figura.append(this.$imagen, this.$pie);
+        this.$contenedor.empty();
+        this.$contenedor.append(
+            this.$titulo,
+            this.$figura,
+            this.$botonAnterior,
+            this.$botonSiguiente,
+            this.$botonMovimiento
+        );
     }
 
-    cambiarFotografia() {
-        if (!this.fotos.length) return;
-        this.actual = (this.actual + 1) % this.fotos.length;
+    mostrarImagenActual() {
+        const imagen = this.imagenes[this.indiceActual];
 
-        const foto = this.fotos[this.actual];
-        this.$img.attr('src', foto.url);
-        this.$img.attr('alt', foto.title);
+        this.$imagen.attr("src", imagen.ruta);
+        this.$imagen.attr("alt", imagen.textoAlternativo);
+        this.$pie.text(`${imagen.titulo}. Imagen ${this.indiceActual + 1} de ${this.imagenes.length}.`);
+    }
+
+    mostrarSiguiente() {
+        this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
+        this.mostrarImagenActual();
+    }
+
+    mostrarAnterior() {
+        this.indiceActual = this.indiceActual - 1;
+
+        if (this.indiceActual < 0) {
+            this.indiceActual = this.imagenes.length - 1;
+        }
+
+        this.mostrarImagenActual();
+    }
+
+    iniciarMovimientoAutomatico() {
+        this.intervalo = window.setInterval(() => this.mostrarSiguiente(), this.tiempo);
+    }
+
+    detenerMovimientoAutomatico() {
+        window.clearInterval(this.intervalo);
+        this.intervalo = null;
+    }
+
+    alternarMovimiento() {
+        if (this.enMovimiento) {
+            this.detenerMovimientoAutomatico();
+            this.enMovimiento = false;
+            this.$botonMovimiento.text("Reanudar");
+            this.$botonMovimiento.attr("aria-label", "Reanudar el movimiento automático del carrusel");
+        } else {
+            this.iniciarMovimientoAutomatico();
+            this.enMovimiento = true;
+            this.$botonMovimiento.text("Pausar");
+            this.$botonMovimiento.attr("aria-label", "Pausar el movimiento automático del carrusel");
+        }
     }
 }
