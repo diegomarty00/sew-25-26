@@ -1,6 +1,6 @@
 class Inicio {
     constructor() {
-        this.selectorCarrusel = 'section[aria-label="Carrusel de imágenes de las Islas Baleares"]';
+        this.selectorCarrusel = 'section[data-componente="carrusel"]';
         this.selectorNoticias = 'section[aria-label="Listado de noticias sobre las Islas Baleares"]';
 
         this.carrusel = new Carrusel(this.selectorCarrusel);

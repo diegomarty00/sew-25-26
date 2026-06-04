@@ -37,6 +37,7 @@ class Carrusel extends GaleriaImagenes {
 
         super(selectorContenedor, imagenes, {
             titulo: "Descubre las Islas Baleares",
+            etiquetaTitulo: "h2",
             mostrarTexto: true,
             texto: "Las Islas Baleares son un destino turístico del Mediterráneo formado por Mallorca, Menorca, Ibiza y Formentera. Destacan por sus playas, paisajes naturales, patrimonio histórico, gastronomía y rutas turísticas.",
             automatico: true,

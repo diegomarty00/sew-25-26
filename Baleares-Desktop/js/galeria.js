@@ -71,6 +71,7 @@ class GaleriaImagenes {
         this.indiceActual = 0;
 
         this.titulo = opciones.titulo || "Fotografías";
+        this.etiquetaTitulo = opciones.etiquetaTitulo;
         this.texto = opciones.texto || "";
         this.mostrarTexto = opciones.mostrarTexto || false;
 
@@ -113,7 +114,7 @@ class GaleriaImagenes {
     }
 
     crearEstructura() {
-        this.$titulo = $("<h6>").text(this.titulo);
+        this.$titulo = $("<" + this.etiquetaTitulo + ">").text(this.titulo);
 
         this.$figura = $("<figure>");
 

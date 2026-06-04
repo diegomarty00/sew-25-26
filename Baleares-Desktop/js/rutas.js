@@ -207,8 +207,6 @@ class Rutas {
         const fotos = hito.find("galeriaFotos > foto");
         const imagenes = [];
 
-        contenedor.attr("aria-label", "Fotografías del hito " + nombreHito);
-
         fotos.each((indice, foto) => {
             const rutaFoto = $(foto).text().trim();
 
@@ -223,6 +221,7 @@ class Rutas {
 
         const galeria = new GaleriaImagenes(contenedor, imagenes, {
             titulo: "Fotografías",
+            etiquetaTitulo: "h6",
             mostrarTexto: false,
             automatico: false,
             conAmpliacion: true
@@ -461,7 +460,7 @@ class CargadorKML {
         this.overlays = [];
 
         this.seccionKML = $("main > section:nth-of-type(3)").first();
-        this.contenedorMapa = $("main > section:nth-of-type(3) > div").get(0);
+        this.contenedorMapa = $("main > section:nth-of-type(3) > input + article").get(0);
         this.inputKML = $("main > section:nth-of-type(3) input").first();
 
         if (this.inputKML.length > 0) {
