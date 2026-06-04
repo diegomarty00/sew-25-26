@@ -206,21 +206,96 @@ class Rutas {
         const nombreHito = hito.find("nombre").first().text().trim();
         const fotos = hito.find("galeriaFotos > foto");
 
-        contenedor.append($("<h6></h6>").text("Fotografías"));
+        const imagenes = [];
 
         fotos.each((indice, foto) => {
             const rutaFoto = $(foto).text().trim();
-            const figure = $("<figure></figure>");
-            const imagen = $("<img>");
 
-            imagen.attr("src", rutaFoto);
-            imagen.attr("alt", "Fotografía del hito " + nombreHito);
-
-            figure.append(imagen);
-            figure.append($("<figcaption></figcaption>").text(nombreHito));
-
-            contenedor.append(figure);
+            if (rutaFoto.length > 0) {
+                imagenes.push({
+                    ruta: rutaFoto,
+                    textoAlternativo: "Fotografía del hito " + nombreHito,
+                    titulo: nombreHito
+                });
+            }
         });
+
+        contenedor.attr("aria-label", "Fotografías del hito " + nombreHito);
+        contenedor.append($("<h6></h6>").text("Fotografías"));
+
+        if (imagenes.length === 0) {
+            contenedor.append($("<p></p>").text("No hay fotografías disponibles para este hito."));
+            return contenedor;
+        }
+
+        let indiceActual = 0;
+
+        const figure = $("<figure></figure>");
+
+        const imagen = $("<img>", {
+            src: imagenes[indiceActual].ruta,
+            alt: imagenes[indiceActual].textoAlternativo,
+            loading: "lazy",
+            decoding: "async"
+        });
+
+        const pie = $("<figcaption></figcaption>", {
+            "aria-live": "polite"
+        });
+
+        const actualizarImagen = () => {
+            const imagenActual = imagenes[indiceActual];
+
+            imagen.attr("src", imagenActual.ruta);
+            imagen.attr("alt", imagenActual.textoAlternativo);
+            pie.text(
+                imagenActual.titulo +
+                ". Imagen " +
+                (indiceActual + 1) +
+                " de " +
+                imagenes.length +
+                "."
+            );
+        };
+
+        const botonAnterior = $("<button></button>", {
+            type: "button",
+            text: "Anterior",
+            "aria-label": "Mostrar fotografía anterior del hito " + nombreHito
+        });
+
+        const botonSiguiente = $("<button></button>", {
+            type: "button",
+            text: "Siguiente",
+            "aria-label": "Mostrar fotografía siguiente del hito " + nombreHito
+        });
+
+        botonAnterior.on("click", () => {
+            indiceActual--;
+
+            if (indiceActual < 0) {
+                indiceActual = imagenes.length - 1;
+            }
+
+            actualizarImagen();
+        });
+
+        botonSiguiente.on("click", () => {
+            indiceActual = (indiceActual + 1) % imagenes.length;
+            actualizarImagen();
+        });
+
+        figure.append(imagen);
+        figure.append(pie);
+
+        contenedor.append(figure);
+
+        if (imagenes.length > 1) {
+            contenedor.append(botonAnterior);
+            contenedor.append(botonSiguiente);
+        }
+
+        actualizarImagen();
 
         return contenedor;
     }

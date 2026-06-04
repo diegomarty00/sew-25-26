@@ -251,3 +251,65 @@ main section[aria-label="Carrusel de imágenes de las Islas Baleares"] button {
   }
 
 }
+
+/*
+  ========================================
+  =====      GALERÍAS DE RUTAS      ======
+  ========================================
+*/
+
+/* Especificidad: 011 */
+section[aria-label^="Fotografías del hito"] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+/* Especificidad: 012 */
+section[aria-label^="Fotografías del hito"] h6 {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+/* Especificidad: 012 */
+section[aria-label^="Fotografías del hito"] figure {
+  flex-basis: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Especificidad: 013 */
+section[aria-label^="Fotografías del hito"] figure img {
+  display: block;
+  width: 100%;
+  height: clamp(12em, 30vw, 20em);
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+/* Especificidad: 013 */
+section[aria-label^="Fotografías del hito"] figure figcaption {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+/* Especificidad: 012 */
+section[aria-label^="Fotografías del hito"] button {
+  flex: 0 1 auto;
+}
+
+@media (min-width: 20em) and (max-width: 49.9375em) {
+  /* Especificidad: 013 */
+  section[aria-label^="Fotografías del hito"] figure img {
+    height: clamp(12em, 65vw, 22em); /* Redefinición permitida por media query para adaptar las fotografías de rutas a pantallas pequeñas */
+  }
+
+  /* Especificidad: 012 */
+  section[aria-label^="Fotografías del hito"] button {
+    flex-basis: 100%; /* Redefinición permitida por media query para mostrar los controles de la galería en vertical en pantallas pequeñas */
+  }
+}

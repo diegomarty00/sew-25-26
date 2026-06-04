@@ -47,7 +47,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">0</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/palma-catedral.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/monumental_palma/catedral.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -63,7 +63,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">120</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/palma-almudaina.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/monumental_palma/palacio_almudaina.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -79,7 +79,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">250</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/palma-parc-mar.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/monumental_palma/parc.jpeg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -95,7 +95,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">650</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/palma-plaza-mayor.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/monumental_palma/plaza_mayor.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -111,7 +111,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">700</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/palma-lonja.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/monumental_palma/lonja.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -164,7 +164,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">3500</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/menorca-sa-mesquida.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/natural_cami_cavalls/sa_mesquida.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -180,7 +180,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">2700</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/menorca-binillauti.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/natural_cami_cavalls/cala_binillauti.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -196,7 +196,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">3200</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/menorca-es-grau.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/natural_cami_cavalls/es_grau.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -213,7 +213,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">1000</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/menorca-albufera.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/natural_cami_cavalls/albufera_es_grau.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -229,7 +229,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">6200</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/menorca-cala-presili.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/natural_cami_cavalls/cala_presili.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -245,7 +245,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">900</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/menorca-favaritx.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/natural_cami_cavalls/far_favaritx.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -261,7 +261,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">1500</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/menorca-cala-tortuga.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/natural_cami_cavalls/cala_tortuga.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -315,7 +315,8 @@
                 </coordenadasHito>
                 <distancia unidad="metros">0</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/ibiza-portal-ses-taules.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/historica_dalt_vila/ses_taules.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/historica_dalt_vila/plaza_vila.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -331,7 +332,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">120</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/ibiza-plaza-vila.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/historica_dalt_vila/plaza_vila.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -346,7 +347,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">260</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/ibiza-baluarte-santa-llucia.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/historica_dalt_vila/baluarte_santa_llucia.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -362,7 +363,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">450</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/ibiza-catedral.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/historica_dalt_vila/catedral_santa_maria.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>
@@ -378,7 +379,7 @@
                 </coordenadasHito>
                 <distancia unidad="metros">500</distancia>
                 <galeriaFotos>
-                    <foto>multimedia/imagenes/rutas/ibiza-baluarte-sant-jaume.jpg</foto>
+                    <foto>multimedia/imagenes/rutas/historica_dalt_vila/baluarte_sant_jaume.jpg</foto>
                 </galeriaFotos>
                 <galeriaVideos />
             </hito>

@@ -40,8 +40,7 @@ p {
 
 /* Especificidad: 002 */
 body a {
-  color: #D8F3DC;
-  /* background-color heredado de body: #003B5C. Contraste AAA 9.98 */
+  color: #D8F3DC; /* background-color heredado de body: #003B5C. Contraste AAA 9.98 */
 }
 
 /* Especificidad: 002 */
@@ -72,40 +71,35 @@ h1 {
 
 /* Especificidad: 001 */
 h2 {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
   font-size: 1.6rem;
   line-height: 1.25;
 }
 
 /* Especificidad: 001 */
 h3 {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
   font-size: 1.35rem;
   line-height: 1.3;
 }
 
 /* Especificidad: 001 */
 h4 {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
   font-size: 1.15rem;
   line-height: 1.35;
 }
 
 /* Especificidad: 001 */
 h5 {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
   font-size: 1rem;
   line-height: 1.4;
 }
 
 /* Especificidad: 001 */
 h6 {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
   font-size: 0.9rem;
   line-height: 1.4;
 }
@@ -176,8 +170,7 @@ button:hover a {
 
 /* Especificidad: 001 */
 dt {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
 }
 
 /* Especificidad: 001 */
@@ -200,8 +193,7 @@ footer p {
 
 /* Especificidad: 002 */
 footer a {
-  color: #D8F3DC;
-  /* background-color heredado de footer: #003B5C. Contraste AAA 9.98 */
+  color: #D8F3DC; /* background-color heredado de footer: #003B5C. Contraste AAA 9.98 */
   font-weight: bold;
 }
 
@@ -225,50 +217,47 @@ main section:nth-of-type(3) article ul li {
 
 /* Especificidad: 016 */
 main section:nth-of-type(3) article ul li dt {
-  color: #F4E3B2;
-  /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+  color: #F4E3B2; /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
   font-weight: bold;
 }
 
 /* Especificidad: 016 */
 main section:nth-of-type(3) article ul li dd {
   margin: 0 0 0.5em 0;
-  color: #FFFFFF;
-  /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+  color: #FFFFFF; /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+  
 }
 
 /* Especificidad: 015 */
 main section:nth-of-type(2) article dl dt {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
   font-weight: bold;
 }
 
 /* Especificidad: 015 */
 main section:nth-of-type(2) article dl dd {
   margin: 0;
-  color: #FFFFFF;
-  /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+  color: #FFFFFF; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
 }
 
 /*
   ========================================
-  =====          CARRUSEL           ======
+  =====            FOTOS            ======
   ========================================
 */
 
 /* Especificidad: 014 */
-main section[aria-label="Carrusel de imágenes de las Islas Baleares"] figure img {
+section figure img {
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
   background-color: #003B5C;
-  color: #FFFFFF;
-  /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
+  color: #FFFFFF; /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
 }
 
 /* Especificidad: 014 */
-main section[aria-label="Carrusel de imágenes de las Islas Baleares"] figure figcaption {
-  color: #F4E3B2;
-  /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+section figure figcaption {
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
   font-weight: bold;
+  font-size: 0.9rem;
 }
+
