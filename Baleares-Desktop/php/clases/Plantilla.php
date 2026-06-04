@@ -30,13 +30,7 @@ class Plantilla
         echo '<a href="../rutas.html" accesskey="r">Rutas</a>';
         echo '<a href="../meteorologia.html" accesskey="m">Meteorología</a>';
         echo '<a href="../juego.html" accesskey="j">Juego</a>';
-
-        if ($paginaActiva === "reservas") {
-            echo '<a href="reservas.php" class="active" aria-current="page" accesskey="v">Reservas</a>';
-        } else {
-            echo '<a href="reservas.php" accesskey="v">Reservas</a>';
-        }
-
+        echo '<a href="reservas.php" class="active" accesskey="v">Reservas</a>';
         echo '<a href="../ayuda.html" accesskey="a">Ayuda</a>';
         echo '</nav>';
 
