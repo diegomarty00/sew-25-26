@@ -130,6 +130,72 @@ main section:nth-of-type(3) article ul li h4 {
 }
 
 
+
+/*
+  ========================================
+  =====          CARRUSEL           ======
+  ========================================
+*/
+
+/* Especificidad: 012 */
+main section[aria-label="Carrusel de imágenes de las Islas Baleares"] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 2em 0;
+}
+
+/* Especificidad: 013 */
+main section[aria-label="Carrusel de imágenes de las Islas Baleares"] h2 {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+/* Especificidad: 013 */
+main section[aria-label="Carrusel de imágenes de las Islas Baleares"] figure {
+  flex-basis: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Especificidad: 014 */
+main section[aria-label="Carrusel de imágenes de las Islas Baleares"] figure img {
+  display: block;
+  width: 100%;
+  height: clamp(16em, 48vw, 34em);
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+/* Especificidad: 014 */
+main section[aria-label="Carrusel de imágenes de las Islas Baleares"] figure figcaption {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+/* Especificidad: 013 */
+main section[aria-label="Carrusel de imágenes de las Islas Baleares"] button {
+  flex: 0 1 auto;
+}
+
+@media (min-width: 20em) and (max-width: 49.9375em) {
+  /* Especificidad: 014 */
+  main section[aria-label="Carrusel de imágenes de las Islas Baleares"] figure img {
+    height: clamp(14em, 65vw, 24em); /* Redefinición permitida por media query para adaptar la altura del carrusel a pantallas pequeñas */
+  }
+
+  /* Especificidad: 013 */
+  main section[aria-label="Carrusel de imágenes de las Islas Baleares"] button {
+    flex-basis: 100%; /* Redefinición permitida por media query para mostrar los controles del carrusel en vertical en pantallas pequeñas */
+  }
+}
+
+
 /* 
   ========================================
   =====     ADAPTABILIDAD MOVIL     ======

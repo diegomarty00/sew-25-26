@@ -8,32 +8,32 @@ class Carrusel {
 
         this.imagenes = [
             {
-                ruta: "multimedia/imagenes/Fondo.png",
+                ruta: "multimedia/imagenes/mapa.jpg",
                 textoAlternativo: "Mapa de situación de las Islas Baleares en el mar Mediterráneo",
                 titulo: "Mapa de situación de las Islas Baleares"
             },
             {
-                ruta: "multimedia/imagenes/Fondo.jpg",
+                ruta: "multimedia/imagenes/vista_mallorca.jpg",
                 textoAlternativo: "Vista turística de Mallorca con costa mediterránea",
                 titulo: "Mallorca"
             },
             {
-                ruta: "multimedia/imagenes/Fondo.jpg",
+                ruta: "multimedia/imagenes/vista_menorca.jpg",
                 textoAlternativo: "Paisaje natural de Menorca con una cala de aguas claras",
                 titulo: "Menorca"
             },
             {
-                ruta: "multimedia/imagenes/Fondo.jpg",
+                ruta: "multimedia/imagenes/vista_ibiza.jpg",
                 textoAlternativo: "Paisaje turístico de Ibiza junto al mar",
                 titulo: "Ibiza"
             },
             {
-                ruta: "multimedia/imagenes/Fondo.jpg",
+                ruta: "multimedia/imagenes/vista_formentera.jpg",
                 textoAlternativo: "Playa de Formentera con arena clara y agua turquesa",
                 titulo: "Formentera"
             },
             {
-                ruta: "multimedia/imagenes/Fondo.jpg",
+                ruta: "multimedia/imagenes/vista_palma.jpg",
                 textoAlternativo: "Vista de Palma, capital de las Islas Baleares",
                 titulo: "Palma"
             }
@@ -47,7 +47,11 @@ class Carrusel {
     }
 
     crearEstructura() {
-        this.$titulo = $("<h2>").text("Recursos turísticos de las Islas Baleares");
+        this.$titulo = $("<h2>").text("Descubre las Islas Baleares");
+
+        this.$texto = $("<p>").text("Las Islas Baleares son un destino turístico del" +
+            " Mediterráneo formado por Mallorca, Menorca, Ibiza y Formentera. Destacan" +
+            " por sus playas, paisajes naturales, patrimonio histórico, gastronomía y rutas turísticas.");
 
         this.$figura = $("<figure>");
         this.$imagen = $("<img>", {
@@ -85,6 +89,7 @@ class Carrusel {
         this.$contenedor.empty();
         this.$contenedor.append(
             this.$titulo,
+            this.$texto,
             this.$figura,
             this.$botonAnterior,
             this.$botonSiguiente,
