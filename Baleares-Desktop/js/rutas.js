@@ -205,8 +205,9 @@ class Rutas {
         const contenedor = $("<section></section>");
         const nombreHito = hito.find("nombre").first().text().trim();
         const fotos = hito.find("galeriaFotos > foto");
-
         const imagenes = [];
+
+        contenedor.attr("aria-label", "Fotografías del hito " + nombreHito);
 
         fotos.each((indice, foto) => {
             const rutaFoto = $(foto).text().trim();
@@ -220,82 +221,14 @@ class Rutas {
             }
         });
 
-        contenedor.attr("aria-label", "Fotografías del hito " + nombreHito);
-        contenedor.append($("<h6></h6>").text("Fotografías"));
-
-        if (imagenes.length === 0) {
-            contenedor.append($("<p></p>").text("No hay fotografías disponibles para este hito."));
-            return contenedor;
-        }
-
-        let indiceActual = 0;
-
-        const figure = $("<figure></figure>");
-
-        const imagen = $("<img>", {
-            src: imagenes[indiceActual].ruta,
-            alt: imagenes[indiceActual].textoAlternativo,
-            loading: "lazy",
-            decoding: "async"
+        const galeria = new GaleriaImagenes(contenedor, imagenes, {
+            titulo: "Fotografías",
+            mostrarTexto: false,
+            automatico: false,
+            conAmpliacion: true
         });
 
-        const pie = $("<figcaption></figcaption>", {
-            "aria-live": "polite"
-        });
-
-        const actualizarImagen = () => {
-            const imagenActual = imagenes[indiceActual];
-
-            imagen.attr("src", imagenActual.ruta);
-            imagen.attr("alt", imagenActual.textoAlternativo);
-            pie.text(
-                imagenActual.titulo +
-                ". Imagen " +
-                (indiceActual + 1) +
-                " de " +
-                imagenes.length +
-                "."
-            );
-        };
-
-        const botonAnterior = $("<button></button>", {
-            type: "button",
-            text: "Anterior",
-            "aria-label": "Mostrar fotografía anterior del hito " + nombreHito
-        });
-
-        const botonSiguiente = $("<button></button>", {
-            type: "button",
-            text: "Siguiente",
-            "aria-label": "Mostrar fotografía siguiente del hito " + nombreHito
-        });
-
-        botonAnterior.on("click", () => {
-            indiceActual--;
-
-            if (indiceActual < 0) {
-                indiceActual = imagenes.length - 1;
-            }
-
-            actualizarImagen();
-        });
-
-        botonSiguiente.on("click", () => {
-            indiceActual = (indiceActual + 1) % imagenes.length;
-            actualizarImagen();
-        });
-
-        figure.append(imagen);
-        figure.append(pie);
-
-        contenedor.append(figure);
-
-        if (imagenes.length > 1) {
-            contenedor.append(botonAnterior);
-            contenedor.append(botonSiguiente);
-        }
-
-        actualizarImagen();
+        galeria.iniciar();
 
         return contenedor;
     }
@@ -700,6 +633,7 @@ function initMap() {
 }
 
 $(document).ready(function () {
+    window.visorImagenes = new VisorImagenes();
     window.rutas = new Rutas();
     window.cargadorSVG = new CargadorSVG();
     window.cargadorKML = new CargadorKML();

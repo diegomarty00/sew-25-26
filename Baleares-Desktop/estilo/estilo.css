@@ -261,3 +261,36 @@ section figure figcaption {
   font-size: 0.9rem;
 }
 
+
+/*
+  ========================================
+  =====      VISOR DE IMÁGENES      ======
+  ========================================
+*/
+
+/* Especificidad: 011 */
+dialog[aria-label="Visor de imágenes"] {
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.4em;
+  background-color: #003B5C;
+  color: #FFFFFF;
+}
+
+/* Especificidad: 012 */
+dialog::backdrop {
+  background-color: #000000;
+}
+
+/* Especificidad: 013 */
+dialog figure img {
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.4em;
+  background-color: #003B5C;
+  color: #FFFFFF; /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
+}
+
+/* Especificidad: 013 */
+dialog figure figcaption {
+  color: #F4E3B2; /* background-color heredado de dialog: #003B5C. Contraste AAA correcto */
+  font-weight: bold;
+}

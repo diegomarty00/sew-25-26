@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/layout.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCrbYGj55x3xpStJ_qDNQu9SLTiaHDbto&callback=initMap"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/galeria.js"></script>
     <script src="js/rutas.js"></script>
 </head>
 
@@ -74,15 +75,6 @@
 
             <div></div>
         </section>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                rutas = new Rutas();
-                cargadorSVG = new CargadorSVG();
-                cargadorKML = new CargadorKML();
-                cargadorKML.inicializarMapa();
-            });
-        </script>
     </main>
 
     <footer>
