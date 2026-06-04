@@ -351,3 +351,34 @@ dialog button {
 }
 
 
+/*
+  ========================================
+  =====       RUTAS ADAPTABLES      ======
+  ========================================
+*/
+
+/* Especificidad: 013 */
+main article {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Especificidad: 014 */
+main article li {
+  min-width: 0;
+}
+
+/* Especificidad: 014 */
+main article a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Especificidad: 013 */
+main svg {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
