@@ -23,7 +23,7 @@ class PaginaLogout {
         echo '<section>';
         echo '<h2>Sesión cerrada</h2>';
         echo '<p>La sesión se ha cerrado correctamente.</p>';
-        echo '<p><a href="reservas.php">Volver a la central de reservas</a></p>';
+        $this->plantilla->mostrarEnlaceAccion("reservas.php", "Volver a la central de reservas");
         echo '</section>';
         echo '</main>';
 

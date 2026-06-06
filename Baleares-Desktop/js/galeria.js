@@ -6,19 +6,17 @@ class VisorImagenes {
             "aria-label": "Visor de imágenes"
         });
 
-        this.$figura = $("<figure>");
-        this.$imagen = $("<img>", {
-            src: "",
-            alt: ""
+        this.$contenido = $("<div>", {
+            "data-contenido": "visor-imagenes"
         });
-
-        this.$pie = $("<figcaption>");
 
         this.$botonCerrar = $("<button>", {
             type: "button",
             text: "Cerrar imagen",
             "aria-label": "Cerrar imagen ampliada"
         });
+
+        this.elementoAnterior = null;
 
         this.$botonCerrar.on("click", () => this.cerrar());
 
@@ -28,19 +26,29 @@ class VisorImagenes {
             }
         });
 
-        this.$figura.append(this.$imagen);
-        this.$figura.append(this.$pie);
-
-        this.$dialogo.append(this.$figura);
+        this.$dialogo.append(this.$contenido);
         this.$dialogo.append(this.$botonCerrar);
 
         $("body").append(this.$dialogo);
     }
 
     abrir(imagen) {
-        this.$imagen.attr("src", imagen.ruta);
-        this.$imagen.attr("alt", imagen.textoAlternativo);
-        this.$pie.text(imagen.titulo);
+        this.elementoAnterior = document.activeElement;
+
+        const $figura = $("<figure>");
+
+        const $imagen = $("<img>", {
+            src: imagen.ruta,
+            alt: imagen.textoAlternativo
+        });
+
+        const $pie = $("<figcaption>").text(imagen.titulo);
+
+        $figura.append($imagen);
+        $figura.append($pie);
+
+        this.$contenido.empty();
+        this.$contenido.append($figura);
 
         const dialogo = this.$dialogo.get(0);
 
@@ -60,6 +68,12 @@ class VisorImagenes {
             dialogo.close();
         } else {
             this.$dialogo.removeAttr("open");
+        }
+
+        this.$contenido.empty();
+
+        if (this.elementoAnterior && typeof this.elementoAnterior.focus === "function") {
+            this.elementoAnterior.focus();
         }
     }
 }

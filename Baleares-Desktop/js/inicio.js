@@ -9,7 +9,7 @@ class Inicio {
 
     iniciar() {
         this.carrusel.iniciar();
-        //this.noticias.buscar();
+        this.noticias.buscar();
     }
 }
 

@@ -553,9 +553,17 @@ class CargadorKML {
             url: rutaKML,
             method: "GET",
             dataType: "text",
-            success: (contenido) => this.insertarKMLDesdeTexto(contenido),
+            success: (contenido) => {this.insertarKMLDesdeTexto(contenido);},
             error: () => this.mostrarMensaje("No se pudo cargar el archivo KML: " + rutaKML)
         });
+    }
+
+    actualizarTituloMapa(texto) {
+        const titulo = $("main > section:nth-of-type(3) > input + article h3").first();
+
+        if (titulo.length > 0) {
+            titulo.text(texto);
+        }
     }
 
     insertarKMLDesdeTexto(contenido) {
