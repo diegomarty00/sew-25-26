@@ -148,12 +148,13 @@ header nav a.active {
 button,
 a[data-accion="reservas"] {
   cursor: pointer;
-  margin: 0.5em;
   border: 0.15em solid #003B5C;
   border-radius: 0.3em;
   background-color: #F4E3B2;
   padding: 0.5em 1em;
   color: #003B5C;
+  font-size: 1rem;
+  line-height: 2.3em;
 }
 
 /* Especificidad: 011 y 021 */
@@ -320,8 +321,7 @@ main section:nth-of-type(3) article ul li dt {
 /* Especificidad: 016 */
 main section:nth-of-type(3) article ul li dd {
   margin: 0 0 0.5em 0;
-  color: #FFFFFF;
-  /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+  color: #FFFFFF; /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
 }
 
 /* Especificidad: 015 */
@@ -415,15 +415,10 @@ dialog figure img {
 }
 
 /* Especificidad: 013 */
-figcaption {
-  color: #F4E3B2;
-  /* background-color heredado de dialog: #003B5C. Contraste AAA correcto */
+section figure figcaption {
+  color: #F4E3B2; /* background-color heredado de dialog: #003B5C. Contraste AAA correcto */
   font-weight: bold;
   font-size: 0.9rem;
-}
-
-section figure figcaption {
-  color: #003B5C; /* background-color heredado de dialog: #F4E3B2. Contraste AAA correcto */
 }
 
 
@@ -457,17 +452,7 @@ main form+section h3 {
 */
 
 /* Especificidad: 014 */
-main>section:first-of-type>article>article {
-  border: 0.2em solid #F4E3B2;
-  border-radius: 0.5em;
-  background-color: #003B5C;
-  color: #FFFFFF;
-  margin: 1.5em 0;
-  padding: 1em;
-}
-
-/* Especificidad: 025 */
-main>section:first-of-type>article>section:nth-of-type(2)>article {
+main > section:first-of-type > article > article {
   border: 0.2em solid #F4E3B2;
   border-radius: 0.5em;
   background-color: #003B5C;
@@ -477,36 +462,17 @@ main>section:first-of-type>article>section:nth-of-type(2)>article {
 }
 
 /* Especificidad: 015 */
-main>section:first-of-type>article>article>h4 {
+main > section:first-of-type > article > article > h4 {
   border-bottom: 0.12em solid #F4E3B2;
   background-color: #8F3A2F;
   color: #FFFFFF;
-  /* Contraste AAA con background-color #8F3A2F */
   padding: 0.6em;
   font-weight: bold;
-}
-
-/* Especificidad: 026 */
-main>section:first-of-type>article>section:nth-of-type(2)>article>h4 {
-  border-bottom: 0.12em solid #F4E3B2;
-  background-color: #8F3A2F;
-  color: #FFFFFF;
-  /* Contraste AAA con background-color #8F3A2F */
-  padding: 0.6em;
-  font-weight: bold;
+  text-align: center;
 }
 
 /* Especificidad: 015 */
-main>section:first-of-type>article>article>p {
-  border-left: 0.3em solid #D8F3DC;
-  background-color: #003B5C;
-  color: #FFFFFF;
-  margin: 1em 0;
-  padding: 0.8em 1em;
-}
-
-/* Especificidad: 026 */
-main>section:first-of-type>article>section:nth-of-type(2)>article>p {
+main > section:first-of-type > article > article > p {
   border-left: 0.3em solid #D8F3DC;
   background-color: #003B5C;
   color: #FFFFFF;
@@ -515,51 +481,28 @@ main>section:first-of-type>article>section:nth-of-type(2)>article>p {
 }
 
 /* Especificidad: 015 */
-main>section:first-of-type>article>article>ul {
+main > section:first-of-type > article > article > ul {
   border: 0.15em solid #D8F3DC;
   border-radius: 0.4em;
   background-color: #D8F3DC;
   color: #003B5C;
-  /* Contraste AAA con background-color #D8F3DC */
-  padding: 1em 1em 1em 2em;
-}
-
-/* Especificidad: 026 */
-main>section:first-of-type>article>section:nth-of-type(2)>article>ul {
-  border: 0.15em solid #D8F3DC;
-  border-radius: 0.4em;
-  background-color: #D8F3DC;
-  color: #003B5C;
-  /* Contraste AAA con background-color #D8F3DC */
   padding: 1em 1em 1em 2em;
 }
 
 /* Especificidad: 016 */
-main>section:first-of-type>article>article>ul li {
+main > section:first-of-type > article > article > ul > li {
   margin: 0.4em 0;
   color: #003B5C;
-  /* background-color heredado de ul: #D8F3DC. Contraste AAA */
 }
 
-/* Especificidad: 027 */
-main>section:first-of-type>article>section:nth-of-type(2)>article>ul li {
-  margin: 0.4em 0;
+/* Especificidad: 017 */
+main > section:first-of-type > article > article > ul > li strong {
   color: #003B5C;
-  /* background-color heredado de ul: #D8F3DC. Contraste AAA */
+  font-weight: bold;
 }
 
 /* Especificidad: 015 */
-main>section:first-of-type>article>article article {
-  border: 0.15em solid #F4E3B2;
-  border-radius: 0.4em;
-  background-color: #003B5C;
-  color: #FFFFFF;
-  margin: 1em 0;
-  padding: 1em;
-}
-
-/* Especificidad: 026 */
-main>section:first-of-type>article>section:nth-of-type(2)>article article {
+main > section:first-of-type > article > article article {
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
   background-color: #003B5C;
@@ -569,63 +512,90 @@ main>section:first-of-type>article>section:nth-of-type(2)>article article {
 }
 
 /* Especificidad: 016 */
-main>section:first-of-type>article>article article h5 {
+main > section:first-of-type > article > article article h5 {
   color: #F4E3B2;
-  /* background-color heredado de article: #003B5C. Contraste AAA */
-  font-weight: bold;
-}
-
-/* Especificidad: 027 */
-main>section:first-of-type>article>section:nth-of-type(2)>article article h5 {
-  color: #F4E3B2;
-  /* background-color heredado de article: #003B5C. Contraste AAA */
   font-weight: bold;
 }
 
 /* Especificidad: 016 */
-main>section:first-of-type>article>article article h6 {
+main > section:first-of-type > article > article article h6 {
+  background-color: #F4E3B2;
   color: #003B5C;
-  /* background-color heredado de article: #F4E3B2. Contraste AAA */
-  font-weight: bold;
-}
-
-/* Especificidad: 027 */
-main>section:first-of-type>article>section:nth-of-type(2)>article article h6 {
-  color: #003B5C;
-  /* background-color heredado de article: #F4E3B2. Contraste AAA */
+  padding: 0.4em;
   font-weight: bold;
 }
 
 /* Especificidad: 016 */
-main>section:first-of-type>article>article article ol {
+main > section:first-of-type > article > article article ol {
   background-color: #F4E3B2;
   color: #003B5C;
-  /* Contraste AAA con background-color #F4E3B2 */
-  border-radius: 0.4em;
-  padding: 1em 1em 1em 2em;
-}
-
-/* Especificidad: 027 */
-main>section:first-of-type>article>section:nth-of-type(2)>article article ol {
-  background-color: #F4E3B2;
-  color: #003B5C;
-  /* Contraste AAA con background-color #F4E3B2 */
   border-radius: 0.4em;
   padding: 1em 1em 1em 2em;
 }
 
 /* Especificidad: 017 */
-main>section:first-of-type>article>article article ol li {
+main > section:first-of-type > article > article article ol li {
   color: #003B5C;
-  /* background-color heredado de ol: #F4E3B2. Contraste AAA */
 }
 
-/* Especificidad: 028 */
-main>section:first-of-type>article>section:nth-of-type(2)>article article ol li {
+/* Especificidad: 018 */
+main > section:first-of-type > article > article article ol li strong {
   color: #003B5C;
-  /* background-color heredado de ol: #F4E3B2. Contraste AAA */
+  font-weight: bold;
 }
 
+/* Especificidad: 017 */
+main > section:first-of-type > article > article article ul {
+  background-color: #D8F3DC;
+  color: #003B5C;
+  border-radius: 0.4em;
+  padding: 1em 1em 1em 2em;
+  border: #003B5C 0.15em solid;
+}
+
+/* Especificidad: 018 */
+main > section:first-of-type > article > article article ul li {
+  color: #003B5C;
+}
+
+/* Especificidad: 019 */
+main > section:first-of-type > article > article article ul li strong {
+  color: #003B5C;
+  font-weight: bold;
+}
+
+/* Especificidad: 016 */
+main > section:first-of-type > article > article article ul li a {
+  color: #003B5C;
+  background-color: #D8F3DC;
+  font-weight: bold;
+  text-decoration: underline;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Especificidad: 026 */
+main > section:first-of-type > article > article article ul li a:visited {
+  color: #003B5C;
+  background-color: #D8F3DC;
+}
+
+/* Especificidad: 026 */
+main > section:first-of-type > article > article article ul li a:focus,
+main > section:first-of-type > article > article article ul li a:hover {
+  outline: 0.2em solid #003B5C;
+  outline-offset: 0.15em;
+  background-color: #F4E3B2;
+  color: #003B5C;
+}
+
+/* Especificidad: 029 */
+main > section:first-of-type > article article ol > li > section:first-of-type figure figcaption {
+  background-color: #F4E3B2;
+  color: #003B5C;
+  padding: 0.4em;
+  font-weight: bold;
+}
 
 /*
   ========================================

@@ -100,14 +100,13 @@ class Rutas {
         });
 
         this.crearSelectorRutas(this.rutasCargadas);
-        this.detalleRuta = $("<section>").attr("aria-live", "polite");
-        this.contenedor.append(this.detalleRuta);
 
         this.mostrarRutaSeleccionada(0);
     }
 
     crearSelectorRutas(rutas) {
-        const contenedorSelector = $("<section>");
+        const parrafoSelector = $("<p>");
+
         const etiqueta = $("<label>")
             .attr("for", "selectorRutas")
             .text("Selecciona una ruta turística: ");
@@ -118,6 +117,7 @@ class Rutas {
 
         rutas.forEach((ruta, indice) => {
             const nombreRuta = ruta.attr("nombre") || "Ruta " + (indice + 1);
+
             const opcion = $("<option>")
                 .attr("value", String(indice))
                 .text(nombreRuta);
@@ -130,10 +130,10 @@ class Rutas {
             this.mostrarRutaSeleccionada(indiceSeleccionado);
         });
 
-        contenedorSelector.append(etiqueta);
-        contenedorSelector.append(selector);
+        parrafoSelector.append(etiqueta);
+        parrafoSelector.append(selector);
 
-        this.contenedor.append(contenedorSelector);
+        this.contenedor.append(parrafoSelector);
     }
 
     mostrarRutaSeleccionada(indice) {
@@ -141,8 +141,12 @@ class Rutas {
             return;
         }
 
-        this.detalleRuta.empty();
-        this.detalleRuta.append(this.escribirRuta(this.rutasCargadas[indice]));
+        this.contenedor.children("article").remove();
+
+        const rutaSeleccionada = this.escribirRuta(this.rutasCargadas[indice]);
+        rutaSeleccionada.attr("aria-live", "polite");
+
+        this.contenedor.append(rutaSeleccionada);
     }
 
     escribirRuta(ruta) {
@@ -284,7 +288,7 @@ class Rutas {
         const videos = hito.find("galeriaVideos > video");
 
         if (videos.length === 0) {
-            return contenedor;
+            return;
         }
 
         contenedor.append($("<h6></h6>").text("Vídeos"));

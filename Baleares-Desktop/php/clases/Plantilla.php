@@ -93,7 +93,7 @@ class Plantilla
 
     public function mostrarEnlaceAccion(string $href, string $texto): void
     {
-        echo '<p>' . $this->crearEnlaceAccion($href, $texto) . '</p>';
+        echo $this->crearEnlaceAccion($href, $texto);
     }
 
 

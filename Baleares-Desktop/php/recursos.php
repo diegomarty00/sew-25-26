@@ -43,10 +43,14 @@ class PaginaRecursos {
             echo '<dt>Descripción</dt><dd>' . htmlspecialchars($recurso["descripcion"], ENT_QUOTES, "UTF-8") . '</dd>';
             echo '</dl>';
 
-            if ($this->seguridad->usuarioAutenticado()) {
-                $this->plantilla->mostrarEnlaceAccion("reservar.php?id_recurso=" . (int) $recurso["id_recurso"], "Reservar este recurso");
+            if ($recurso["plazas_disponibles"] > 0) {
+                if ($this->seguridad->usuarioAutenticado()) {
+                    $this->plantilla->mostrarEnlaceAccion("reservar.php?id_recurso=" . (int) $recurso["id_recurso"], "Reservar este recurso");
+                } else {
+                    $this->plantilla->mostrarEnlaceAccion("registro.php?id_recurso=" . (int) $recurso["id_recurso"], "Iniciar sesión para reservar este recurso");
+                }
             } else {
-                $this->plantilla->mostrarEnlaceAccion("registro.php?id_recurso=" . (int) $recurso["id_recurso"], "Iniciar sesión para reservar este recurso");
+                echo '<p>No quedan plazas disponibles para este recurso.</p>';
             }
 
             echo '</article>';
