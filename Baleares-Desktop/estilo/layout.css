@@ -298,6 +298,90 @@ main>section:nth-of-type(3)>input+article {
 
 /*
   ========================================
+  =====     MAQUETACIÓN DE RUTAS    ======
+  ========================================
+*/
+
+/* Especificidad: 014 */
+main>section:first-of-type>article>article {
+  box-sizing: border-box;
+
+}
+
+/* Especificidad: 025 */
+main>section:first-of-type>article>section:nth-of-type(2)>article {
+  box-sizing: border-box;
+}
+
+
+/* Especificidad: 015 */
+main>section:first-of-type>article>article>ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  gap: 0.5em 1em;
+}
+
+/* Especificidad: 026 */
+main>section:first-of-type>article>section:nth-of-type(2)>article>ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  gap: 0.5em 1em;
+}
+
+/* Especificidad: 016 */
+main>section:first-of-type>article>article>ul li {
+  box-sizing: border-box;
+}
+
+/* Especificidad: 027 */
+main>section:first-of-type>article>section:nth-of-type(2)>article>ul li {
+  box-sizing: border-box;
+}
+
+/* Especificidad: 015 */
+main>section:first-of-type>article>article article {
+  box-sizing: border-box;
+}
+
+/* Especificidad: 026 */
+main>section:first-of-type>article>section:nth-of-type(2)>article article {
+  box-sizing: border-box;
+}
+
+/* Especificidad: 016 */
+main>section:first-of-type>article>article article ol {
+  box-sizing: border-box;
+}
+
+/* Especificidad: 027 */
+main>section:first-of-type>article>section:nth-of-type(2)>article article ol {
+  box-sizing: border-box;
+}
+
+
+/* Especificidad: 024 */
+main>section:first-of-type>article>section[aria-live="polite"]>article>ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  gap: 0.75em 1em;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 70em;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Especificidad: 025 */
+main>section:first-of-type>article>section[aria-live="polite"]>article>ul>li {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+S
+/*
+  ========================================
   =====     GESTIÓN DE RESERVAS     ======
   ========================================
 */
@@ -329,25 +413,25 @@ section[aria-label="Opciones de gestión de reservas"] nav a {
 
 /* Especificidad: 002 */
 main form {
-    box-sizing: border-box;
-    max-width: 45em;
+  box-sizing: border-box;
+  max-width: 45em;
 }
 
 /* Especificidad: 002 */
 main fieldset {
-    box-sizing: border-box;
-    margin: 1em 0;
+  box-sizing: border-box;
+  margin: 1em 0;
 }
 
 /* Especificidad: 002 */
 main input {
-    box-sizing: border-box;
-    max-width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 /* Especificidad: 002 */
 main button {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* 
@@ -360,65 +444,99 @@ main button {
 
   /* Especificidad: 001 */
   header {
-    display: flex;/* Redefinición permitida por media query para adaptar la cabecera a móvil */
-    flex-direction: column;/* Redefinición permitida por media query para navegación vertical */
-    justify-content: space-between;/* Redefinición permitida por media query */
-    align-items: center;/* Redefinición permitida por media query */
+    display: flex;
+    /* Redefinición permitida por media query para adaptar la cabecera a móvil */
+    flex-direction: column;
+    /* Redefinición permitida por media query para navegación vertical */
+    justify-content: space-between;
+    /* Redefinición permitida por media query */
+    align-items: center;
+    /* Redefinición permitida por media query */
   }
 
   /* Especificidad: 001 */
   nav {
-    display: flex;/* Redefinición permitida por media query para adaptar menús a móvil */
-    flex-direction: column;/* Redefinición permitida por media query para navegación vertical */
-    align-items: center;/* Redefinición permitida por media query */
+    display: flex;
+    /* Redefinición permitida por media query para adaptar menús a móvil */
+    flex-direction: column;
+    /* Redefinición permitida por media query para navegación vertical */
+    align-items: center;
+    /* Redefinición permitida por media query */
   }
 
   /* Especificidad: 002 */
   main article {
-    margin: 0.75rem 0.5rem;/* Redefinición permitida por media query para adaptar artículos a móvil */
-    max-width: 100%;/* Redefinición permitida por media query para evitar desbordamiento */
+    margin: 0.75rem 0.5rem;
+    /* Redefinición permitida por media query para adaptar artículos a móvil */
+    max-width: 100%;
+    /* Redefinición permitida por media query para evitar desbordamiento */
   }
 
   /* Especificidad: 004 */
   main article h2+img {
-    width: 100%;/* Redefinición permitida por media query para adaptar imágenes */
-    max-width: 100%;/* Redefinición permitida por media query para evitar desbordamiento */
-    height: auto;/* Redefinición permitida por media query para mantener proporción */
+    width: 100%;
+    /* Redefinición permitida por media query para adaptar imágenes */
+    max-width: 100%;
+    /* Redefinición permitida por media query para evitar desbordamiento */
+    height: auto;
+    /* Redefinición permitida por media query para mantener proporción */
   }
 
   /* Especificidad: 014 */
   main section:nth-of-type(2) article dl {
-    grid-template-columns: 1fr;/* Redefinición permitida por media query para adaptar la meteorología actual a pantallas pequeñas */
+    grid-template-columns: 1fr;
+    /* Redefinición permitida por media query para adaptar la meteorología actual a pantallas pequeñas */
   }
 
   /* Especificidad: 015 */
   main section:nth-of-type(3) article ul li {
-    flex-basis: 100%;/* Redefinición permitida por media query para mostrar cada día de previsión en una fila en pantallas pequeñas */
+    flex-basis: 100%;
+    /* Redefinición permitida por media query para mostrar cada día de previsión en una fila en pantallas pequeñas */
   }
 
   /* Especificidad: 013 */
   section[data-componente="carrusel"] figure img {
-    height: clamp(14em, 65vw, 24em);/* Redefinición permitida por media query para adaptar la altura del carrusel a pantallas pequeñas */
+    height: clamp(14em, 65vw, 24em);
+    /* Redefinición permitida por media query para adaptar la altura del carrusel a pantallas pequeñas */
   }
 
   /* Especificidad: 012 */
   section[data-componente="carrusel"] button {
-    flex-basis: 100%;/* Redefinición permitida por media query para mostrar los controles del carrusel en vertical en pantallas pequeñas */
+    flex-basis: 100%;
+    /* Redefinición permitida por media query para mostrar los controles del carrusel en vertical en pantallas pequeñas */
   }
 
   /* Especificidad: 029 */
   main>section:first-of-type>article article ol>li>section:first-of-type figure img {
-    height: clamp(12em, 65vw, 22em);/* Redefinición permitida por media query para adaptar las fotografías de rutas a pantallas pequeñas */
+    height: clamp(12em, 65vw, 22em);
+    /* Redefinición permitida por media query para adaptar las fotografías de rutas a pantallas pequeñas */
   }
 
   /* Especificidad: 028 */
   main>section:first-of-type>article article ol>li>section:first-of-type button {
-    flex-basis: 100%;/* Redefinición permitida por media query para mostrar los controles de la galería en vertical en pantallas pequeñas */
+    flex-basis: 100%;
+    /* Redefinición permitida por media query para mostrar los controles de la galería en vertical en pantallas pequeñas */
   }
 
   /* Especificidad: 012 */
   section[aria-label="Opciones de gestión de reservas"] nav {
-    flex-direction: column;/* Redefinición permitida por media query para adaptar el menú de reservas a pantallas pequeñas */
-    align-items: flex-start;/* Redefinición permitida por media query para mejorar la lectura en móvil */
+    flex-direction: column;
+    /* Redefinición permitida por media query para adaptar el menú de reservas a pantallas pequeñas */
+    align-items: flex-start;
+    /* Redefinición permitida por media query para mejorar la lectura en móvil */
   }
+
+
+  /* Especificidad: 015 */
+  main>section:first-of-type>article>article>ul {
+    grid-template-columns: 1fr;
+    /* Redefinición permitida por media query para mostrar los datos de la ruta en una sola columna en móvil */
+  }
+
+  /* Especificidad: 026 */
+  main>section:first-of-type>article>section:nth-of-type(2)>article>ul {
+    grid-template-columns: 1fr;
+    /* Redefinición permitida por media query para mostrar los datos de la ruta seleccionada en una sola columna en móvil */
+  }
+
 }

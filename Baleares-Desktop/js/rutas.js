@@ -159,22 +159,26 @@ class Rutas {
         return articleRuta;
     }
 
+
+    crearElementoDato(etiqueta, valor) {
+        return $("<li></li>")
+            .append($("<strong></strong>").text(etiqueta + ": "))
+            .append(document.createTextNode(valor));
+    }
+
+
     crearDatosGenerales(ruta) {
         const lista = $("<ul></ul>");
         const duracion = ruta.find("duracion").first();
 
-        lista.append($("<li></li>").text("Tipo: " + this.obtenerTexto(ruta, "tipo")));
-        lista.append($("<li></li>").text("Medio de transporte: " + this.obtenerTexto(ruta, "transporte")));
-        lista.append($("<li></li>").text("Fecha de inicio: " + this.obtenerTexto(ruta, "fechaInicio")));
-        lista.append($("<li></li>").text("Hora de inicio: " + this.obtenerTexto(ruta, "horaInicio")));
-        lista.append(
-            $("<li></li>").text(
-                "Duración: " + duracion.text().trim() + " " + duracion.attr("unidad")
-            )
-        );
-        lista.append($("<li></li>").text("Agencia: " + this.obtenerTexto(ruta, "agencia")));
-        lista.append($("<li></li>").text("Personas adecuadas: " + this.obtenerTexto(ruta, "personasAdecuadas")));
-        lista.append($("<li></li>").text("Recomendación: " + this.obtenerTexto(ruta, "recomendacion") + "/10"));
+        lista.append(this.crearElementoDato("Tipo", this.obtenerTexto(ruta, "tipo")));
+        lista.append(this.crearElementoDato("Medio de transporte", this.obtenerTexto(ruta, "transporte")));
+        lista.append(this.crearElementoDato("Fecha de inicio", this.obtenerTexto(ruta, "fechaInicio")));
+        lista.append(this.crearElementoDato("Hora de inicio", this.obtenerTexto(ruta, "horaInicio")));
+        lista.append(this.crearElementoDato("Duración", duracion.text().trim() + " " + duracion.attr("unidad")));
+        lista.append(this.crearElementoDato("Agencia", this.obtenerTexto(ruta, "agencia")));
+        lista.append(this.crearElementoDato("Personas adecuadas", this.obtenerTexto(ruta, "personasAdecuadas")));
+        lista.append(this.crearElementoDato("Recomendación", this.obtenerTexto(ruta, "recomendacion") + "/10"));
 
         return lista;
     }
@@ -186,14 +190,14 @@ class Rutas {
 
         articleInicio.append($("<h5></h5>").text("Inicio de la ruta"));
 
-        lista.append($("<li></li>").text("Lugar: " + inicio.find("lugar").first().text().trim()));
-        lista.append($("<li></li>").text("Dirección: " + inicio.find("direccion").first().text().trim()));
+        lista.append(this.crearElementoDato("Lugar", inicio.find("lugar").first().text().trim()));
+        lista.append(this.crearElementoDato("Dirección", inicio.find("direccion").first().text().trim()));
 
         const coordenadas = inicio.find("coordenadasInicio").first();
 
-        lista.append($("<li></li>").text("Longitud: " + this.obtenerCoordenada(coordenadas, "longitud") + " grados"));
-        lista.append($("<li></li>").text("Latitud: " + this.obtenerCoordenada(coordenadas, "latitud") + " grados"));
-        lista.append($("<li></li>").text("Altitud: " + this.obtenerCoordenada(coordenadas, "altitud") + " metros"));
+        lista.append(this.crearElementoDato("Longitud", this.obtenerCoordenada(coordenadas, "longitud") + " grados"));
+        lista.append(this.crearElementoDato("Latitud", this.obtenerCoordenada(coordenadas, "latitud") + " grados"));
+        lista.append(this.crearElementoDato("Altitud", this.obtenerCoordenada(coordenadas, "altitud") + " metros"));
 
         articleInicio.append(lista);
 
@@ -231,17 +235,15 @@ class Rutas {
         const coordenadas = hito.find("coordenadasHito").first();
 
         lista.append(
-            $("<li></li>").text(
-                "Distancia desde el hito anterior: " +
-                distancia.text().trim() +
-                " " +
-                distancia.attr("unidad")
+            this.crearElementoDato(
+                "Distancia desde el hito anterior",
+                distancia.text().trim() + " " + distancia.attr("unidad")
             )
         );
 
-        lista.append($("<li></li>").text("Longitud: " + this.obtenerCoordenada(coordenadas, "longitud") + " grados"));
-        lista.append($("<li></li>").text("Latitud: " + this.obtenerCoordenada(coordenadas, "latitud") + " grados"));
-        lista.append($("<li></li>").text("Altitud: " + this.obtenerCoordenada(coordenadas, "altitud") + " metros"));
+        lista.append(this.crearElementoDato("Longitud", this.obtenerCoordenada(coordenadas, "longitud") + " grados"));
+        lista.append(this.crearElementoDato("Latitud", this.obtenerCoordenada(coordenadas, "latitud") + " grados"));
+        lista.append(this.crearElementoDato("Altitud", this.obtenerCoordenada(coordenadas, "altitud") + " metros"));
 
         return lista;
     }
@@ -553,7 +555,7 @@ class CargadorKML {
             url: rutaKML,
             method: "GET",
             dataType: "text",
-            success: (contenido) => {this.insertarKMLDesdeTexto(contenido);},
+            success: (contenido) => { this.insertarKMLDesdeTexto(contenido); },
             error: () => this.mostrarMensaje("No se pudo cargar el archivo KML: " + rutaKML)
         });
     }

@@ -71,7 +71,7 @@ class PaginaLogin
         echo '<h2>Iniciar sesión</h2>';
 
         if ($this->mensaje !== "") {
-            echo '<p>' . htmlspecialchars($this->mensaje, ENT_QUOTES, "UTF-8") . '</p>';
+            echo '<p data-estado="error" role="alert">' . htmlspecialchars($this->mensaje, ENT_QUOTES, "UTF-8") . '</p>';
         }
 
         echo '<form method="post" action="login.php' . $this->crearParametroRecurso($idRecurso) . '">';

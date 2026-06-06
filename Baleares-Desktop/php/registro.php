@@ -88,7 +88,7 @@ class PaginaRegistro
         echo '<h2>Registro de usuarios</h2>';
 
         if ($this->mensaje !== "") {
-            echo '<p>' . htmlspecialchars($this->mensaje, ENT_QUOTES, "UTF-8") . '</p>';
+            echo '<p data-estado="error" role="alert">' . htmlspecialchars($this->mensaje, ENT_QUOTES, "UTF-8") . '</p>';
         }
 
         echo '<form action="registro.php' . $this->crearParametroRecurso($idRecurso) . '" method="post">';

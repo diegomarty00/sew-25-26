@@ -68,10 +68,10 @@ class Juego {
             {
                 texto: "En la ruta histórica por Dalt Vila, ¿cuál es el segundo hito que se visita?",
                 opciones: [
-                    "Baluarte de Santa Llúcia", 
-                    "Portal de Ses Taules", 
-                    "Baluarte de Sant Jaume", 
-                    "Catedral de Santa María", 
+                    "Baluarte de Santa Llúcia",
+                    "Portal de Ses Taules",
+                    "Baluarte de Sant Jaume",
+                    "Catedral de Santa María",
                     "Plaza de Vila"],
                 correcta: 4
             },
@@ -160,12 +160,86 @@ class Juego {
 
     finalizar() {
         if (!this.estanTodasRespondidas()) {
-            this.resultado.textContent = "Debes responder todas las preguntas antes de finalizar el juego.";
+            this.mostrarError("Debes responder todas las preguntas antes de finalizar el juego.");
             return;
         }
 
+        this.limpiarError();
+
         const puntuacion = this.calcularPuntuacion();
-        this.resultado.textContent = `Has obtenido una puntuación de ${puntuacion} sobre 10.`;
+        this.mostrarDialogoResultado(puntuacion);
+    }
+
+    limpiarError() {
+        const error = document.querySelector("p[data-estado='error']");
+
+        if (error) {
+            error.remove();
+        }
+    }
+
+    mostrarError(mensaje) {
+        let error = document.querySelector("p[data-estado='error']");
+
+        if (!error) {
+            error = document.createElement("p");
+            error.setAttribute("data-estado", "error");
+            error.setAttribute("data-origen", "juego");
+            error.setAttribute("role", "alert");
+            error.setAttribute("tabindex", "-1");
+
+            const botonFinalizar = document.querySelector("button[type='submit'], button[data-accion='finalizar-juego']");
+
+            if (botonFinalizar) {
+                botonFinalizar.insertAdjacentElement("afterend", error);
+            } else {
+                document.querySelector("main").appendChild(error);
+            }
+        }
+
+        error.textContent = mensaje;
+        error.focus();
+    }
+
+
+    mostrarDialogoResultado(puntuacion) {
+        let dialogo = document.querySelector("dialog[data-dialogo='resultado-juego']");
+
+        if (!dialogo) {
+            dialogo = document.createElement("dialog");
+            dialogo.setAttribute("data-dialogo", "resultado-juego");
+            dialogo.setAttribute("aria-labelledby", "tituloResultadoJuego");
+
+            const titulo = document.createElement("h3");
+            titulo.setAttribute("id", "tituloResultadoJuego");
+            titulo.textContent = "Resultado del juego";
+
+            const mensaje = document.createElement("p");
+            mensaje.setAttribute("data-contenido", "resultado-juego");
+
+            const formulario = document.createElement("form");
+            formulario.setAttribute("method", "dialog");
+
+            const boton = document.createElement("button");
+            boton.setAttribute("type", "submit");
+            boton.textContent = "Aceptar";
+
+            formulario.appendChild(boton);
+            dialogo.appendChild(titulo);
+            dialogo.appendChild(mensaje);
+            dialogo.appendChild(formulario);
+
+            document.body.appendChild(dialogo);
+        }
+
+        const mensajeResultado = dialogo.querySelector("p[data-contenido='resultado-juego']");
+        mensajeResultado.textContent = "Has obtenido una puntuación de " + puntuacion + " sobre " + this.preguntas.length + ".";
+
+        if (typeof dialogo.showModal === "function") {
+            dialogo.showModal();
+        } else {
+            dialogo.setAttribute("open", "open");
+        }
     }
 
     estanTodasRespondidas() {

@@ -63,7 +63,7 @@ class PaginaReservar
         }
 
         if ($plazas > (int) $recurso["plazas_disponibles"]) {
-            $this->mensaje = "No hay plazas suficientes para este recurso.";
+            $this->mensaje = "No hay suficientes plazas disponibles para la cantidad solicitada.";
             return;
         }
 
@@ -116,7 +116,7 @@ class PaginaReservar
         echo '<h2>Reservar recurso turístico</h2>';
 
         if ($this->mensaje !== "") {
-            echo '<p>' . htmlspecialchars($this->mensaje, ENT_QUOTES, "UTF-8") . '</p>';
+            echo '<p data-estado="error" role="alert">' . htmlspecialchars($this->mensaje, ENT_QUOTES, "UTF-8") . '</p>';
         }
 
         echo '<article>';
@@ -179,7 +179,7 @@ class PaginaReservar
         echo '<main>';
         echo '<section>';
         echo '<h2>Error</h2>';
-        echo '<p>' . htmlspecialchars($mensaje, ENT_QUOTES, "UTF-8") . '</p>';
+        echo '<p data-estado="error" role="alert">' . htmlspecialchars($mensaje, ENT_QUOTES, "UTF-8") . '</p>';
         echo '</section>';
         echo '</main>';
 
