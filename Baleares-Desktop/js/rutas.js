@@ -85,33 +85,78 @@ class Rutas {
         const rutas = $(xml).find("ruta");
 
         this.contenedor.empty();
-        this.contenedor.append($("<h3></h3>").text("Datos procesados:"));
+        this.contenedor.append($("<h3>").text("Datos procesados:"));
 
         if (rutas.length === 0) {
             this.contenedor.append(
-                $("<p></p>").text("No se encontraron rutas en el XML.")
+                $("<p>").text("No se encontraron rutas en el XML.")
             );
             return;
         }
 
+        this.rutasCargadas = [];
         rutas.each((indice, ruta) => {
-            this.escribirRuta($(ruta));
+            this.rutasCargadas.push($(ruta));
         });
+
+        this.crearSelectorRutas(this.rutasCargadas);
+        this.detalleRuta = $("<section>").attr("aria-live", "polite");
+        this.contenedor.append(this.detalleRuta);
+
+        this.mostrarRutaSeleccionada(0);
+    }
+
+    crearSelectorRutas(rutas) {
+        const contenedorSelector = $("<section>");
+        const etiqueta = $("<label>")
+            .attr("for", "selectorRutas")
+            .text("Selecciona una ruta turística: ");
+
+        const selector = $("<select>")
+            .attr("id", "selectorRutas")
+            .attr("name", "selectorRutas");
+
+        rutas.forEach((ruta, indice) => {
+            const nombreRuta = ruta.attr("nombre") || "Ruta " + (indice + 1);
+            const opcion = $("<option>")
+                .attr("value", String(indice))
+                .text(nombreRuta);
+
+            selector.append(opcion);
+        });
+
+        selector.on("change", (evento) => {
+            const indiceSeleccionado = Number($(evento.currentTarget).val());
+            this.mostrarRutaSeleccionada(indiceSeleccionado);
+        });
+
+        contenedorSelector.append(etiqueta);
+        contenedorSelector.append(selector);
+
+        this.contenedor.append(contenedorSelector);
+    }
+
+    mostrarRutaSeleccionada(indice) {
+        if (!this.rutasCargadas || !this.rutasCargadas[indice]) {
+            return;
+        }
+
+        this.detalleRuta.empty();
+        this.detalleRuta.append(this.escribirRuta(this.rutasCargadas[indice]));
     }
 
     escribirRuta(ruta) {
-        const articleRuta = $("<article></article>");
+        const articleRuta = $("<article>");
 
-        articleRuta.append($("<h4></h4>").text(ruta.attr("nombre")));
-        articleRuta.append($("<p></p>").text(this.obtenerTexto(ruta, "descripcion")));
-
+        articleRuta.append($("<h4>").text(ruta.attr("nombre")));
+        articleRuta.append($("<p>").text(this.obtenerTexto(ruta, "descripcion")));
         articleRuta.append(this.crearDatosGenerales(ruta));
         articleRuta.append(this.crearInicioRuta(ruta));
         articleRuta.append(this.crearHitos(ruta));
         articleRuta.append(this.crearReferencias(ruta));
         articleRuta.append(this.crearRecursosGenerados(ruta));
 
-        this.contenedor.append(articleRuta);
+        return articleRuta;
     }
 
     crearDatosGenerales(ruta) {

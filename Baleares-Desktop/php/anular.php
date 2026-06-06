@@ -22,7 +22,7 @@ class PaginaAnular {
     }
 
     public function ejecutar(): void {
-        $idReserva = isset($_GET["id"]) ? (int) $_GET["id"] : 0;
+        $idReserva = isset($_GET["id_reserva"]) ? (int) $_GET["id_reserva"] : 0;
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $idReserva = isset($_POST["id_reserva"]) ? (int) $_POST["id_reserva"] : 0;
@@ -50,7 +50,7 @@ class PaginaAnular {
 
         if ($this->mensaje !== "") {
             echo '<p>' . htmlspecialchars($this->mensaje, ENT_QUOTES, "UTF-8") . '</p>';
-            echo '<p><a href="reservas.php">Volver a mis reservas</a></p>';
+            $this->plantilla->mostrarEnlaceAccion("mis-reservas.php", "Volver a mis reservas");
         } else {
             echo '<p>Confirme la anulación de la reserva seleccionada.</p>';
             echo '<form action="anular.php?id_reserva=' . (int) $idReserva . '" method="post">';

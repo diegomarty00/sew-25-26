@@ -40,7 +40,8 @@ p {
 
 /* Especificidad: 002 */
 body a {
-  color: #D8F3DC; /* background-color heredado de body: #003B5C. Contraste AAA 9.98 */
+  color: #D8F3DC;
+  /* background-color heredado de body: #003B5C. Contraste AAA 9.98 */
 }
 
 /* Especificidad: 002 */
@@ -69,9 +70,14 @@ h1 {
   line-height: 1.2;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0.2em 0;
-  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2;
+  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
   line-height: 1.25;
 }
 
@@ -134,7 +140,9 @@ header nav a.active {
 }
 
 /* Especificidad: 001 */
-button {
+button,
+a[data-accion="reservas"],
+a[data-accion="reservas"]{
   cursor: pointer;
   margin: 0.5em;
   border: 0.15em solid #003B5C;
@@ -146,7 +154,9 @@ button {
 
 /* Especificidad: 011 */
 button:focus,
-button:hover {
+button:hover,
+a[data-accion="reservas"]:focus,
+a[data-accion="reservas"]:hover {
   outline: 0.2em solid #F4E3B2;
   outline-offset: 0.15em;
   background-color: #8F3A2F;
@@ -166,7 +176,8 @@ button:hover a {
 
 /* Especificidad: 001 */
 dt {
-  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  color: #F4E3B2;
+  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
 }
 
 /* Especificidad: 001 */
@@ -189,7 +200,8 @@ footer p {
 
 /* Especificidad: 002 */
 footer a {
-  color: #D8F3DC; /* background-color heredado de footer: #003B5C. Contraste AAA 9.98 */
+  color: #D8F3DC;
+  /* background-color heredado de footer: #003B5C. Contraste AAA 9.98 */
   font-weight: bold;
 }
 
@@ -213,27 +225,40 @@ main section:nth-of-type(3) article ul li {
 
 /* Especificidad: 016 */
 main section:nth-of-type(3) article ul li dt {
-  color: #F4E3B2; /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+  color: #F4E3B2;
+  /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
   font-weight: bold;
 }
 
 /* Especificidad: 016 */
 main section:nth-of-type(3) article ul li dd {
   margin: 0 0 0.5em 0;
-  color: #FFFFFF; /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
-  
+  color: #FFFFFF;
+  /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+
 }
 
 /* Especificidad: 015 */
 main section:nth-of-type(2) article dl dt {
-  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+  color: #F4E3B2;
+  /* background-color heredado de body: #003B5C. Contraste AAA correcto */
   font-weight: bold;
 }
 
 /* Especificidad: 015 */
 main section:nth-of-type(2) article dl dd {
   margin: 0;
-  color: #FFFFFF; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+  color: #FFFFFF;
+  /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+}
+
+article{
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.4em;
+  border-color: #F4E3B2;
+  background-color: #003B5C;
+  margin: 1em 0;
+  padding: 1em;
 }
 
 /*
@@ -247,14 +272,52 @@ section figure img {
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
   background-color: #003B5C;
-  color: #FFFFFF; /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
+  color: #FFFFFF;
+  /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
 }
 
 /* Especificidad: 014 */
 section figure figcaption {
-  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+  color: #F4E3B2;
+  /* background-color heredado de body: #003B5C. Contraste AAA correcto */
   font-weight: bold;
   font-size: 0.9rem;
+}
+
+
+/* Especificidad: 002 */
+label,
+select {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+/* Especificidad: 001 */
+label {
+  color: #F4E3B2;
+  /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+}
+
+/* Especificidad: 001 */
+select {
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.3em;
+  background-color: #F4E3B2;
+  color: #003B5C;
+  font-style: italic;
+  /* Contraste AAA con background-color #F4E3B2 */
+}
+
+/* Especificidad: 011 */
+select:focus,
+select:hover {
+  outline: 0.2em solid #F4E3B2;
+  outline-offset: 0.15em;
+  border-color: #FFFFFF;
+  background-color: #D8F3DC;
+  color: #003B5C;
+  /* Contraste AAA con background-color #D8F3DC */
 }
 
 
@@ -265,7 +328,7 @@ section figure figcaption {
 */
 
 /* Especificidad: 011 */
-dialog[aria-label="Visor de imágenes"] {
+dialog{
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
   background-color: #003B5C;
@@ -274,7 +337,7 @@ dialog[aria-label="Visor de imágenes"] {
 
 /* Especificidad: 012 */
 dialog::backdrop {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Especificidad: 013 */
@@ -282,11 +345,104 @@ dialog figure img {
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
   background-color: #003B5C;
-  color: #FFFFFF; /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
+  color: #FFFFFF;
+  /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
 }
 
 /* Especificidad: 013 */
 dialog figure figcaption {
-  color: #F4E3B2; /* background-color heredado de dialog: #003B5C. Contraste AAA correcto */
+  color: #F4E3B2;
+  /* background-color heredado de dialog: #003B5C. Contraste AAA correcto */
   font-weight: bold;
+}
+
+
+/*
+  ========================================
+  =====      TABLAS ACCESIBLES      ======
+  ========================================
+*/
+
+/* Especificidad: 001 */
+table {
+  border: 0.2em solid #F4E3B2;
+  border-collapse: collapse;
+  background-color: #003B5C;
+  color: #FFFFFF;
+}
+
+/* Especificidad: 002 */
+table caption {
+  padding: 0.75em;
+  color: #F4E3B2;
+  /* background-color heredado de table: #003B5C. Contraste AAA 9.26 */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Especificidad: 002 */
+table th,
+table td {
+  border: 0.12em solid #003B5C;
+  padding: 0.9em;
+  line-height: 1.5;
+}
+
+/* Especificidad: 003 */
+table thead th {
+  border-color: #F4E3B2;
+  background-color: #8F3A2F;
+  color: #FFFFFF;
+  /* Contraste AAA con background-color #8F3A2F */
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Especificidad: 013 */
+table tbody tr:nth-child(odd) th,
+table tbody tr:nth-child(odd) td {
+  background-color: #F4E3B2;
+  color: #003B5C;
+  /* Contraste AAA con background-color #F4E3B2 */
+}
+
+/* Especificidad: 013 */
+table tbody tr:nth-child(even) th,
+table tbody tr:nth-child(even) td {
+  background-color: #D8F3DC;
+  color: #003B5C;
+  /* Contraste AAA con background-color #D8F3DC */
+}
+
+/* Especificidad: 003 */
+table tbody th {
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Especificidad: 003 */
+table tbody td {
+  text-align: left;
+}
+
+/*
+=====      ACCIONES DE RESERVAS      ======
+*/
+
+/* Especificidad: 002 */
+main form+section {
+  border: 0.2em solid #F4E3B2;
+  border-radius: 0.4em;
+  background-color: #D8F3DC;
+  margin: 1em 0;
+  padding: 1em;
+  color: #003B5C;
+  /* Contraste AAA con background-color #D8F3DC */
+}
+
+/* Especificidad: 003 */
+main form+section h3 {
+  color: #003B5C;
+  /* background-color heredado de main form + section: #D8F3DC. Contraste AAA */
 }

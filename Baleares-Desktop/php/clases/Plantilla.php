@@ -53,16 +53,17 @@ class Plantilla
         echo '<section aria-label="Opciones de gestión de reservas">';
         echo '<h2>Gestión de reservas</h2>';
 
+        
         echo '<nav aria-label="Menú de gestión de reservas">';
 
-        echo '<a href="recursos.php">Recursos turísticos</a>';
+        $this->mostrarEnlaceAccion("recursos.php", "Recursos turísticos");
 
         if ($autenticado) {
-            echo '<a href="mis-reservas.php">Mis reservas</a>';
-            echo '<a href="logout.php">Cerrar sesión</a>';
+            $this->mostrarEnlaceAccion("mis-reservas.php", "Mis reservas");
+            $this->mostrarEnlaceAccion("logout.php", "Cerrar sesión");
         } else {
-            echo '<a href="registro.php">Registrarse</a>';
-            echo '<a href="login.php">Iniciar sesión</a>';
+            $this->mostrarEnlaceAccion("registro.php", "Registrarse");
+            $this->mostrarEnlaceAccion("login.php", "Iniciar sesión");
         }
 
         echo '</nav>';
@@ -81,6 +82,20 @@ class Plantilla
         echo '</body>';
         echo '</html>';
     }
+
+
+    public function crearEnlaceAccion(string $href, string $texto): string
+    {
+        return '<a href="' . htmlspecialchars($href, ENT_QUOTES, "UTF-8") . '" data-accion="reservas">'
+            . htmlspecialchars($texto, ENT_QUOTES, "UTF-8")
+            . '</a>';
+    }
+
+    public function mostrarEnlaceAccion(string $href, string $texto): void
+    {
+        echo '<p>' . $this->crearEnlaceAccion($href, $texto) . '</p>';
+    }
+
 
     private function usuarioAutenticado(): bool
     {

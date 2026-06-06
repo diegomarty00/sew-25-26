@@ -50,7 +50,7 @@ class PaginaMisReservas {
             echo '</dl>';
 
             if ($reserva["estado"] !== "Anulada") {
-                echo '<p><a href="anular.php?id_reserva=' . (int) $reserva["id_reserva"] . '">Anular esta reserva</a></p>';
+                $this->plantilla->mostrarEnlaceAccion("anular.php?id_reserva=" . (int) $reserva["id_reserva"], "Anular esta reserva");
             }
 
             echo '</article>';

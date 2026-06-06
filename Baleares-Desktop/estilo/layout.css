@@ -415,3 +415,37 @@ section[aria-label="Opciones de gestión de reservas"] nav a {
     /* Redefinición permitida por media query para mejorar la lectura en móvil */
   }
 }
+
+/*
+=====      MAQUETACIÓN DE RESERVAS      ======
+*/
+
+/* Especificidad: 002 */
+main form {
+    box-sizing: border-box;
+    max-width: 45em;
+}
+
+/* Especificidad: 002 */
+main fieldset {
+    box-sizing: border-box;
+    margin: 1em 0;
+}
+
+/* Especificidad: 002 */
+main input {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Especificidad: 002 */
+main button {
+    max-width: 100%;
+}
+
+/* Especificidad: 001 */
+dialog {
+    box-sizing: border-box;
+    width: min(90%, 40em);
+    padding: 1em;
+}

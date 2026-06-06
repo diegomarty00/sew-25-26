@@ -12,6 +12,9 @@ class PaginaReservar
     private Reserva $reservas;
     private Seguridad $seguridad;
     private string $mensaje = "";
+    private int $plazasSeleccionadas = 1;
+    private string $presupuestoHtml = "";
+    private bool $reservaRealizada = false;
 
     public function __construct()
     {
@@ -36,7 +39,12 @@ class PaginaReservar
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $this->procesarReserva($recurso);
-            $recurso = $this->recursos->obtenerPorId($idRecurso);
+
+            $recursoActualizado = $this->recursos->obtenerPorId($idRecurso);
+
+            if ($recursoActualizado !== null) {
+                $recurso = $recursoActualizado;
+            }
         }
 
         $this->mostrar($recurso);
@@ -46,6 +54,8 @@ class PaginaReservar
     {
         $plazas = isset($_POST["plazas"]) ? (int) $_POST["plazas"] : 0;
         $accion = isset($_POST["accion"]) ? (string) $_POST["accion"] : "";
+
+        $this->plazasSeleccionadas = max(1, $plazas);
 
         if ($plazas <= 0) {
             $this->mensaje = "Debe indicar un número de plazas válido.";
@@ -60,7 +70,7 @@ class PaginaReservar
         $presupuesto = $this->reservas->calcularPresupuesto((int) $recurso["id_recurso"], $plazas);
 
         if ($accion === "presupuesto") {
-            $this->mensaje = "Presupuesto: " . number_format((float) $presupuesto, 2, ",", ".") . " euros.";
+            $this->presupuestoHtml = $this->crearResumenPresupuesto($recurso, $plazas, (float) $presupuesto);
             return;
         }
 
@@ -71,8 +81,26 @@ class PaginaReservar
                 $plazas
             );
 
-            $this->mensaje = $creada ? "Reserva confirmada correctamente." : "No se pudo confirmar la reserva.";
+            if ($creada) {
+                $this->reservaRealizada = true;
+                return;
+            }
+
+            $this->mensaje = "No se pudo confirmar la reserva.";
         }
+    }
+
+    private function crearResumenPresupuesto(array $recurso, int $plazas, float $presupuesto): string
+    {
+        $html = '<section aria-live="polite">';
+        $html .= '<h3>Presupuesto actualizado</h3>';
+        $html .= '<p>Recurso: ' . htmlspecialchars($recurso["nombre"], ENT_QUOTES, "UTF-8") . '</p>';
+        $html .= '<p>Número de plazas: ' . $plazas . '</p>';
+        $html .= '<p>Precio por plaza: ' . number_format((float) $recurso["precio"], 2, ",", ".") . ' euros.</p>';
+        $html .= '<p>Importe total: ' . number_format($presupuesto, 2, ",", ".") . ' euros.</p>';
+        $html .= '</section>';
+
+        return $html;
     }
 
     private function mostrar(array $recurso): void
@@ -101,13 +129,41 @@ class PaginaReservar
         echo '<form action="reservar.php?id_recurso=' . (int) $recurso["id_recurso"] . '" method="post">';
         echo '<fieldset>';
         echo '<legend>Datos de la reserva</legend>';
-        echo '<p><label for="plazas">Número de plazas</label>';
-        echo '<input type="number" id="plazas" name="plazas" min="1" required></p>';
+
+        echo '<p>';
+        echo '<label for="plazas">Número de plazas</label>';
+        echo '<input type="number" id="plazas" name="plazas" min="1" value="' . (int) $this->plazasSeleccionadas . '" required>';
+        echo '</p>';
+
         echo '</fieldset>';
 
         echo '<p><button type="submit" name="accion" value="presupuesto">Generar presupuesto</button></p>';
         echo '<p><button type="submit" name="accion" value="confirmar">Confirmar reserva</button></p>';
         echo '</form>';
+
+        if ($this->presupuestoHtml !== "") {
+            echo $this->presupuestoHtml;
+        }
+
+
+        if ($this->reservaRealizada) {
+            echo '<dialog data-dialogo="reserva-realizada" aria-labelledby="titulo-dialogo-reserva">';
+            echo '<h3 id="titulo-dialogo-reserva">Reserva realizada</h3>';
+            echo '<p>La reserva se ha realizado correctamente.</p>';
+            echo '<form action="mis-reservas.php" method="get">';
+            echo '<button type="submit" autofocus>Aceptar</button>';
+            echo '</form>';
+            echo '</dialog>';
+
+            echo '<script>';
+            echo 'const dialogoReserva = document.querySelector("dialog[data-dialogo=\'reserva-realizada\']");';
+            echo 'if (dialogoReserva && typeof dialogoReserva.showModal === "function") {';
+            echo 'dialogoReserva.showModal();';
+            echo '}';
+            echo '</script>';
+        }
+
+
         echo '</section>';
         echo '</main>';
 

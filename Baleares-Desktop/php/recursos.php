@@ -44,9 +44,9 @@ class PaginaRecursos {
             echo '</dl>';
 
             if ($this->seguridad->usuarioAutenticado()) {
-                echo '<p><a href="reservar.php?id_recurso=' . (int) $recurso["id_recurso"] . '">Reservar este recurso</a></p>';
+                $this->plantilla->mostrarEnlaceAccion("reservar.php?id_recurso=" . (int) $recurso["id_recurso"], "Reservar este recurso");
             } else {
-                echo '<p><a href="login.php">Inicie sesión para reservar este recurso</a></p>';
+                $this->plantilla->mostrarEnlaceAccion("registro.php?id_recurso=" . (int) $recurso["id_recurso"], "Iniciar sesión para reservar este recurso");
             }
 
             echo '</article>';
