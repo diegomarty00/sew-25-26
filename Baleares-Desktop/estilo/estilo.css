@@ -1,0 +1,292 @@
+/* Diego Martinez Menendez - UO270457 */
+
+/* Estilos generales del proyecto Baleares
+
+W. White              #FFFFFF
+B. Black              #000000
+
+1. Deep Sea Navy      #003B5C     W, 4, 5
+2. Mediterranean Blue #006D77     Decorative only
+3. Turquoise          #00A6A6     B
+4. Sea Foam           #D8F3DC     B, 1
+5. Sand               #F4E3B2     B, 1
+6. Terracotta         #8F3A2F     W
+7. Coral              #C8553D     Decorative only
+
+Contrastes principales:
+- #FFFFFF sobre #003B5C = 11.8
+- #D8F3DC sobre #003B5C = 9.98
+- #F4E3B2 sobre #003B5C = 9.26
+- #003B5C sobre #F4E3B2 = 9.26
+- #FFFFFF sobre #8F3A2F = 7.46
+
+*/
+
+/* Especificidad: 001 */
+body {
+  margin: 0;
+  background-color: #003B5C;
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Verdana, sans-serif;
+}
+
+p {
+  margin: 0em;
+  padding: 0.5em 1em;
+  font-size: 0.8rem;
+}
+
+/* Especificidad: 002 */
+body a {
+  color: #D8F3DC; /* background-color heredado de body: #003B5C. Contraste AAA 9.98 */
+}
+
+/* Especificidad: 002 */
+main p,
+section p,
+aside p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Especificidad: 001 */
+header {
+  background-color: #F4E3B2;
+  color: #003B5C;
+}
+
+/* Especificidad: 002 */
+header a {
+  color: #003B5C;
+}
+
+/* Especificidad: 001 */
+h1 {
+  color: #003B5C;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 0.2em 0;
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+  line-height: 1.25;
+}
+
+/* Especificidad: 001 */
+h2 {
+  font-size: 1.6rem;
+}
+
+/* Especificidad: 001 */
+h3 {
+  font-size: 1.35rem;
+}
+
+/* Especificidad: 001 */
+h4 {
+  font-size: 1.15rem;
+}
+
+/* Especificidad: 001 */
+h5 {
+  font-size: 1rem;
+}
+
+/* Especificidad: 001 */
+h6 {
+  font-size: 0.9rem;
+}
+
+/* Especificidad: 001 */
+nav {
+  color: #003B5C;
+}
+
+/* Especificidad: 002 */
+nav a {
+  margin: 0.5em;
+}
+
+/* Especificidad: 012 */
+nav a:focus,
+nav a:hover {
+  outline: 0.2em solid #003B5C;
+  outline-offset: 0.15em;
+  background-color: #8F3A2F;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/* Especificidad: 013 */
+header nav a.active {
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+}
+
+/* Especificidad: 010 */
+.active {
+  background-color: #8F3A2F;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/* Especificidad: 001 */
+button {
+  cursor: pointer;
+  margin: 0.5em;
+  border: 0.15em solid #003B5C;
+  border-radius: 0.3em;
+  background-color: #F4E3B2;
+  padding: 0.5em 1em;
+  color: #003B5C;
+}
+
+/* Especificidad: 011 */
+button:focus,
+button:hover {
+  outline: 0.2em solid #F4E3B2;
+  outline-offset: 0.15em;
+  background-color: #8F3A2F;
+  color: #FFFFFF;
+}
+
+/* Especificidad: 002 */
+button a {
+  color: #003B5C;
+}
+
+/* Especificidad: 012 */
+button:focus a,
+button:hover a {
+  color: #FFFFFF;
+}
+
+/* Especificidad: 001 */
+dt {
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA 9.26 */
+}
+
+/* Especificidad: 001 */
+footer {
+  border-top: 0.2em solid #F4E3B2;
+  background-color: #003B5C;
+  padding: 1em;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  text-align: center;
+
+}
+
+/* Especificidad: 002 */
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Especificidad: 002 */
+footer a {
+  color: #D8F3DC; /* background-color heredado de footer: #003B5C. Contraste AAA 9.98 */
+  font-weight: bold;
+}
+
+/* Especificidad: 012 */
+footer a:focus,
+footer a:hover {
+  outline: 0.2em solid #F4E3B2;
+  outline-offset: 0.15em;
+  background-color: #8F3A2F;
+  color: #FFFFFF;
+}
+
+
+/* Especificidad: 015 */
+main section:nth-of-type(3) article ul li {
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.4em;
+  background-color: #003B5C;
+  color: #FFFFFF;
+}
+
+/* Especificidad: 016 */
+main section:nth-of-type(3) article ul li dt {
+  color: #F4E3B2; /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+  font-weight: bold;
+}
+
+/* Especificidad: 016 */
+main section:nth-of-type(3) article ul li dd {
+  margin: 0 0 0.5em 0;
+  color: #FFFFFF; /* background-color heredado de main section:nth-of-type(3) article ul li: #003B5C. Contraste AAA correcto */
+  
+}
+
+/* Especificidad: 015 */
+main section:nth-of-type(2) article dl dt {
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+  font-weight: bold;
+}
+
+/* Especificidad: 015 */
+main section:nth-of-type(2) article dl dd {
+  margin: 0;
+  color: #FFFFFF; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+}
+
+/*
+  ========================================
+  =====            FOTOS            ======
+  ========================================
+*/
+
+/* Especificidad: 014 */
+section figure img {
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.4em;
+  background-color: #003B5C;
+  color: #FFFFFF; /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
+}
+
+/* Especificidad: 014 */
+section figure figcaption {
+  color: #F4E3B2; /* background-color heredado de body: #003B5C. Contraste AAA correcto */
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+
+/*
+  ========================================
+  =====      VISOR DE IMÁGENES      ======
+  ========================================
+*/
+
+/* Especificidad: 011 */
+dialog[aria-label="Visor de imágenes"] {
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.4em;
+  background-color: #003B5C;
+  color: #FFFFFF;
+}
+
+/* Especificidad: 012 */
+dialog::backdrop {
+  background-color: #000000;
+}
+
+/* Especificidad: 013 */
+dialog figure img {
+  border: 0.15em solid #F4E3B2;
+  border-radius: 0.4em;
+  background-color: #003B5C;
+  color: #FFFFFF; /* background-color definido en esta regla: #003B5C. Contraste AAA correcto */
+}
+
+/* Especificidad: 013 */
+dialog figure figcaption {
+  color: #F4E3B2; /* background-color heredado de dialog: #003B5C. Contraste AAA correcto */
+  font-weight: bold;
+}

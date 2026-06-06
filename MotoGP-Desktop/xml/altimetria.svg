@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380">
-<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#222}.axis{stroke:#333;stroke-width:1}.grid{stroke:#bbb;stroke-width:0.6;stroke-dasharray:3 3}.profile{fill:rgba(220,0,0,0.18);stroke:#d00;stroke-width:2}</style>
-<line class="axis" x1="48" y1="332" x2="852" y2="332"/>
-<line class="axis" x1="48" y1="332" x2="48" y2="48"/>
-<text x="450" y="30" font-size="16" text-anchor="middle">Altimetría del circuito</text>
-<text x="450" y="368" font-size="12" text-anchor="middle">Distancia (m)</text>
-<text x="18" y="190" font-size="12" text-anchor="middle" transform="rotate(-90,18,190)">Altitud (m)</text>
-<polyline class="profile" points="48.00,332.00 48.00,101.73 99.14,117.08 135.14,105.57 242.95,82.54 266.49,67.19 362.74,147.78 381.75,186.16 411.49,159.30 456.30,182.32 476.39,224.54 561.34,312.81 620.45,282.11 637.65,220.70 741.98,117.08 767.23,86.38 852.00,101.73 852.00,332.00"/>
-</svg>

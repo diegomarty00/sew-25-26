@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Ruta monumental por Palma</name>
+    <Style id="lineaRuta">
+      <LineStyle>
+        <color>ff5c3a8f</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>Ruta monumental por Palma</name>
+      <styleUrl>#lineaRuta</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+          2.648136,39.567379,22
+          2.648136,39.567379,22
+          2.646700,39.567000,24
+          2.649300,39.566200,5
+          2.650900,39.570400,30
+          2.643900,39.568000,8
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

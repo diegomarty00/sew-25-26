@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Diego Martínez Menéndez">
+    <meta name="description" content="Gastronomía típica de las Islas Baleares">
+    <meta name="keywords" content="Baleares, gastronomía, ensaimada, sobrasada, queso de Mahón, tumbet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baleares - Gastronomía</title>
+    <link rel="icon" href="multimedia/imagenes/Baleares.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <link rel="stylesheet" href="estilo/layout.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Baleares</a></h1>
+
+        <nav>
+            <a href="index.html" accesskey="i">Inicio</a>
+            <a href="gastronomia.html" class="active" accesskey="g">Gastronomía</a>
+            <a href="rutas.html" accesskey="r">Rutas</a>
+            <a href="meteorologia.html" accesskey="m">Meteorología</a>
+            <a href="juego.html" accesskey="j">Juego</a>
+            <a href="php/reservas.php" accesskey="v">Reservas</a>
+            <a href="ayuda.html" accesskey="a">Ayuda</a>
+        </nav>
+    </header>
+
+    <p>Estás en: <a href="index.html">Inicio</a> >> Gastronomía</p>
+
+    <main>
+        <section>
+            <h2>Introducción a la cocina balear</h2>
+            <p>
+                La gastronomía de las Islas Baleares forma parte de la cocina mediterránea
+                y combina productos del mar, ingredientes de la huerta, carnes, embutidos,
+                repostería tradicional y elaboraciones propias de cada isla.
+            </p>
+
+            <p>
+                Entre sus productos y platos más conocidos destacan la sobrasada, el queso
+                de Mahón, la ensaimada, el tumbet, el pa amb oli, la caldereta de langosta
+                y los vinos de la denominación de origen Binissalem.
+            </p>
+        </section>
+
+        <section>
+            <h2>Platos y productos imprescindibles</h2>
+
+            <ol>
+                <li>Ensaimada de Mallorca</li>
+                <li>Sobrasada</li>
+                <li>Queso de Mahón</li>
+                <li>Caldereta de langosta</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Ingredientes habituales</h2>
+
+            <ul>
+                <li>Productos del mar, como pescado, langosta y marisco.</li>
+                <li>
+                    Productos de la tierra:
+                    <ul>
+                        <li>Almendras</li>
+                        <li>Tomates</li>
+                        <li>Berenjenas</li>
+                    </ul>
+                </li>
+                <li>Embutidos tradicionales, especialmente la sobrasada.</li>
+                <li>Quesos, como el queso de Mahón.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Glosario de expresiones gastronómicas</h2>
+
+            <dl>
+                <dt>Bon profit</dt>
+                <dd>
+                    Expresión usada para desear que la comida siente bien, equivalente a
+                    “buen provecho”. Es habitual escucharla antes o durante una comida.
+                </dd>
+
+                <dt>Fer un variat</dt>
+                <dd>
+                    Expresión relacionada con pedir o comer un variat mallorquín, una mezcla
+                    de tapas o pequeñas raciones servidas juntas en un mismo plato o recipiente.
+                </dd>
+
+                <dt>Que aprofiti</dt>
+                <dd>
+                    Fórmula de cortesía que también se utiliza para desear buen provecho
+                    a otra persona cuando va a comer.
+                </dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2>Tabla de productos gastronómicos</h2>
+
+            <table>
+                <caption>Productos típicos de Baleares</caption>
+                <thead>
+                    <tr>
+                        <th id="producto" scope="col">Producto</th>
+                        <th id="descripcion" scope="col">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th id="sobrasada" scope="row" headers="producto">Sobrasada</th>
+                        <td headers="descripcion sobrasada">
+                            Embutido tradicional de Mallorca elaborado con carne de cerdo y pimentón.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="ensaimada" scope="row" headers="producto">Ensaimada</th>
+                        <td headers="descripcion ensaimada">
+                            Producto de repostería típico de Mallorca con forma de espiral.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="quesoMahon" scope="row" headers="producto">Queso de Mahón</th>
+                        <td headers="descripcion quesoMahon">
+                            Queso menorquín con sabor intenso y forma característica.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="pomada" scope="row" headers="producto">Pomada menorquina</th>
+                        <td headers="descripcion pomada">
+                            Bebida típica de Menorca elaborada con ginebra menorquina y limonada.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Imagen gastronómica del mes</h2>
+
+            <figure>
+                <img src="multimedia/imagenes/ensaimada.jpg"
+                    alt="Ensaimada tradicional de Mallorca servida en una tabla">
+                <figcaption>Ensaimada tradicional de Mallorca.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Vídeo sobre gastronomía balear</h2>
+
+            <video controls preload="metadata">
+                <source src="multimedia/videos/gastronomia-balear-Peq.mp4" type="video/mp4"
+                    media="(max-width: 679px)" />
+                <source src="multimedia/videos/gastronomia-balear-Peq.webm" type="video/webm"
+                    media="(max-width: 679px)" />
+                <source src="multimedia/videos/gastronomia-balear-Med.mp4" type="video/mp4"
+                    media="(max-width: 1319px)" />
+                <source src="multimedia/videos/gastronomia-balear-Med.webm" type="video/webm"
+                    media="(max-width: 1319px)" />
+                <source src="multimedia/videos/gastronomia-balear-Gra.mp4" type="video/mp4"
+                    media="(min-width: 1320px)" />
+                <source src="multimedia/videos/gastronomia-balear-Gra.webm" type="video/webm"
+                    media="(min-width: 1320px)" />
+                El navegador no puede reproducir el vídeo sobre gastronomía balear.
+            </video>
+        </section>
+
+        <section>
+            <h2>Himno regional - La Balanguera</h2>
+
+            <audio controls preload="metadata">
+                <source src="multimedia/audios/La-Balanguera.mp3" type="audio/mpeg">
+                <source src="multimedia/audios/La-Balanguera.ogg" type="audio/ogg">
+                <source src="multimedia/audios/La-Balanguera.wav" type="audio/wav">
+                El navegador no puede reproducir el audio sobre gastronomía balear.
+            </audio>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            All Rights Reserved. &copy; 2026 <a href="index.html">Baleares</a>
+            - Design By : <a href="https://github.com/diegomarty00">Diego Martinez Menéndez</a>
+        </p>
+    </footer>
+</body>
+
+</html>
