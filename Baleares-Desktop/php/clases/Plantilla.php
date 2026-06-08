@@ -25,13 +25,13 @@ class Plantilla
         echo '<h1><a href="../index.html">Baleares</a></h1>';
 
         echo '<nav>';
-        echo '<a href="../index.html" accesskey="i">Inicio</a>';
-        echo '<a href="../gastronomia.html" accesskey="g">Gastronomía</a>';
-        echo '<a href="../rutas.html" accesskey="r">Rutas</a>';
-        echo '<a href="../meteorologia.html" accesskey="m">Meteorología</a>';
-        echo '<a href="../juego.html" accesskey="j">Juego</a>';
-        echo '<a href="reservas.php" class="active" accesskey="v">Reservas</a>';
-        echo '<a href="../ayuda.html" accesskey="a">Ayuda</a>';
+        echo '<a href="../index.html" >Inicio</a>';
+        echo '<a href="../gastronomia.html" >Gastronomía</a>';
+        echo '<a href="../rutas.html" >Rutas</a>';
+        echo '<a href="../meteorologia.html"  >Meteorología</a>';
+        echo '<a href="../juego.html" >Juego</a>';
+        echo '<a href="reservas.php" class="active" >Reservas</a>';
+        echo '<a href="../ayuda.html" >Ayuda</a>';
         echo '</nav>';
 
         echo '</header>';
