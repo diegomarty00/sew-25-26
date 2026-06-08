@@ -18,7 +18,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/galeria.js"></script>
     <script src="js/rutas.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCrbYGj55x3xpStJ_qDNQu9SLTiaHDbto&callback=initMap"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCrbYGj55x3xpStJ_qDNQu9SLTiaHDbto&callback=initMap"></script>
 </head>
 
 <body>
@@ -27,13 +28,13 @@
         <h1><a href="index.html">Baleares</a></h1>
 
         <nav>
-            <a href="index.html" >Inicio</a>
-            <a href="gastronomia.html" >Gastronomía</a>
-            <a href="rutas.html" class="active" >Rutas</a>
-            <a href="meteorologia.html"  >Meteorología</a>
-            <a href="juego.html" >Juego</a>
-            <a href="php/reservas.php" >Reservas</a>
-            <a href="ayuda.html" >Ayuda</a>
+            <a href="index.html">Inicio</a>
+            <a href="gastronomia.html">Gastronomía</a>
+            <a href="rutas.html" class="active">Rutas</a>
+            <a href="meteorologia.html">Meteorología</a>
+            <a href="juego.html">Juego</a>
+            <a href="php/reservas.php">Reservas</a>
+            <a href="ayuda.html">Ayuda</a>
         </nav>
     </header>
 
@@ -48,7 +49,8 @@
                 Después, utiliza el desplegable para consultar una ruta concreta.
             </p>
 
-            <input type="file" title="Subir archivo XML de rutas" accept=".xml,text/xml">
+            <label for="archivoXML">Selecciona el archivo XML con las rutas turísticas:</label>
+            <input id="archivoXML" name="archivoXML" type="file" accept=".xml,text/xml">
 
             <article>
                 <h3>Datos procesados:</h3>
@@ -60,7 +62,8 @@
 
             <p>Selecciona el archivo SVG de la altimetría de una ruta:</p>
 
-            <input type="file" title="Subir archivo SVG de altimetría" accept=".svg">
+            <label for="archivoSVG">Selecciona el archivo SVG de la altimetría:</label>
+            <input id="archivoSVG" name="archivoSVG" type="file" accept=".svg">
         </section>
 
         <section>
@@ -68,8 +71,8 @@
 
             <p>Selecciona el archivo KML con la planimetría de una ruta:</p>
 
-            <input type="file" title="Subir archivo KML de planimetría" accept=".kml">
-
+            <label for="archivoKML">Selecciona el archivo KML de la planimetría:</label>
+            <input id="archivoKML" name="archivoKML" type="file" accept=".kml">
 
             <article>
                 <h3>Mapa:</h3>
