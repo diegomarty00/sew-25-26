@@ -262,14 +262,14 @@ table thead th {
   text-align: left;
 }
 
-/* Especificidad: 013 */
+/* Especificidad: 014 */
 table tbody tr:nth-child(odd) th,
 table tbody tr:nth-child(odd) td {
   background-color: #F4E3B2;
   color: #003B5C;
 }
 
-/* Especificidad: 013 */
+/* Especificidad: 014 */
 table tbody tr:nth-child(even) th,
 table tbody tr:nth-child(even) td {
   background-color: #D8F3DC;
@@ -331,7 +331,7 @@ main section:nth-of-type(2) article dl dd {
   ========================================
 */
 
-/* Especificidad: 014 */
+/* Especificidad: 003 */
 section figure img {
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
@@ -340,7 +340,7 @@ section figure img {
 }
 
 
-/* Especificidad: 002 */
+/* Especificidad: 001 */
 label,
 select {
   font-size: 1rem;
@@ -378,7 +378,7 @@ select:hover {
   ========================================
 */
 
-/* Especificidad: 011 */
+/* Especificidad: 001 */
 dialog {
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
@@ -386,12 +386,12 @@ dialog {
   color: #FFFFFF;
 }
 
-/* Especificidad: 012 */
+/* Especificidad: 002 */
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.65); /* Fondo semitransparente para mejorar el contraste del diálogo */
 }
 
-/* Especificidad: 013 */
+/* Especificidad: 003 */
 dialog figure img {
   border: 0.15em solid #F4E3B2;
   border-radius: 0.4em;
@@ -399,7 +399,7 @@ dialog figure img {
   color: #FFFFFF;
 }
 
-/* Especificidad: 013 */
+/* Especificidad: 003 */
 section figure figcaption {
   color: #F4E3B2; /* background-color heredado de dialog: #003B5C. Contraste AAA correcto */
   font-weight: bold;
@@ -413,7 +413,7 @@ section figure figcaption {
   ========================================
 */
 
-/* Especificidad: 002 */
+/* Especificidad: 003 */
 main form+section {
   border: 0.2em solid #F4E3B2;
   border-radius: 0.4em;
@@ -423,7 +423,7 @@ main form+section {
   color: #003B5C;
 }
 
-/* Especificidad: 003 */
+/* Especificidad: 004 */
 main form+section h3 {
   color: #003B5C;/* background-color heredado de main form + section: #D8F3DC. Contraste AAA */
 }
@@ -528,7 +528,7 @@ main > section:first-of-type > article > article article ol li strong {
   font-weight: bold;
 }
 
-/* Especificidad: 017 */
+/* Especificidad: 016 */
 main > section:first-of-type > article > article article ul {
   background-color: #D8F3DC;
   color: #003B5C;
@@ -537,18 +537,18 @@ main > section:first-of-type > article > article article ul {
   border: #003B5C 0.15em solid;
 }
 
-/* Especificidad: 018 */
+/* Especificidad: 017 */
 main > section:first-of-type > article > article article ul li {
   color: #003B5C; /* background-color heredado de main > section:first-of-type > article > article article ul: #D8F3DC. Contraste AAA correcto */
 }
 
-/* Especificidad: 019 */
+/* Especificidad: 018 */
 main > section:first-of-type > article > article article ul li strong {
   color: #003B5C; /* background-color heredado de main > section:first-of-type > article > article article ul: #D8F3DC. Contraste AAA correcto */
   font-weight: bold;
 }
 
-/* Especificidad: 016 */
+/* Especificidad: 018 */
 main > section:first-of-type > article > article article ul li a {
   color: #003B5C;
   background-color: #D8F3DC;
@@ -557,13 +557,13 @@ main > section:first-of-type > article > article article ul li a {
   overflow-wrap: break-word;
 }
 
-/* Especificidad: 026 */
+/* Especificidad: 028 */
 main > section:first-of-type > article > article article ul li a:visited {
   color: #003B5C;
   background-color: #D8F3DC;
 }
 
-/* Especificidad: 026 */
+/* Especificidad: 028 */
 main > section:first-of-type > article > article article ul li a:focus,
 main > section:first-of-type > article > article article ul li a:hover {
   outline: 0.2em solid #003B5C;

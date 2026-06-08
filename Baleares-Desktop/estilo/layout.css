@@ -279,7 +279,7 @@ main article a {
   word-wrap: break-word;
 }
 
-/* Especificidad: 013 */
+/* Especificidad: 014 */
 main>section:nth-of-type(2)>input+svg {
   display: block;
   box-sizing: border-box;
@@ -288,7 +288,7 @@ main>section:nth-of-type(2)>input+svg {
   height: auto;
 }
 
-/* Especificidad: 013 */
+/* Especificidad: 014 */
 main>section:nth-of-type(3)>input+article {
   box-sizing: border-box;
   margin: 1em 0;
@@ -372,7 +372,7 @@ main>section:first-of-type>article>section[aria-live="polite"]>article>ul {
   align-items: stretch;
 }
 
-/* Especificidad: 025 */
+/* Especificidad: 027 */
 main>section:first-of-type>article>section[aria-live="polite"]>article>ul>li {
   box-sizing: border-box;
   text-align: center;
@@ -385,7 +385,7 @@ S
   ========================================
 */
 
-/* Especificidad: 011 */
+/* Especificidad: 012 */
 section[aria-label="Opciones de gestión de reservas"] {
   margin-bottom: 1.5em;
 }
